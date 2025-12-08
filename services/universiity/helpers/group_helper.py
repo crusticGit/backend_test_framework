@@ -1,6 +1,6 @@
 import requests
 
-from helpers.base_helper import BaseHelper
+from services.general.helpers.base_helper import BaseHelper
 
 
 class GroupHelper(BaseHelper):
