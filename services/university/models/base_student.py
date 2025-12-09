@@ -1,6 +1,6 @@
 from enum import StrEnum
 
-from pydantic import BaseModel, ConfigDict, EmailStr
+from pydantic import BaseModel, ConfigDict
 
 
 class DegreeEnum(StrEnum):
@@ -15,7 +15,7 @@ class BaseStudent(BaseModel):
 
     first_name: str
     last_name: str
-    email: EmailStr
+    email: str
     degree: DegreeEnum
     phone: str
     group_id: int
