@@ -1,10 +1,10 @@
 from services.general.base_service import BaseService
-from services.universiity.helpers.group_helper import GroupHelper
-from services.universiity.helpers.student_helper import StudentHelper
-from services.universiity.models.group_request import GroupRequest
-from services.universiity.models.group_response import GroupResponse
-from services.universiity.models.student_request import StudentRequest
-from services.universiity.models.student_response import StudentResponse
+from services.university.helpers.group_helper import GroupHelper
+from services.university.helpers.student_helper import StudentHelper
+from services.university.models.group_request import GroupRequest
+from services.university.models.group_response import GroupResponse
+from services.university.models.student_request import StudentRequest
+from services.university.models.student_response import StudentResponse
 from utils.api_utils import ApiUtils
 
 
