@@ -1,6 +1,10 @@
+import time
+
 import pytest
+import requests
 from faker import Faker
 
+from logger.logger import Logger
 from services.auth.auth_service import AuthService
 from services.auth.models.login_request import LoginRequest
 from services.auth.models.register_request import RegisterRequest
@@ -10,6 +14,21 @@ from utils.api_utils import ApiUtils
 faker = Faker()
 
 
+@pytest.fixture(scope='session', autouse=True)
+def auth_service_readiness():
+    Logger.info('!auth_service_readiness!')
+    timeout = 180
+    start_time = time.time()
+    while time.time() < start_time + timeout:
+        try:
+            response = requests.get(AuthService.SERVICE_URL + '/docs')
+            response.raise_for_status()
+        except:
+            time.sleep(1)
+        else:
+            break
+    else:
+        raise RuntimeError(f'Auth service wasnt started during {timeout} seconds.')
 
 
 # если удобно можно отдельные фикстуры делать для сессий/сервисов/хелперов и так далее
