@@ -31,6 +31,9 @@ class ApiUtils:
     def update_headers(self, headers: dict):
         self.session.headers.update(headers)
 
+    def delete_headers(self):
+        self.session.headers = {}
+
     @log_response
     def get(self, endpoint_url, **kwargs):
         response = self.session.get(self.url + endpoint_url, **kwargs)
