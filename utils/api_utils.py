@@ -25,8 +25,11 @@ class ApiUtils:
             headers = {}
 
         self.session = Session()
-        self.session.headers.update(headers)
         self.url = url
+        self.update_headers(headers)
+
+    def update_headers(self, headers: dict):
+        self.session.headers.update(headers)
 
     @log_response
     def get(self, endpoint_url, **kwargs):
