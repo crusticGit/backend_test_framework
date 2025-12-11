@@ -21,10 +21,11 @@ class TestAuthContract:
                                   lower_case=True)
         email = faker.email()
 
-        response = auth_helper.post_register({"username": name,
-                                              "password": password,
-                                              "password_repeat": password,
-                                              "email": email})
+        register_data = {"username": name,
+                         "password": password,
+                         "password_repeat": password,
+                         "email": email}
+        response = auth_helper.post_register(register_data)
 
         expected_result = requests.status_codes.codes.created
         assert response.status_code == expected_result, (f'Wrong status code. '
@@ -41,10 +42,12 @@ class TestAuthContract:
                                   lower_case=True)
         email = faker.email()
 
-        response = auth_helper.post_register({"username": "",
-                                              "password": password,
-                                              "password_repeat": password,
-                                              "email": email})
+        register_data = {"username": "",
+                         "password": password,
+                         "password_repeat": password,
+                         "email": email}
+
+        response = auth_helper.post_register(register_data)
 
         expected_result = requests.status_codes.codes.conflict
         assert response.status_code == expected_result, (f'Wrong status code. '
@@ -58,14 +61,14 @@ class TestAuthContract:
         password = faker.password(length=random.randint(8, 99), special_chars=True,
                                   digits=True, upper_case=True, lower_case=True)
 
-        reg_data = {
+        register_data = {
             "username": name,
             "password": password,
             "password_repeat": password,
             "email": faker.email()
         }
-        auth_helper.post_register(reg_data)
-        response = auth_helper.post_register(reg_data)
+        auth_helper.post_register(register_data)
+        response = auth_helper.post_register(register_data)
 
         expected_result = requests.status_codes.codes.conflict
         assert response.status_code == expected_result, (f'Wrong status code. '
@@ -79,14 +82,14 @@ class TestAuthContract:
         password = faker.password(length=random.randint(8, 99), special_chars=True,
                                   digits=True, upper_case=True, lower_case=True)
 
-        reg_data = {
+        register_data = {
             "username": faker.name(),
             "password": password,
             "password_repeat": password,
             "email": email
         }
-        auth_helper.post_register(reg_data)
-        response = auth_helper.post_register(reg_data)
+        auth_helper.post_register(register_data)
+        response = auth_helper.post_register(register_data)
 
         expected_result = requests.status_codes.codes.conflict
         assert response.status_code == expected_result, (f'Wrong status code. '
@@ -100,14 +103,14 @@ class TestAuthContract:
         password = faker.password(length=random.randint(8, 99), special_chars=True,
                                   digits=True, upper_case=True, lower_case=True)
 
-        reg_data = {
+        register_data = {
             "username": faker.name(),
             "password": password,
             "password_repeat": password,
             "email": email
         }
 
-        response = auth_helper.post_register(reg_data)
+        response = auth_helper.post_register(register_data)
 
         expected_result = requests.status_codes.codes.unprocessable
         assert response.status_code == expected_result, (f'Wrong status code. '
@@ -123,14 +126,14 @@ class TestAuthContract:
                             "digits": True,
                             "upper_case": True, "lower_case": True}
 
-        reg_data = {
+        register_data = {
             "username": faker.name(),
             "password": faker.password(**password_options),
             "password_repeat": faker.password(**password_options),
             "email": faker.email()
         }
 
-        response = auth_helper.post_register(reg_data)
+        response = auth_helper.post_register(register_data)
 
         expected_result = requests.status_codes.codes.unprocessable
         assert response.status_code == expected_result, (f'Wrong status code. '
@@ -143,14 +146,14 @@ class TestAuthContract:
         password_options = {"length": random.randint(4, 7)}
         password = faker.password(**password_options)
 
-        reg_data = {
+        register_data = {
             "username": faker.name(),
             "password": password,
             "password_repeat": password,
             "email": faker.email()
         }
 
-        response = auth_helper.post_register(reg_data)
+        response = auth_helper.post_register(register_data)
 
         expected_result = requests.status_codes.codes.unprocessable
         assert response.status_code == expected_result, (f'Wrong status code. '
@@ -166,14 +169,14 @@ class TestAuthContract:
                             "upper_case": True, "lower_case": True}
 
         password = faker.password(**password_options)
-        reg_data = {
+        register_data = {
             "username": faker.name(),
             "password": password,
             "password_repeat": password,
             "email": faker.email()
         }
 
-        response = auth_helper.post_register(reg_data)
+        response = auth_helper.post_register(register_data)
 
         expected_result = requests.status_codes.codes.unprocessable
         assert response.status_code == expected_result, (f'Wrong status code. '
@@ -192,16 +195,139 @@ class TestAuthContract:
                                   lower_case=True)
         email = faker.email()
 
-        reg_data = {"username": name,
-                    "password": password,
-                    "password_repeat": password,
-                    "email": email}
+        register_data = {"username": name,
+                         "password": password,
+                         "password_repeat": password,
+                         "email": email}
 
-        reg_data.pop(required_field)
+        register_data.pop(required_field)
 
-        response = auth_helper.post_register(reg_data)
+        response = auth_helper.post_register(register_data)
 
         expected_result = requests.status_codes.codes.unprocessable
         assert response.status_code == expected_result, (f'Wrong status code. '
                                                          f'Actual: {response.status_code}, '
                                                          f'but expected: {expected_result}')
+
+    def test_login_valid_data(self, auth_api_utils_anonym):
+        auth_helper = AuthorizationHelper(api_utils=auth_api_utils_anonym)
+
+        name = faker.user_name()
+        password = faker.password(length=random.randint(8, 99),
+                                  special_chars=True,
+                                  digits=True,
+                                  upper_case=True,
+                                  lower_case=True)
+        email = faker.email()
+
+        register_data = {"username": name,
+                         "password": password,
+                         "password_repeat": password,
+                         "email": email}
+
+        login_data = {
+            "username": name,
+            "password": password
+        }
+
+        auth_helper.post_register(register_data)
+        login_response = auth_helper.post_login(login_data)
+
+        expected_result = requests.status_codes.codes.ok
+        assert login_response.status_code == expected_result, (f'Wrong status code. '
+                                                               f'Actual: {login_response.status_code}, '
+                                                               f'but expected: {expected_result}')
+
+    def test_login_invalid_password(self, auth_api_utils_anonym):
+        auth_helper = AuthorizationHelper(api_utils=auth_api_utils_anonym)
+
+        name = faker.user_name()
+        password = faker.password(length=random.randint(8, 99),
+                                  special_chars=True,
+                                  digits=True,
+                                  upper_case=True,
+                                  lower_case=True)
+        email = faker.email()
+
+        register_data = {"username": name,
+                         "password": password,
+                         "password_repeat": password,
+                         "email": email}
+
+        login_data = {
+            "username": name,
+            "password": faker.password(length=random.randint(8, 99),
+                                       special_chars=True,
+                                       digits=True,
+                                       upper_case=True,
+                                       lower_case=True)
+        }
+
+        auth_helper.post_register(register_data)
+        login_response = auth_helper.post_login(login_data)
+
+        expected_result = requests.status_codes.codes.unauthorized
+        assert login_response.status_code == expected_result, (f'Wrong status code. '
+                                                               f'Actual: {login_response.status_code}, '
+                                                               f'but expected: {expected_result}')
+
+    def test_login_invalid_username(self, auth_api_utils_anonym):
+        auth_helper = AuthorizationHelper(api_utils=auth_api_utils_anonym)
+
+        name = faker.user_name()
+        password = faker.password(length=random.randint(8, 99),
+                                  special_chars=True,
+                                  digits=True,
+                                  upper_case=True,
+                                  lower_case=True)
+        email = faker.email()
+
+        register_data = {"username": name,
+                         "password": password,
+                         "password_repeat": password,
+                         "email": email}
+
+        login_data = {
+            "username": faker.user_name(),
+            "password": password
+        }
+
+        auth_helper.post_register(register_data)
+        login_response = auth_helper.post_login(login_data)
+
+        expected_result = requests.status_codes.codes.unauthorized
+        assert login_response.status_code == expected_result, (f'Wrong status code. '
+                                                               f'Actual: {login_response.status_code}, '
+                                                               f'but expected: {expected_result}')
+
+    @pytest.mark.parametrize("required_field", ['username', 'password'])
+    def test_login_should_fail_when_required_field_is_missing(self, auth_api_utils_anonym, required_field):
+        auth_helper = AuthorizationHelper(api_utils=auth_api_utils_anonym)
+
+        name = faker.user_name()
+        password = faker.password(length=random.randint(8, 99),
+                                  special_chars=True,
+                                  digits=True,
+                                  upper_case=True,
+                                  lower_case=True)
+        email = faker.email()
+
+        register_data = {"username": name,
+                         "password": password,
+                         "password_repeat": password,
+                         "email": email}
+
+        login_data = {
+            "username": name,
+            "password": password
+        }
+
+        del login_data[required_field]
+
+        auth_helper.post_register(register_data)
+        login_response = auth_helper.post_login(login_data)
+
+        expected_result = requests.status_codes.codes.unprocessable
+        assert login_response.status_code == expected_result, (f'Wrong status code. '
+                                                               f'Actual: {login_response.status_code}, '
+                                                               f'but expected: {expected_result}')
