@@ -52,7 +52,7 @@ def university_api_utils_anonym():
 
 @pytest.fixture(scope='function', autouse=False)
 def access_token(auth_api_utils_anonym):
-    username = faker.user_name()
+    username = faker.user_name() + "testUser" + str(faker.random_int(-1000, 1000))
     password = faker.password(length=30,
                               special_chars=True,
                               digits=True,

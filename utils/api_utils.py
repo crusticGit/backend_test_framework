@@ -51,5 +51,5 @@ class ApiUtils:
 
     @log_response
     def put(self, endpoint_url, data=None, json=None, **kwargs):
-        response = self.session.post(self.url + endpoint_url, data, json, **kwargs)
+        response = self.session.put(self.url + endpoint_url, data=data, json=json, **kwargs)
         return response
