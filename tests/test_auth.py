@@ -116,7 +116,7 @@ class TestAuth:
                                    password_repeat=password,
                                    email="")
 
-        register_response = auth_service.register_user_with_validation_check(register_request=register)
+        register_response = auth_service.register_user_expect_validation_error(register_request=register)
 
         expected_error = "An email address must have an @-sign."
         actual_error_msg = register_response.detail[0].msg

@@ -1,10 +1,14 @@
 from services.general.base_service import BaseService
+from services.general.models.validation_error_response import ValidationErrorResponse
 from services.university.helpers.group_helper import GroupHelper
 from services.university.helpers.student_helper import StudentHelper
+from services.university.helpers.teacher_helper import TeacherHelper
 from services.university.models.group_request import GroupRequest
 from services.university.models.group_response import GroupResponse
 from services.university.models.student_request import StudentRequest
 from services.university.models.student_response import StudentResponse
+from services.university.models.teacher_request import TeacherRequest
+from services.university.models.teacher_response import TeacherResponse
 from utils.api_utils import ApiUtils
 
 
@@ -16,6 +20,7 @@ class UniversityService(BaseService):
 
         self.group_helper = GroupHelper(self.api_utils)
         self.student_helper = StudentHelper(self.api_utils)
+        self.teacher_helper = TeacherHelper(self.api_utils)
 
     def create_group(self, group_request: GroupRequest) -> GroupResponse:
         response = self.group_helper.post_group(json=group_request.model_dump())
@@ -24,6 +29,14 @@ class UniversityService(BaseService):
     def create_student(self, student_request: StudentRequest) -> StudentResponse:
         response = self.student_helper.post_student(json=student_request.model_dump())
         return StudentResponse(**response.json())
+
+    def create_teacher(self, teacher_request: TeacherRequest) -> TeacherResponse:
+        response = self.teacher_helper.post_teacher(json=teacher_request.model_dump())
+        return TeacherResponse(**response.json())
+
+    def create_teacher_expect_validation_error(self, teacher_request: TeacherRequest) -> ValidationErrorResponse:
+        response = self.teacher_helper.post_teacher(json=teacher_request.model_dump())
+        return ValidationErrorResponse(**response.json())
 
     def create_random_student(self):
         raise NotImplementedError

@@ -23,7 +23,7 @@ class AuthService(BaseService):
         response = self.authorization_helper.post_register(data=register_request.model_dump())
         return SuccessResponse(**response.json())
 
-    def register_user_with_validation_check(self,
+    def register_user_expect_validation_error(self,
                                             register_request: RegisterRequest) -> ValidationErrorResponse:
         response = self.authorization_helper.post_register(data=register_request.model_dump())
         return ValidationErrorResponse(**response.json())

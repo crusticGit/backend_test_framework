@@ -12,7 +12,6 @@ faker = Faker()
 
 
 class TestStudent:
-    # верхеуровневый тест
     def test_student_create(self, university_api_utils_admin):
         university_service = UniversityService(university_api_utils_admin)
 
