@@ -1,6 +1,6 @@
 import json
 
-import curlify
+import curlify  # type: ignore
 import requests
 from requests import Session
 

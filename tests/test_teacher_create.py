@@ -24,11 +24,11 @@ class TestTeacher:
         last_name = faker.last_name()
         subject = random.choice([subject for subject in SubjectEnum])
 
-        teacher = TeacherRequest(**{
-            "first_name": first_name,
-            "last_name": last_name,
-            "subject": subject
-        })
+        teacher = TeacherRequest(
+            first_name=first_name,
+            last_name=last_name,
+            subject=subject
+        )
 
         teacher_response = university_service.create_teacher(teacher)
 

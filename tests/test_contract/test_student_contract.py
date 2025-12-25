@@ -3,7 +3,7 @@ import random
 import requests
 from faker import Faker
 
-from services.university.helpers.group_helper import GroupHelper
+from ..conftest import student_helper
 from services.university.helpers.student_helper import StudentHelper
 from services.university.models.base_student import DegreeEnum
 
@@ -34,10 +34,7 @@ class TestStudentContract:
                                                          f'Actual: {response.status_code}, '
                                                          f'but expected: {expected_result}')
 
-    def test_create_student_admin(self, university_api_utils_admin):
-        student_helper = StudentHelper(api_utils=university_api_utils_admin)
-
-        group_helper = GroupHelper(api_utils=university_api_utils_admin)
+    def test_create_student_admin(self, student_helper, group_helper):
         name = faker.name() + str(random.randint(1, 1000))
         group_data = {"name": name}
         group_id = group_helper.post_group(group_data).json()['id']
@@ -63,14 +60,11 @@ class TestStudentContract:
                                                          f'Actual: {response.status_code}, '
                                                          f'but expected: {expected_result}')
 
-    def test_create_student_fails_on_group_not_found(self, university_api_utils_admin):
-        student_helper = StudentHelper(api_utils=university_api_utils_admin)
-
-        group_helper = GroupHelper(api_utils=university_api_utils_admin)
+    def test_create_student_fails_on_group_not_found(self, student_helper, group_helper):
         name = faker.name() + str(random.randint(1, 1000))
         group_data = {"name": name}
         group_id = group_helper.post_group(group_data).json()['id']
-        group_helper.delete_group(str(group_id))
+        group_helper.delete_group(group_id)
 
         first_name = faker.first_name()
         last_name = faker.last_name()
@@ -94,7 +88,7 @@ class TestStudentContract:
                                                          f'but expected: {expected_result}')
 
     def test_get_all_students_anonym(self, university_api_utils_anonym):
-        student_helper = StudentHelper(api_utils=university_api_utils_anonym)
+        student_helper = StudentHelper(university_api_utils_anonym)
         response = student_helper.get_students()
 
         expected_result = requests.status_codes.codes.forbidden
@@ -102,8 +96,7 @@ class TestStudentContract:
                                                          f'Actual: {response.status_code}, '
                                                          f'but expected: {expected_result}')
 
-    def test_get_all_students_admin(self, university_api_utils_admin):
-        student_helper = StudentHelper(api_utils=university_api_utils_admin)
+    def test_get_all_students_admin(self, student_helper):
         response = student_helper.get_students()
 
         expected_result = requests.status_codes.codes.ok
@@ -113,7 +106,7 @@ class TestStudentContract:
 
     def test_delete_student_anonym(self, university_api_utils_anonym):
         student_helper = StudentHelper(api_utils=university_api_utils_anonym)
-        student_id = str(random.randint(-10000, 10000))
+        student_id = random.randint(-10000, 10000)
         response = student_helper.delete_student(student_id)
 
         expected_result = requests.status_codes.codes.forbidden
@@ -121,10 +114,7 @@ class TestStudentContract:
                                                          f'Actual: {response.status_code}, '
                                                          f'but expected: {expected_result}')
 
-    def test_delete_student_admin(self, university_api_utils_admin):
-        student_helper = StudentHelper(api_utils=university_api_utils_admin)
-
-        group_helper = GroupHelper(api_utils=university_api_utils_admin)
+    def test_delete_student_admin(self, student_helper, group_helper):
         name = faker.name() + str(random.randint(1, 1000))
         group_data = {"name": name}
         group_id = group_helper.post_group(group_data).json()['id']
@@ -146,17 +136,14 @@ class TestStudentContract:
 
         student_id = student_helper.post_student(student_data).json()['id']
 
-        response = student_helper.delete_student(str(student_id))
+        response = student_helper.delete_student(student_id)
 
         expected_result = requests.status_codes.codes.ok
         assert response.status_code == expected_result, (f'Wrong status code. '
                                                          f'Actual: {response.status_code}, '
                                                          f'but expected: {expected_result}')
 
-    def test_delete_student_fails_on_student_not_found(self, university_api_utils_admin):
-        student_helper = StudentHelper(api_utils=university_api_utils_admin)
-
-        group_helper = GroupHelper(api_utils=university_api_utils_admin)
+    def test_delete_student_fails_on_student_not_found(self, group_helper, student_helper):
         name = faker.name() + str(random.randint(1, 1000))
         group_data = {"name": name}
         group_id = group_helper.post_group(group_data).json()['id']
@@ -178,8 +165,8 @@ class TestStudentContract:
 
         student_id = student_helper.post_student(student_data).json()['id']
 
-        student_helper.delete_student(str(student_id))
-        response = student_helper.delete_student(str(student_id))
+        student_helper.delete_student(student_id)
+        response = student_helper.delete_student(student_id)
 
         expected_result = requests.status_codes.codes.not_found
         assert response.status_code == expected_result, (f'Wrong status code. '
@@ -189,17 +176,14 @@ class TestStudentContract:
     def test_get_student_anonym(self, university_api_utils_anonym):
         student_helper = StudentHelper(api_utils=university_api_utils_anonym)
         student_id = random.randint(1, 1000)
-        response = student_helper.get_student(str(student_id))
+        response = student_helper.get_student(student_id)
 
         expected_result = requests.status_codes.codes.forbidden
         assert response.status_code == expected_result, (f'Wrong status code. '
                                                          f'Actual: {response.status_code}, '
                                                          f'but expected: {expected_result}')
 
-    def test_get_student_admin(self, university_api_utils_admin):
-        student_helper = StudentHelper(api_utils=university_api_utils_admin)
-
-        group_helper = GroupHelper(api_utils=university_api_utils_admin)
+    def test_get_student_admin(self, student_helper, group_helper):
         name = faker.name() + str(random.randint(1, 1000))
         group_data = {"name": name}
         group_id = group_helper.post_group(group_data).json()['id']
@@ -220,7 +204,7 @@ class TestStudentContract:
         }
 
         student_id = student_helper.post_student(student_data).json()['id']
-        response = student_helper.get_student(str(student_id))
+        response = student_helper.get_student(student_id)
 
         expected_result = requests.status_codes.codes.ok
         assert response.status_code == expected_result, (f'Wrong status code. '
@@ -230,17 +214,14 @@ class TestStudentContract:
     def test_update_student_anonym(self, university_api_utils_anonym):
         student_helper = StudentHelper(api_utils=university_api_utils_anonym)
         student_id = random.randint(-10000, 10000)
-        response = student_helper.update_student(str(student_id), json={})
+        response = student_helper.update_student(student_id, json={})
 
         expected_result = requests.status_codes.codes.forbidden
         assert response.status_code == expected_result, (f'Wrong status code. '
                                                          f'Actual: {response.status_code}, '
                                                          f'but expected: {expected_result}')
 
-    def test_update_student_admin(self, university_api_utils_admin):
-        student_helper = StudentHelper(api_utils=university_api_utils_admin)
-
-        group_helper = GroupHelper(api_utils=university_api_utils_admin)
+    def test_update_student_admin(self, student_helper, group_helper):
         name = faker.name() + str(random.randint(1, 1000))
         group_data = {"name": name}
         group_id = group_helper.post_group(group_data).json()['id']
@@ -280,17 +261,14 @@ class TestStudentContract:
             "group_id": new_group_id
         }
 
-        response_update_student = student_helper.update_student(str(student_id), update_student_data)
+        response_update_student = student_helper.update_student(student_id, update_student_data)
 
         expected_result = requests.status_codes.codes.ok
         assert response_update_student.status_code == expected_result, (f'Wrong status code. '
                                                                         f'Actual: {response_update_student.status_code}, '
                                                                         f'but expected: {expected_result}')
 
-    def test_update_student_fails_on_email_taken(self, university_api_utils_admin):
-        student_helper = StudentHelper(api_utils=university_api_utils_admin)
-
-        group_helper = GroupHelper(api_utils=university_api_utils_admin)
+    def test_update_student_fails_on_email_taken(self, student_helper, group_helper):
         name = 'group - ' + faker.company() + ' #' + str(random.randint(1, 1000))
         group_data = {"name": name}
         group_id = group_helper.post_group(group_data).json()['id']
@@ -338,7 +316,7 @@ class TestStudentContract:
             "group_id": new_group_id
         }
 
-        response_update_student = student_helper.update_student(str(student_id), update_student_data)
+        response_update_student = student_helper.update_student(student_id, update_student_data)
 
         expected_result = requests.status_codes.codes.conflict
         assert response_update_student.status_code == expected_result, (f'Wrong status code. '

@@ -1,4 +1,4 @@
-from pydantic import BaseModel, ConfigDict
+from pydantic import BaseModel, ConfigDict, EmailStr
 
 
 class UserResponse(BaseModel):
@@ -6,5 +6,5 @@ class UserResponse(BaseModel):
 
     id: int
     username: str
-    email: str
+    email: EmailStr
     is_enabled: bool

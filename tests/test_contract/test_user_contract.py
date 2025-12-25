@@ -7,9 +7,7 @@ faker = Faker()
 
 
 class TestUserContract:
-    def test_get_current_user_info_success(self, auth_api_utils_admin):
-        user_helper = UserHelper(api_utils=auth_api_utils_admin)
-
+    def test_get_current_user_info_success(self, user_helper):
         response = user_helper.get_me()
 
         expected_result = requests.status_codes.codes.ok

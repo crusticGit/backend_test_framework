@@ -3,10 +3,8 @@ import random
 import requests
 from faker import Faker
 
+from ..conftest import grade_helper
 from services.university.helpers.grade_helper import GradeHelper
-from services.university.helpers.group_helper import GroupHelper
-from services.university.helpers.student_helper import StudentHelper
-from services.university.helpers.teacher_helper import TeacherHelper
 from services.university.models.base_student import DegreeEnum
 from services.university.models.base_teacher import SubjectEnum
 
@@ -15,7 +13,7 @@ faker = Faker()
 
 class TestGradeContract:
     def test_create_grade_anonym(self, university_api_utils_anonym):
-        grade_helper = GradeHelper(api_utils=university_api_utils_anonym)
+        grade_helper = GradeHelper(university_api_utils_anonym)
         teacher_id = random.randint(1, 1000)
         student_id = random.randint(1, 1000)
         grade = random.randint(0, 5)
@@ -32,11 +30,7 @@ class TestGradeContract:
                                                          f'Actual: {response.status_code}, '
                                                          f'but expected: {expected_result}')
 
-    def test_create_grade_admin(self, university_api_utils_admin):
-        grade_helper = GradeHelper(api_utils=university_api_utils_admin)
-        teacher_helper = TeacherHelper(api_utils=university_api_utils_admin)
-        student_helper = StudentHelper(api_utils=university_api_utils_admin)
-        group_helper = GroupHelper(api_utils=university_api_utils_admin)
+    def test_create_grade_admin(self, grade_helper, teacher_helper, student_helper, group_helper):
 
         group_id = group_helper.post_group({
             "name": faker.name()
@@ -71,11 +65,7 @@ class TestGradeContract:
                                                          f'Actual: {response.status_code}, '
                                                          f'but expected: {expected_result}')
 
-    def test_create_grade_fails_on_student_not_found(self, university_api_utils_admin):
-        grade_helper = GradeHelper(api_utils=university_api_utils_admin)
-        teacher_helper = TeacherHelper(api_utils=university_api_utils_admin)
-        student_helper = StudentHelper(api_utils=university_api_utils_admin)
-        group_helper = GroupHelper(api_utils=university_api_utils_admin)
+    def test_create_grade_fails_on_student_not_found(self, grade_helper, teacher_helper, student_helper, group_helper):
 
         group_id = group_helper.post_group({
             "name": faker.name()
@@ -96,7 +86,7 @@ class TestGradeContract:
             "group_id": group_id
         }).json()['id']
 
-        student_helper.delete_student(str(student_id))
+        student_helper.delete_student(student_id)
 
         grade = random.randint(0, 5)
 
@@ -112,11 +102,7 @@ class TestGradeContract:
                                                          f'Actual: {response.status_code}, '
                                                          f'but expected: {expected_result}')
 
-    def test_create_grade_fails_on_teacher_not_found(self, university_api_utils_admin):
-        grade_helper = GradeHelper(api_utils=university_api_utils_admin)
-        teacher_helper = TeacherHelper(api_utils=university_api_utils_admin)
-        student_helper = StudentHelper(api_utils=university_api_utils_admin)
-        group_helper = GroupHelper(api_utils=university_api_utils_admin)
+    def test_create_grade_fails_on_teacher_not_found(self, grade_helper, teacher_helper, student_helper, group_helper):
 
         group_id = group_helper.post_group({
             "name": faker.name()
@@ -137,7 +123,7 @@ class TestGradeContract:
             "group_id": group_id
         }).json()['id']
 
-        teacher_helper.delete_teacher(str(teacher_id))
+        teacher_helper.delete_teacher(teacher_id)
 
         grade = random.randint(0, 5)
 
@@ -153,11 +139,8 @@ class TestGradeContract:
                                                          f'Actual: {response.status_code}, '
                                                          f'but expected: {expected_result}')
 
-    def test_delete_grade_admin(self, university_api_utils_admin):
-        grade_helper = GradeHelper(api_utils=university_api_utils_admin)
-        teacher_helper = TeacherHelper(api_utils=university_api_utils_admin)
-        student_helper = StudentHelper(api_utils=university_api_utils_admin)
-        group_helper = GroupHelper(api_utils=university_api_utils_admin)
+    def test_delete_grade_admin(self, university_api_utils_admin, grade_helper, group_helper, student_helper,
+                                teacher_helper):
 
         group_id = group_helper.post_group({
             "name": faker.name()
@@ -194,11 +177,7 @@ class TestGradeContract:
                                                          f'Actual: {response.status_code}, '
                                                          f'but expected: {expected_result}')
 
-    def test_delete_grade_fails_on_grade_not_exists(self, university_api_utils_admin):
-        grade_helper = GradeHelper(api_utils=university_api_utils_admin)
-        teacher_helper = TeacherHelper(api_utils=university_api_utils_admin)
-        student_helper = StudentHelper(api_utils=university_api_utils_admin)
-        group_helper = GroupHelper(api_utils=university_api_utils_admin)
+    def test_delete_grade_fails_on_grade_not_exists(self, grade_helper, teacher_helper, student_helper, group_helper):
 
         group_id = group_helper.post_group({
             "name": faker.name()
@@ -229,19 +208,15 @@ class TestGradeContract:
 
         grade_id = grade_helper.post_grade(grade_data).json()['id']
 
-        grade_helper.delete_grade(str(grade_id))
-        response = grade_helper.delete_grade(str(grade_id))
+        grade_helper.delete_grade(grade_id)
+        response = grade_helper.delete_grade(grade_id)
 
         expected_result = requests.status_codes.codes.not_found
         assert response.status_code == expected_result, (f'Wrong status code. '
                                                          f'Actual: {response.status_code}, '
                                                          f'but expected: {expected_result}')
 
-    def test_update_grade_teacher_successfully(self, university_api_utils_admin):
-        grade_helper = GradeHelper(api_utils=university_api_utils_admin)
-        teacher_helper = TeacherHelper(api_utils=university_api_utils_admin)
-        student_helper = StudentHelper(api_utils=university_api_utils_admin)
-        group_helper = GroupHelper(api_utils=university_api_utils_admin)
+    def test_update_grade_teacher_successfully(self, grade_helper, teacher_helper, student_helper, group_helper):
 
         group_id = group_helper.post_group({
             "name": faker.name()
@@ -279,19 +254,14 @@ class TestGradeContract:
         grade_id = grade_helper.post_grade(grade_data).json()['id']
 
         grade_data['teacher_id'] = new_teacher_id
-        response = grade_helper.update_grade(str(grade_id), grade_data)
+        response = grade_helper.update_grade(grade_id, grade_data)
 
         expected_result = requests.status_codes.codes.ok
         assert response.status_code == expected_result, (f'Wrong status code. '
                                                          f'Actual: {response.status_code}, '
                                                          f'but expected: {expected_result}')
 
-    def test_update_grade_fails_on_grade_not_exists(self, university_api_utils_admin):
-        grade_helper = GradeHelper(api_utils=university_api_utils_admin)
-        teacher_helper = TeacherHelper(api_utils=university_api_utils_admin)
-        student_helper = StudentHelper(api_utils=university_api_utils_admin)
-        group_helper = GroupHelper(api_utils=university_api_utils_admin)
-
+    def test_update_grade_fails_on_grade_not_exists(self, grade_helper, teacher_helper, student_helper, group_helper):
         group_id = group_helper.post_group({
             "name": faker.name()
         }).json()['id']
@@ -320,9 +290,9 @@ class TestGradeContract:
         }
 
         grade_id = grade_helper.post_grade(grade_data).json()['id']
-        grade_helper.delete_grade(str(grade_id))
+        grade_helper.delete_grade(grade_id)
 
-        response = grade_helper.update_grade(str(grade_id), grade_data)
+        response = grade_helper.update_grade(grade_id, grade_data)
 
         expected_result = requests.status_codes.codes.not_found
         assert response.status_code == expected_result, (f'Wrong status code. '
@@ -330,27 +300,24 @@ class TestGradeContract:
                                                          f'but expected: {expected_result}')
 
     def test_get_grade_anonym(self, university_api_utils_anonym):
-        grade_helper = GradeHelper(api_utils=university_api_utils_anonym)
+        grade_helper = GradeHelper(university_api_utils_anonym)
+
         student_id = random.randint(1, 1000)
         teacher_id = random.randint(1, 1000)
         group_id = random.randint(1, 1000)
 
-        response = grade_helper.get_grade(query_params={
-            'student_id': student_id,
-            'teacher_id': teacher_id,
-            'group_id': group_id
-        })
+        response = grade_helper.get_grade(
+            student_id=student_id,
+            teacher_id=teacher_id,
+            group_id=group_id
+        )
 
         expected_result = requests.status_codes.codes.forbidden
         assert response.status_code == expected_result, (f'Wrong status code. '
                                                          f'Actual: {response.status_code}, '
                                                          f'but expected: {expected_result}')
 
-    def test_get_grade_admin(self, university_api_utils_admin):
-        grade_helper = GradeHelper(api_utils=university_api_utils_admin)
-        teacher_helper = TeacherHelper(api_utils=university_api_utils_admin)
-        student_helper = StudentHelper(api_utils=university_api_utils_admin)
-        group_helper = GroupHelper(api_utils=university_api_utils_admin)
+    def test_get_grade_admin(self, grade_helper, teacher_helper, student_helper, group_helper):
 
         group_id = group_helper.post_group({
             "name": faker.name()
@@ -378,11 +345,11 @@ class TestGradeContract:
                 'grade': random.randint(0, 5)
             })
 
-        response = grade_helper.get_grade(query_params={
-            'student_id': student_id,
-            'teacher_id': teacher_id,
-            'group_id': group_id
-        })
+        response = grade_helper.get_grade(
+            student_id=student_id,
+            teacher_id=teacher_id,
+            group_id=group_id
+        )
 
         expected_result = requests.status_codes.codes.ok
         assert response.status_code == expected_result, (f'Wrong status code. '
@@ -390,27 +357,23 @@ class TestGradeContract:
                                                          f'but expected: {expected_result}')
 
     def test_get_stats_anonym(self, university_api_utils_anonym):
-        grade_helper = GradeHelper(api_utils=university_api_utils_anonym)
+        grade_helper = GradeHelper(university_api_utils_anonym)
         student_id = random.randint(1, 1000)
         teacher_id = random.randint(1, 1000)
         group_id = random.randint(1, 1000)
 
-        response = grade_helper.get_grades_stats(query_params={
-            'student_id': student_id,
-            'teacher_id': teacher_id,
-            'group_id': group_id
-        })
+        response = grade_helper.get_stats(
+            student_id=student_id,
+            teacher_id=teacher_id,
+            group_id=group_id
+        )
 
         expected_result = requests.status_codes.codes.forbidden
         assert response.status_code == expected_result, (f'Wrong status code. '
                                                          f'Actual: {response.status_code}, '
                                                          f'but expected: {expected_result}')
 
-    def test_get_stats_admin(self, university_api_utils_admin):
-        grade_helper = GradeHelper(api_utils=university_api_utils_admin)
-        teacher_helper = TeacherHelper(api_utils=university_api_utils_admin)
-        student_helper = StudentHelper(api_utils=university_api_utils_admin)
-        group_helper = GroupHelper(api_utils=university_api_utils_admin)
+    def test_get_stats_admin(self, grade_helper, teacher_helper, student_helper, group_helper):
 
         group_id = group_helper.post_group({
             "name": faker.name()
@@ -438,11 +401,11 @@ class TestGradeContract:
                 'grade': random.randint(0, 5)
             })
 
-        response = grade_helper.get_grades_stats(query_params={
-            'student_id': student_id,
-            'teacher_id': teacher_id,
-            'group_id': group_id
-        })
+        response = grade_helper.get_stats(
+            student_id=student_id,
+            teacher_id=teacher_id,
+            group_id=group_id
+        )
 
         expected_result = requests.status_codes.codes.ok
         assert response.status_code == expected_result, (f'Wrong status code. '

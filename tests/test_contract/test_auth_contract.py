@@ -4,42 +4,30 @@ import pytest
 import requests
 from faker import Faker
 
-from services.auth.helpers.authorization_helper import AuthorizationHelper
+from services.auth.models.register_request import RegisterRequest
 
 faker = Faker()
 
 
 class TestAuthContract:
-    def test_register_valid_data(self, auth_api_utils_anonym):
-        auth_helper = AuthorizationHelper(api_utils=auth_api_utils_anonym)
-
+    def test_register_valid_data(self, auth_helper, generate_valid_password):
         name = faker.user_name()
-        password = faker.password(length=random.randint(8, 99),
-                                  special_chars=True,
-                                  digits=True,
-                                  upper_case=True,
-                                  lower_case=True)
+        password = generate_valid_password
         email = faker.email()
 
-        register_data = {"username": name,
-                         "password": password,
-                         "password_repeat": password,
-                         "email": email}
-        response = auth_helper.post_register(register_data)
+        register_data = RegisterRequest(username=name,
+                                        password=password,
+                                        password_repeat=password,
+                                        email=email)
+        response = auth_helper.post_register(register_data.model_dump())
 
         expected_result = requests.status_codes.codes.created
         assert response.status_code == expected_result, (f'Wrong status code. '
                                                          f'Actual: {response.status_code}, '
                                                          f'but expected: {expected_result}')
 
-    def test_register_username_is_empty(self, auth_api_utils_anonym):
-        auth_helper = AuthorizationHelper(api_utils=auth_api_utils_anonym)
-
-        password = faker.password(length=random.randint(8, 99),
-                                  special_chars=True,
-                                  digits=True,
-                                  upper_case=True,
-                                  lower_case=True)
+    def test_register_username_is_empty(self, auth_helper, generate_valid_password):
+        password = generate_valid_password
         email = faker.email()
 
         register_data = {"username": "",
@@ -54,12 +42,9 @@ class TestAuthContract:
                                                          f'Actual: {response.status_code}, '
                                                          f'but expected: {expected_result}')
 
-    def test_register_existing_name(self, auth_api_utils_anonym):
-        auth_helper = AuthorizationHelper(api_utils=auth_api_utils_anonym)
-
+    def test_register_existing_name(self, auth_helper, generate_valid_password):
         name = faker.user_name()
-        password = faker.password(length=random.randint(8, 99), special_chars=True,
-                                  digits=True, upper_case=True, lower_case=True)
+        password = generate_valid_password
 
         register_data = {
             "username": name,
@@ -75,12 +60,9 @@ class TestAuthContract:
                                                          f'Actual: {response.status_code}, '
                                                          f'but expected: {expected_result}')
 
-    def test_register_existing_email(self, auth_api_utils_anonym):
-        auth_helper = AuthorizationHelper(api_utils=auth_api_utils_anonym)
-
+    def test_register_existing_email(self, auth_helper, generate_valid_password):
         email = faker.email()
-        password = faker.password(length=random.randint(8, 99), special_chars=True,
-                                  digits=True, upper_case=True, lower_case=True)
+        password = generate_valid_password
 
         register_data = {
             "username": faker.name(),
@@ -96,13 +78,9 @@ class TestAuthContract:
                                                          f'Actual: {response.status_code}, '
                                                          f'but expected: {expected_result}')
 
-    def test_register_invalid_email(self, auth_api_utils_anonym):
-        auth_helper = AuthorizationHelper(api_utils=auth_api_utils_anonym)
-
+    def test_register_invalid_email(self, auth_helper, generate_valid_password):
         email = faker.email().replace('@', '')
-        password = faker.password(length=random.randint(8, 99), special_chars=True,
-                                  digits=True, upper_case=True, lower_case=True)
-
+        password = generate_valid_password
         register_data = {
             "username": faker.name(),
             "password": password,
@@ -117,10 +95,9 @@ class TestAuthContract:
                                                          f'Actual: {response.status_code}, '
                                                          f'but expected: {expected_result}')
 
-    def test_register_password_mismatch(self, auth_api_utils_anonym):
-        auth_helper = AuthorizationHelper(api_utils=auth_api_utils_anonym)
-
-        password_length = random.randint(8, 99)
+    def test_register_password_mismatch(self, auth_helper):
+        password_length = random.randint(RegisterRequest.PASSWORD_MIN_LENGTH,
+                                         RegisterRequest.PASSWORD_MAX_LENGTH)
         password_options = {"length": password_length,
                             "special_chars": True,
                             "digits": True,
@@ -140,10 +117,8 @@ class TestAuthContract:
                                                          f'Actual: {response.status_code}, '
                                                          f'but expected: {expected_result}')
 
-    def test_register_password_too_short(self, auth_api_utils_anonym):
-        auth_helper = AuthorizationHelper(api_utils=auth_api_utils_anonym)
-
-        password_options = {"length": random.randint(4, 7)}
+    def test_register_password_too_short(self, auth_helper):
+        password_options = {"length": random.randint(4, RegisterRequest.PASSWORD_MIN_LENGTH - 1)}
         password = faker.password(**password_options)
 
         register_data = {
@@ -160,9 +135,8 @@ class TestAuthContract:
                                                          f'Actual: {response.status_code}, '
                                                          f'but expected: {expected_result}')
 
-    def test_register_password_too_long(self, auth_api_utils_anonym):
-        auth_helper = AuthorizationHelper(api_utils=auth_api_utils_anonym)
-        password_length = random.randint(99, 1000)
+    def test_register_password_too_long(self, auth_helper):
+        password_length = random.randint(RegisterRequest.PASSWORD_MAX_LENGTH + 1, 1000)
         password_options = {"length": password_length,
                             "special_chars": True,
                             "digits": True,
@@ -184,15 +158,10 @@ class TestAuthContract:
                                                          f'but expected: {expected_result}')
 
     @pytest.mark.parametrize("required_field", ['username', 'password', 'password_repeat', 'email'])
-    def test_register_should_fail_when_required_field_is_missing(self, auth_api_utils_anonym, required_field):
-        auth_helper = AuthorizationHelper(api_utils=auth_api_utils_anonym)
-
+    def test_register_should_fail_when_required_field_is_missing(self, generate_valid_password, auth_helper,
+                                                                 required_field):
         name = faker.user_name()
-        password = faker.password(length=random.randint(8, 99),
-                                  special_chars=True,
-                                  digits=True,
-                                  upper_case=True,
-                                  lower_case=True)
+        password = generate_valid_password
         email = faker.email()
 
         register_data = {"username": name,
@@ -209,15 +178,9 @@ class TestAuthContract:
                                                          f'Actual: {response.status_code}, '
                                                          f'but expected: {expected_result}')
 
-    def test_login_valid_data(self, auth_api_utils_anonym):
-        auth_helper = AuthorizationHelper(api_utils=auth_api_utils_anonym)
-
+    def test_login_valid_data(self, auth_helper, generate_valid_password):
         name = faker.user_name()
-        password = faker.password(length=random.randint(8, 99),
-                                  special_chars=True,
-                                  digits=True,
-                                  upper_case=True,
-                                  lower_case=True)
+        password = generate_valid_password
         email = faker.email()
 
         register_data = {"username": name,
@@ -238,15 +201,9 @@ class TestAuthContract:
                                                                f'Actual: {login_response.status_code}, '
                                                                f'but expected: {expected_result}')
 
-    def test_login_invalid_password(self, auth_api_utils_anonym):
-        auth_helper = AuthorizationHelper(api_utils=auth_api_utils_anonym)
-
+    def test_login_invalid_password(self, auth_helper, generate_valid_password):
         name = faker.user_name()
-        password = faker.password(length=random.randint(8, 99),
-                                  special_chars=True,
-                                  digits=True,
-                                  upper_case=True,
-                                  lower_case=True)
+        password = generate_valid_password
         email = faker.email()
 
         register_data = {"username": name,
@@ -256,7 +213,8 @@ class TestAuthContract:
 
         login_data = {
             "username": name,
-            "password": faker.password(length=random.randint(8, 99),
+            "password": faker.password(length=random.randint(RegisterRequest.PASSWORD_MIN_LENGTH,
+                                                             RegisterRequest.PASSWORD_MAX_LENGTH),
                                        special_chars=True,
                                        digits=True,
                                        upper_case=True,
@@ -271,15 +229,9 @@ class TestAuthContract:
                                                                f'Actual: {login_response.status_code}, '
                                                                f'but expected: {expected_result}')
 
-    def test_login_invalid_username(self, auth_api_utils_anonym):
-        auth_helper = AuthorizationHelper(api_utils=auth_api_utils_anonym)
-
+    def test_login_invalid_username(self, auth_helper, generate_valid_password):
         name = faker.user_name()
-        password = faker.password(length=random.randint(8, 99),
-                                  special_chars=True,
-                                  digits=True,
-                                  upper_case=True,
-                                  lower_case=True)
+        password = generate_valid_password
         email = faker.email()
 
         register_data = {"username": name,
@@ -301,15 +253,10 @@ class TestAuthContract:
                                                                f'but expected: {expected_result}')
 
     @pytest.mark.parametrize("required_field", ['username', 'password'])
-    def test_login_should_fail_when_required_field_is_missing(self, auth_api_utils_anonym, required_field):
-        auth_helper = AuthorizationHelper(api_utils=auth_api_utils_anonym)
-
+    def test_login_should_fail_when_required_field_is_missing(self, generate_valid_password, auth_helper,
+                                                              required_field):
         name = faker.user_name()
-        password = faker.password(length=random.randint(8, 99),
-                                  special_chars=True,
-                                  digits=True,
-                                  upper_case=True,
-                                  lower_case=True)
+        password = generate_valid_password
         email = faker.email()
 
         register_data = {"username": name,

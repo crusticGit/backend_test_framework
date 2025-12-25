@@ -43,13 +43,12 @@ class UniversityService(BaseService):
         response = self.student_helper.post_student(json=student_request.model_dump())
         return StudentResponse(**response.json())
 
-    def create_teacher(self, teacher_request: TeacherRequest) -> TeacherResponse:
+    def create_teacher(self, teacher_request: TeacherRequest) -> (TeacherResponse | ValidationErrorResponse):
         response = self.teacher_helper.post_teacher(json=teacher_request.model_dump())
-        return TeacherResponse(**response.json())
-
-    def create_teacher_expect_validation_error(self, teacher_request: TeacherRequest) -> ValidationErrorResponse:
-        response = self.teacher_helper.post_teacher(json=teacher_request.model_dump())
-        return ValidationErrorResponse(**response.json())
+        if response.status_code == 201:
+            return TeacherResponse(**response.json())
+        else:
+            return ValidationErrorResponse(**response.json())
 
     def create_grade(self, grade_request: GradeRequest) -> GradeResponse:
         response = self.grade_helper.post_grade(data=grade_request.model_dump())
@@ -58,9 +57,11 @@ class UniversityService(BaseService):
     def get_grade_statistics(self, student_id: int,
                              teacher_id: int,
                              group_id: int) -> GradeStatisticResponse:
-        response = self.grade_helper.get_grades_stats({"student_id": student_id,
-                                                       "teacher_id": teacher_id,
-                                                       "group_id": group_id})
+        response = self.grade_helper.get_stats(
+            student_id=student_id,
+            teacher_id=teacher_id,
+            group_id=group_id
+        )
 
         return GradeStatisticResponse(**response.json())
 
@@ -71,7 +72,7 @@ class UniversityService(BaseService):
             first_name=faker.first_name(),
             last_name=faker.last_name(),
             email=faker.email(),
-            degree=random.choice([degree.value for degree in DegreeEnum]),
+            degree=random.choice([degree for degree in DegreeEnum]),
             phone=faker.numerify('+7##########'),
             group_id=group.id
         )

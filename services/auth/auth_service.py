@@ -19,19 +19,17 @@ class AuthService(BaseService):
         self.authorization_helper = AuthorizationHelper(self.api_utils)
         self.user_helper = UserHelper(self.api_utils)
 
-    def register_user(self, register_request: RegisterRequest) -> SuccessResponse:
+    def register_user(self, register_request: RegisterRequest) -> (SuccessResponse | ValidationErrorResponse):
         response = self.authorization_helper.post_register(data=register_request.model_dump())
-        return SuccessResponse(**response.json())
-
-    def register_user_expect_validation_error(self,
-                                            register_request: RegisterRequest) -> ValidationErrorResponse:
-        response = self.authorization_helper.post_register(data=register_request.model_dump())
-        return ValidationErrorResponse(**response.json())
+        if response.status_code == 201:
+            return SuccessResponse(**response.json())
+        else:
+            return ValidationErrorResponse(**response.json())
 
     def login_user(self, login_request: LoginRequest) -> LoginResponse:
         response = self.authorization_helper.post_login(data=login_request.model_dump())
         return LoginResponse(**response.json())
 
-    def get_user_info(self) -> UserResponse:
+    def get_me(self) -> UserResponse:
         response = self.user_helper.get_me()
         return UserResponse(**response.json())
