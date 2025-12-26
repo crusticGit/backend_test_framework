@@ -3,10 +3,12 @@ import random
 import requests
 from faker import Faker
 
-from ..conftest import grade_helper
 from services.university.helpers.grade_helper import GradeHelper
+from services.university.models.base_grade import GRADE_MAX, GRADE_MIN
 from services.university.models.base_student import DegreeEnum
 from services.university.models.base_teacher import SubjectEnum
+from utils.generate_utils import GenerateUtils
+from ..conftest import grade_helper
 
 faker = Faker()
 
@@ -16,7 +18,7 @@ class TestGradeContract:
         grade_helper = GradeHelper(university_api_utils_anonym)
         teacher_id = random.randint(1, 1000)
         student_id = random.randint(1, 1000)
-        grade = random.randint(0, 5)
+        grade = random.randint(GRADE_MIN, GRADE_MAX)
 
         grade_data = {
             'teacher_id': teacher_id,
@@ -32,32 +34,19 @@ class TestGradeContract:
 
     def test_create_grade_admin(self, grade_helper, teacher_helper, student_helper, group_helper):
 
-        group_id = group_helper.post_group({
-            "name": faker.name()
-        }).json()['id']
+        group_id = group_helper.post_group(
+            GenerateUtils.random_group_data()
+        ).json()['id']
 
-        teacher_id = teacher_helper.post_teacher({
-            "first_name": faker.name(),
-            "last_name": faker.last_name(),
-            "subject": random.choice([subject.value for subject in SubjectEnum])
-        }).json()['id']
+        teacher_id = teacher_helper.post_teacher(
+            GenerateUtils.random_teacher_data()
+        ).json()['id']
 
-        student_id = student_helper.post_student({
-            "first_name": faker.first_name(),
-            "last_name": faker.last_name(),
-            "email": faker.email(),
-            "degree": random.choice([degree for degree in DegreeEnum]),
-            "phone": faker.numerify('+7##########'),
-            "group_id": group_id
-        }).json()['id']
+        student_id = student_helper.post_student(
+            GenerateUtils.random_student_data(group_id)
+        ).json()['id']
 
-        grade = random.randint(0, 5)
-
-        grade_data = {
-            'teacher_id': teacher_id,
-            'student_id': student_id,
-            'grade': grade
-        }
+        grade_data = GenerateUtils.random_grade_data(teacher_id, student_id)
 
         response = grade_helper.post_grade(grade_data)
         expected_result = requests.status_codes.codes.created
@@ -88,7 +77,7 @@ class TestGradeContract:
 
         student_helper.delete_student(student_id)
 
-        grade = random.randint(0, 5)
+        grade = random.randint(GRADE_MIN, GRADE_MAX)
 
         grade_data = {
             'teacher_id': teacher_id,
@@ -125,7 +114,7 @@ class TestGradeContract:
 
         teacher_helper.delete_teacher(teacher_id)
 
-        grade = random.randint(0, 5)
+        grade = random.randint(GRADE_MIN, GRADE_MAX)
 
         grade_data = {
             'teacher_id': teacher_id,
@@ -161,7 +150,7 @@ class TestGradeContract:
             "group_id": group_id
         }).json()['id']
 
-        grade = random.randint(0, 5)
+        grade = random.randint(GRADE_MIN, GRADE_MAX)
 
         grade_data = {
             'teacher_id': teacher_id,
@@ -198,7 +187,7 @@ class TestGradeContract:
             "group_id": group_id
         }).json()['id']
 
-        grade = random.randint(0, 5)
+        grade = random.randint(GRADE_MIN, GRADE_MAX)
 
         grade_data = {
             'teacher_id': teacher_id,
@@ -237,7 +226,7 @@ class TestGradeContract:
             "group_id": group_id
         }).json()['id']
 
-        grade = random.randint(0, 5)
+        grade = random.randint(GRADE_MIN, GRADE_MAX)
 
         grade_data = {
             'teacher_id': teacher_id,
@@ -281,7 +270,7 @@ class TestGradeContract:
             "group_id": group_id
         }).json()['id']
 
-        grade = random.randint(0, 5)
+        grade = random.randint(GRADE_MIN, GRADE_MAX)
 
         grade_data = {
             'teacher_id': teacher_id,

@@ -4,6 +4,7 @@ import requests
 from faker import Faker
 
 from services.university.helpers.group_helper import GroupHelper
+from utils.generate_utils import GenerateUtils
 
 faker = Faker()
 
@@ -11,7 +12,7 @@ faker = Faker()
 class TestGroupContract:
     def test_create_group_anonym(self, university_api_utils_anonym):
         group_helper = GroupHelper(api_utils=university_api_utils_anonym)
-        response = group_helper.post_group({"name": faker.name()})
+        response = group_helper.post_group(GenerateUtils.random_group_data())
 
         expected_result = requests.status_codes.codes.forbidden
         assert response.status_code == expected_result, (f'Wrong status code. '
@@ -19,9 +20,7 @@ class TestGroupContract:
                                                          f'but expected: {expected_result}')
 
     def test_create_group_admin(self, group_helper):
-        name = faker.name()
-        group_data = {"name": name}
-        response = group_helper.post_group(group_data)
+        response = group_helper.post_group(GenerateUtils.random_group_data())
 
         expected_result = requests.status_codes.codes.created
         assert response.status_code == expected_result, (f'Wrong status code. '
@@ -29,8 +28,7 @@ class TestGroupContract:
                                                          f'but expected: {expected_result}')
 
     def test_create_group_fails_if_already_exists(self, group_helper):
-        name = faker.name()
-        group_data = {"name": name}
+        group_data = GenerateUtils.random_group_data()
 
         group_helper.post_group(group_data)
         response = group_helper.post_group(group_data)
@@ -78,9 +76,7 @@ class TestGroupContract:
                                                          f'but expected: {expected_result}')
 
     def test_delete_group_admin(self, group_helper):
-        name = faker.name()
-        group_data = {"name": name}
-        response_create_group = group_helper.post_group(group_data)
+        response_create_group = group_helper.post_group(GenerateUtils.random_group_data())
 
         group_id = response_create_group.json()['id']
 
@@ -92,9 +88,7 @@ class TestGroupContract:
                                                                       f'but expected: {expected_result}')
 
     def test_delete_group_fails_on_group_not_exists(self, group_helper):
-        name = faker.name()
-        group_data = {"name": name}
-        response_create_group = group_helper.post_group(group_data)
+        response_create_group = group_helper.post_group(GenerateUtils.random_group_data())
 
         group_id = response_create_group.json()['id']
 
@@ -126,10 +120,8 @@ class TestGroupContract:
                                                          f'but expected: {expected_result}')
 
     def test_update_group_admin(self, group_helper):
-        name = faker.name()
-        group_data = {"name": name}
-        update_name = faker.name()
-        update_data = {"name": update_name}
+        group_data = GenerateUtils.random_group_data()
+        update_data = GenerateUtils.random_group_data()
 
         response_create_group = group_helper.post_group(group_data)
         group_id = response_create_group.json()['id']
@@ -142,10 +134,9 @@ class TestGroupContract:
                                                                       f'but expected: {expected_result}')
 
     def test_update_group_fails_on_group_not_exists(self, group_helper):
-        name = faker.name()
-        group_data = {"name": name}
-        update_name = faker.name()
-        update_data = {"name": update_name}
+        group_data = GenerateUtils.random_group_data()
+
+        update_data = GenerateUtils.random_group_data()
         response_create_group = group_helper.post_group(group_data)
 
         group_id = response_create_group.json()['id']
@@ -160,8 +151,7 @@ class TestGroupContract:
                                                          f'but expected: {expected_result}')
 
     def test_update_group_fails_on_invalid_group_id_type(self, group_helper):
-        update_name = faker.name()
-        update_data = {"name": update_name}
+        update_data = GenerateUtils.random_group_data()
 
         group_id = str(random.choice([[faker.name()], faker.name(), random.random(), None, {}]))
         response_delete_group = group_helper.update_group(group_id=group_id, json=update_data)

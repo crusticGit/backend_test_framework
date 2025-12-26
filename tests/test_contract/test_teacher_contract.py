@@ -5,6 +5,7 @@ from faker import Faker
 
 from services.university.helpers.teacher_helper import TeacherHelper
 from services.university.models.base_teacher import SubjectEnum
+from utils.generate_utils import GenerateUtils
 
 faker = Faker()
 
@@ -12,13 +13,8 @@ faker = Faker()
 class TestTeacherContract:
     def test_create_teacher_anonym(self, university_api_utils_anonym):
         teacher_helper = TeacherHelper(api_utils=university_api_utils_anonym)
-        response = teacher_helper.post_teacher(
-            {
-                "first_name": faker.name(),
-                "last_name": faker.last_name(),
-                "subject": random.choice([subject.value for subject in SubjectEnum])
-            }
-        )
+        teacher_data = GenerateUtils.random_teacher_data()
+        response = teacher_helper.post_teacher(teacher_data)
         expected_result = requests.status_codes.codes.forbidden
         assert response.status_code == expected_result, (f'Wrong status code. '
                                                          f'Actual: {response.status_code}, '
@@ -26,11 +22,7 @@ class TestTeacherContract:
 
     def test_create_group_admin(self, teacher_helper):
         response = teacher_helper.post_teacher(
-            {
-                "first_name": faker.name(),
-                "last_name": faker.last_name(),
-                "subject": random.choice([subject.value for subject in SubjectEnum])
-            }
+            GenerateUtils.random_teacher_data()
         )
         expected_result = requests.status_codes.codes.created
         assert response.status_code == expected_result, (f'Wrong status code. '
@@ -47,11 +39,7 @@ class TestTeacherContract:
 
     def test_delete_teacher_admin(self, teacher_helper):
         teacher_id = teacher_helper.post_teacher(
-            {
-                "first_name": faker.name(),
-                "last_name": faker.last_name(),
-                "subject": random.choice([subject.value for subject in SubjectEnum])
-            }
+            GenerateUtils.random_teacher_data()
         ).json()['id']
 
         response_delete_teacher = teacher_helper.delete_teacher(teacher_id)
@@ -63,11 +51,7 @@ class TestTeacherContract:
 
     def test_get_teacher_admin(self, teacher_helper):
         teacher_id = teacher_helper.post_teacher(
-            {
-                "first_name": faker.name(),
-                "last_name": faker.last_name(),
-                "subject": random.choice([subject.value for subject in SubjectEnum])
-            }
+            GenerateUtils.random_teacher_data()
         ).json()['id']
 
         response_get_teacher = teacher_helper.get_teacher(teacher_id)
@@ -78,11 +62,7 @@ class TestTeacherContract:
                                                                      f'but expected: {expected_result}')
 
     def test_update_teacher_subject_successfully(self, teacher_helper):
-        teacher_data = {
-            "first_name": faker.name(),
-            "last_name": faker.last_name(),
-            "subject": random.choice([subject.value for subject in SubjectEnum])
-        }
+        teacher_data = GenerateUtils.random_teacher_data()
         teacher_id = teacher_helper.post_teacher(teacher_data).json()['id']
 
         new_subject = random.choice([subject.value for subject in SubjectEnum])

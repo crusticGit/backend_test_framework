@@ -3,7 +3,7 @@ import random
 from faker import Faker
 
 from logger.logger import Logger
-from services.university.models.base_grade import GradeEnum
+from services.university.models.base_grade import GRADE_MIN, GRADE_MAX
 from services.university.models.grade_request import GradeRequest
 
 faker = Faker()
@@ -19,7 +19,7 @@ class TestGrade:
         student = university_service_admin.create_random_student()
 
         Logger.info('Step 3. Create grade')
-        grade_value = random.choice([grade for grade in GradeEnum])
+        grade_value = random.choice([grade for grade in range(GRADE_MIN, GRADE_MAX + 1)])
         grade_data = GradeRequest(teacher_id=teacher.id,
                                   student_id=student.id,
                                   grade=grade_value)
@@ -44,7 +44,7 @@ class TestGrade:
 
         grades = []
         for i in range(random.randint(0, 10)):
-            grade_value = random.choice([grade for grade in GradeEnum])
+            grade_value = random.choice([grade for grade in range(GRADE_MIN, GRADE_MAX + 1)])
 
             grade_data = GradeRequest(teacher_id=teacher.id,
                                       student_id=student.id,
