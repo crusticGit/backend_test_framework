@@ -47,8 +47,8 @@ class UniversityService(BaseService):
         response = self.teacher_helper.post_teacher(json=teacher_request.model_dump())
         if response.status_code == 201:
             return TeacherResponse(**response.json())
-        else:
-            return ValidationErrorResponse(**response.json())
+
+        return ValidationErrorResponse(**response.json())
 
     def create_grade(self, grade_request: GradeRequest) -> GradeResponse:
         response = self.grade_helper.post_grade(data=grade_request.model_dump())
