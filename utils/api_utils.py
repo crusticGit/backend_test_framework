@@ -1,6 +1,6 @@
 import json
 
-import curlify
+import curlify  # type: ignore
 import requests
 from requests import Session
 
@@ -25,8 +25,14 @@ class ApiUtils:
             headers = {}
 
         self.session = Session()
-        self.session.headers.update(headers)
         self.url = url
+        self.update_headers(headers)
+
+    def update_headers(self, headers: dict):
+        self.session.headers.update(headers)
+
+    def delete_headers(self):
+        self.session.headers = {}
 
     @log_response
     def get(self, endpoint_url, **kwargs):
@@ -36,4 +42,14 @@ class ApiUtils:
     @log_response
     def post(self, endpoint_url, data=None, json=None, **kwargs):
         response = self.session.post(self.url + endpoint_url, data, json, **kwargs)
+        return response
+
+    @log_response
+    def delete(self, endpoint_url, **kwargs):
+        response = self.session.delete(self.url + endpoint_url, **kwargs)
+        return response
+
+    @log_response
+    def put(self, endpoint_url, data=None, json=None, **kwargs):
+        response = self.session.put(self.url + endpoint_url, data=data, json=json, **kwargs)
         return response
