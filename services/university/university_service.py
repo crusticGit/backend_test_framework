@@ -43,7 +43,9 @@ class UniversityService(BaseService):
         response = self.student_helper.post_student(json=student_request.model_dump())
         return StudentResponse(**response.json())
 
-    def create_teacher(self, teacher_request: TeacherRequest) -> (TeacherResponse | ValidationErrorResponse):
+    def create_teacher(
+        self, teacher_request: TeacherRequest
+    ) -> TeacherResponse | ValidationErrorResponse:
         response = self.teacher_helper.post_teacher(json=teacher_request.model_dump())
         if response.status_code == 201:
             return TeacherResponse(**response.json())
@@ -54,13 +56,11 @@ class UniversityService(BaseService):
         response = self.grade_helper.post_grade(data=grade_request.model_dump())
         return GradeResponse(**response.json())
 
-    def get_grade_statistics(self, student_id: int,
-                             teacher_id: int,
-                             group_id: int) -> GradeStatisticResponse:
+    def get_grade_statistics(
+        self, student_id: int, teacher_id: int, group_id: int
+    ) -> GradeStatisticResponse:
         response = self.grade_helper.get_stats(
-            student_id=student_id,
-            teacher_id=teacher_id,
-            group_id=group_id
+            student_id=student_id, teacher_id=teacher_id, group_id=group_id
         )
 
         return GradeStatisticResponse(**response.json())
@@ -73,13 +73,13 @@ class UniversityService(BaseService):
             last_name=faker.last_name(),
             email=faker.email(),
             degree=random.choice([degree for degree in DegreeEnum]),
-            phone=faker.numerify('+7##########'),
-            group_id=group.id
+            phone=faker.numerify("+7##########"),
+            group_id=group.id,
         )
 
-        student_response = StudentResponse(**self.student_helper.post_student(
-            json=student_data.model_dump()
-        ).json())
+        student_response = StudentResponse(
+            **self.student_helper.post_student(json=student_data.model_dump()).json()
+        )
 
         return student_response
 
@@ -87,21 +87,19 @@ class UniversityService(BaseService):
         teacher_data = TeacherRequest(
             first_name=faker.first_name(),
             last_name=faker.last_name(),
-            subject=random.choice([subject for subject in SubjectEnum])
+            subject=random.choice([subject for subject in SubjectEnum]),
         )
 
-        teacher_response = TeacherResponse(**self.teacher_helper.post_teacher(
-            json=teacher_data.model_dump()
-        ).json())
+        teacher_response = TeacherResponse(
+            **self.teacher_helper.post_teacher(json=teacher_data.model_dump()).json()
+        )
 
         return teacher_response
 
     def create_random_group(self) -> GroupResponse:
-        group_data = GroupRequest(
-            name=faker.name() + str(random.randint(1, 1000))
+        group_data = GroupRequest(name=faker.name() + str(random.randint(1, 1000)))
+        group_response = GroupResponse(
+            **self.group_helper.post_group(group_data.model_dump()).json()
         )
-        group_response = GroupResponse(**self.group_helper.post_group(
-            group_data.model_dump()
-        ).json())
 
         return group_response
