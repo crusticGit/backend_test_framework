@@ -11,9 +11,9 @@ from services.auth.helpers.authorization_helper import AuthorizationHelper
 from services.auth.helpers.user_helper import UserHelper
 from services.auth.models.login_request import LoginRequest
 from services.auth.models.register_request import (
-    RegisterRequest,
     PASSWORD_MAX_LENGTH,
     PASSWORD_MIN_LENGTH,
+    RegisterRequest,
 )
 from services.university.helpers.grade_helper import GradeHelper
 from services.university.helpers.group_helper import GroupHelper
@@ -66,7 +66,11 @@ def university_api_utils_anonym():
 def access_token(auth_api_utils_anonym):
     username = faker.user_name() + "testUser" + str(faker.random_int(-1000, 1000))
     password = faker.password(
-        length=30, special_chars=True, digits=True, upper_case=True, lower_case=True
+        length=30,
+        special_chars=True,
+        digits=True,
+        upper_case=True,
+        lower_case=True,
     )
 
     auth_service = AuthService(auth_api_utils_anonym)
@@ -76,11 +80,11 @@ def access_token(auth_api_utils_anonym):
             password=password,
             password_repeat=password,
             email=faker.email(),
-        )
+        ),
     )
 
     login_response = auth_service.login_user(
-        login_request=LoginRequest(username=username, password=password)
+        login_request=LoginRequest(username=username, password=password),
     )
 
     return login_response.access_token
@@ -89,7 +93,8 @@ def access_token(auth_api_utils_anonym):
 @pytest.fixture(scope="function", autouse=False)
 def auth_api_utils_admin(access_token):
     api_utils = ApiUtils(
-        url=AuthService.SERVICE_URL, headers={"Authorization": f"Bearer {access_token}"}
+        url=AuthService.SERVICE_URL,
+        headers={"Authorization": f"Bearer {access_token}"},
     )
     return api_utils
 

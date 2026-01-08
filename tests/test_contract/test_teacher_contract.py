@@ -17,18 +17,14 @@ class TestTeacherContract:
         response = teacher_helper.post_teacher(teacher_data)
         expected_result = requests.status_codes.codes.forbidden
         assert response.status_code == expected_result, (
-            f"Wrong status code. "
-            f"Actual: {response.status_code}, "
-            f"but expected: {expected_result}"
+            f"Wrong status code. Actual: {response.status_code}, but expected: {expected_result}"
         )
 
     def test_create_group_admin(self, teacher_helper):
         response = teacher_helper.post_teacher(GenerateUtils.random_teacher_data())
         expected_result = requests.status_codes.codes.created
         assert response.status_code == expected_result, (
-            f"Wrong status code. "
-            f"Actual: {response.status_code}, "
-            f"but expected: {expected_result}"
+            f"Wrong status code. Actual: {response.status_code}, but expected: {expected_result}"
         )
 
     def test_get_all_teacher_admin(self, teacher_helper):
@@ -36,37 +32,31 @@ class TestTeacherContract:
 
         expected_result = requests.status_codes.codes.ok
         assert response.status_code == expected_result, (
-            f"Wrong status code. "
-            f"Actual: {response.status_code}, "
-            f"but expected: {expected_result}"
+            f"Wrong status code. Actual: {response.status_code}, but expected: {expected_result}"
         )
 
     def test_delete_teacher_admin(self, teacher_helper):
         teacher_id = teacher_helper.post_teacher(
-            GenerateUtils.random_teacher_data()
+            GenerateUtils.random_teacher_data(),
         ).json()["id"]
 
         response_delete_teacher = teacher_helper.delete_teacher(teacher_id)
 
         expected_result = requests.status_codes.codes.ok
         assert response_delete_teacher.status_code == expected_result, (
-            f"Wrong status code. "
-            f"Actual: {response_delete_teacher.status_code}, "
-            f"but expected: {expected_result}"
+            f"Wrong status code. Actual: {response_delete_teacher.status_code}, but expected: {expected_result}"
         )
 
     def test_get_teacher_admin(self, teacher_helper):
         teacher_id = teacher_helper.post_teacher(
-            GenerateUtils.random_teacher_data()
+            GenerateUtils.random_teacher_data(),
         ).json()["id"]
 
         response_get_teacher = teacher_helper.get_teacher(teacher_id)
 
         expected_result = requests.status_codes.codes.ok
         assert response_get_teacher.status_code == expected_result, (
-            f"Wrong status code. "
-            f"Actual: {response_get_teacher.status_code}, "
-            f"but expected: {expected_result}"
+            f"Wrong status code. Actual: {response_get_teacher.status_code}, but expected: {expected_result}"
         )
 
     def test_update_teacher_subject_successfully(self, teacher_helper):
@@ -80,7 +70,5 @@ class TestTeacherContract:
 
         expected_result = requests.status_codes.codes.ok
         assert response_get_teacher.status_code == expected_result, (
-            f"Wrong status code. "
-            f"Actual: {response_get_teacher.status_code}, "
-            f"but expected: {expected_result}"
+            f"Wrong status code. Actual: {response_get_teacher.status_code}, but expected: {expected_result}"
         )

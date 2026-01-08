@@ -24,7 +24,9 @@ class TestTeacher:
         subject = random.choice([subject for subject in SubjectEnum])
 
         teacher = TeacherRequest(
-            first_name=first_name, last_name=last_name, subject=subject
+            first_name=first_name,
+            last_name=last_name,
+            subject=subject,
         )
 
         teacher_response = university_service.create_teacher(teacher)
@@ -37,14 +39,14 @@ class TestTeacher:
         )
 
         assert actual_result == expected_result, (
-            f"Teacher details mismatch"
-            f"Actual: {teacher_response.group_id}, "
-            f"but expected: {expected_result}"
+            f"Teacher details mismatchActual: {teacher_response.group_id}, but expected: {expected_result}"
         )
 
     @pytest.mark.parametrize("required_field", ["first_name", "last_name", "subject"])
     def test_create_teacher_missing_required_field_validation(
-        self, university_api_utils_admin, required_field
+        self,
+        university_api_utils_admin,
+        required_field,
     ):
         teacher_helper = TeacherHelper(api_utils=university_api_utils_admin)
 
@@ -59,15 +61,13 @@ class TestTeacher:
         del teacher[required_field]
 
         teacher_response = ValidationErrorResponse(
-            **teacher_helper.post_teacher(teacher).json()
+            **teacher_helper.post_teacher(teacher).json(),
         )
 
         expected_result = "Field required"
 
         assert teacher_response.detail[0].msg == expected_result, (
-            f"Wrong error message. "
-            f"Actual: {teacher_response.group_id}, "
-            f"but expected: {expected_result}"
+            f"Wrong error message. Actual: {teacher_response.group_id}, but expected: {expected_result}"
         )
 
     def test_create_teacher_expect_validation_error(self, university_api_utils_admin):
@@ -82,13 +82,11 @@ class TestTeacher:
         teacher = {"first_name": first_name, "last_name": last_name, "subject": subject}
 
         teacher_response = ValidationErrorResponse(
-            **teacher_helper.post_teacher(teacher).json()
+            **teacher_helper.post_teacher(teacher).json(),
         )
 
         expected_result = "Input should be 'Mathematics', 'Physics', 'History', 'Biology' or 'Geography'"
 
         assert teacher_response.detail[0].msg == expected_result, (
-            f"Wrong error message. "
-            f"Actual: {teacher_response.group_id}, "
-            f"but expected: {expected_result}"
+            f"Wrong error message. Actual: {teacher_response.group_id}, but expected: {expected_result}"
         )

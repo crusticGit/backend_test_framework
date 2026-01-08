@@ -16,9 +16,7 @@ class TestGroupContract:
 
         expected_result = requests.status_codes.codes.forbidden
         assert response.status_code == expected_result, (
-            f"Wrong status code. "
-            f"Actual: {response.status_code}, "
-            f"but expected: {expected_result}"
+            f"Wrong status code. Actual: {response.status_code}, but expected: {expected_result}"
         )
 
     def test_create_group_admin(self, group_helper):
@@ -26,9 +24,7 @@ class TestGroupContract:
 
         expected_result = requests.status_codes.codes.created
         assert response.status_code == expected_result, (
-            f"Wrong status code. "
-            f"Actual: {response.status_code}, "
-            f"but expected: {expected_result}"
+            f"Wrong status code. Actual: {response.status_code}, but expected: {expected_result}"
         )
 
     def test_create_group_fails_if_already_exists(self, group_helper):
@@ -39,23 +35,19 @@ class TestGroupContract:
 
         expected_result = requests.status_codes.codes.conflict
         assert response.status_code == expected_result, (
-            f"Wrong status code. "
-            f"Actual: {response.status_code}, "
-            f"but expected: {expected_result}"
+            f"Wrong status code. Actual: {response.status_code}, but expected: {expected_result}"
         )
 
     def test_create_group_fails_on_invalid_name_type(self, group_helper):
         name = random.choice(
-            [random.randint(1, 10), [faker.name()], None, {}, random.random()]
+            [random.randint(1, 10), [faker.name()], None, {}, random.random()],
         )
         group_data = {"name": name}
         response = group_helper.post_group(group_data)
 
         expected_result = requests.status_codes.codes.unprocessable
         assert response.status_code == expected_result, (
-            f"Wrong status code. "
-            f"Actual: {response.status_code}, "
-            f"but expected: {expected_result}"
+            f"Wrong status code. Actual: {response.status_code}, but expected: {expected_result}"
         )
 
     def test_get_all_groups_anonym(self, university_api_utils_anonym):
@@ -64,9 +56,7 @@ class TestGroupContract:
 
         expected_result = requests.status_codes.codes.forbidden
         assert response.status_code == expected_result, (
-            f"Wrong status code. "
-            f"Actual: {response.status_code}, "
-            f"but expected: {expected_result}"
+            f"Wrong status code. Actual: {response.status_code}, but expected: {expected_result}"
         )
 
     def test_get_all_groups_admin(self, group_helper):
@@ -74,9 +64,7 @@ class TestGroupContract:
 
         expected_result = requests.status_codes.codes.ok
         assert response.status_code == expected_result, (
-            f"Wrong status code. "
-            f"Actual: {response.status_code}, "
-            f"but expected: {expected_result}"
+            f"Wrong status code. Actual: {response.status_code}, but expected: {expected_result}"
         )
 
     def test_delete_group_anonym(self, university_api_utils_anonym):
@@ -86,14 +74,12 @@ class TestGroupContract:
 
         expected_result = requests.status_codes.codes.forbidden
         assert response.status_code == expected_result, (
-            f"Wrong status code. "
-            f"Actual: {response.status_code}, "
-            f"but expected: {expected_result}"
+            f"Wrong status code. Actual: {response.status_code}, but expected: {expected_result}"
         )
 
     def test_delete_group_admin(self, group_helper):
         response_create_group = group_helper.post_group(
-            GenerateUtils.random_group_data()
+            GenerateUtils.random_group_data(),
         )
 
         group_id = response_create_group.json()["id"]
@@ -102,14 +88,12 @@ class TestGroupContract:
 
         expected_result = requests.status_codes.codes.ok
         assert response_delete_group.status_code == expected_result, (
-            f"Wrong status code. "
-            f"Actual: {response_create_group.status_code}, "
-            f"but expected: {expected_result}"
+            f"Wrong status code. Actual: {response_create_group.status_code}, but expected: {expected_result}"
         )
 
     def test_delete_group_fails_on_group_not_exists(self, group_helper):
         response_create_group = group_helper.post_group(
-            GenerateUtils.random_group_data()
+            GenerateUtils.random_group_data(),
         )
 
         group_id = response_create_group.json()["id"]
@@ -119,22 +103,18 @@ class TestGroupContract:
 
         expected_result = requests.status_codes.codes.not_found
         assert response.status_code == expected_result, (
-            f"Wrong status code. "
-            f"Actual: {response.status_code}, "
-            f"but expected: {expected_result}"
+            f"Wrong status code. Actual: {response.status_code}, but expected: {expected_result}"
         )
 
     def test_delete_group_fails_on_invalid_group_id_type(self, group_helper):
         group_id = str(
-            random.choice([[faker.name()], faker.name(), random.random(), None, {}])
+            random.choice([[faker.name()], faker.name(), random.random(), None, {}]),
         )
         response_delete_group = group_helper.delete_group(group_id=group_id)
 
         expected_result = requests.status_codes.codes.unprocessable
         assert response_delete_group.status_code == expected_result, (
-            f"Wrong status code. "
-            f"Actual: {response_delete_group.status_code}, "
-            f"but expected: {expected_result}"
+            f"Wrong status code. Actual: {response_delete_group.status_code}, but expected: {expected_result}"
         )
 
     def test_update_group_anonym(self, university_api_utils_anonym):
@@ -144,9 +124,7 @@ class TestGroupContract:
 
         expected_result = requests.status_codes.codes.forbidden
         assert response.status_code == expected_result, (
-            f"Wrong status code. "
-            f"Actual: {response.status_code}, "
-            f"but expected: {expected_result}"
+            f"Wrong status code. Actual: {response.status_code}, but expected: {expected_result}"
         )
 
     def test_update_group_admin(self, group_helper):
@@ -157,14 +135,13 @@ class TestGroupContract:
         group_id = response_create_group.json()["id"]
 
         response_update_group = group_helper.update_group(
-            group_id=group_id, json=update_data
+            group_id=group_id,
+            json=update_data,
         )
 
         expected_result = requests.status_codes.codes.ok
         assert response_update_group.status_code == expected_result, (
-            f"Wrong status code. "
-            f"Actual: {response_create_group.status_code}, "
-            f"but expected: {expected_result}"
+            f"Wrong status code. Actual: {response_create_group.status_code}, but expected: {expected_result}"
         )
 
     def test_update_group_fails_on_group_not_exists(self, group_helper):
@@ -181,24 +158,21 @@ class TestGroupContract:
 
         expected_result = requests.status_codes.codes.not_found
         assert response.status_code == expected_result, (
-            f"Wrong status code. "
-            f"Actual: {response.status_code}, "
-            f"but expected: {expected_result}"
+            f"Wrong status code. Actual: {response.status_code}, but expected: {expected_result}"
         )
 
     def test_update_group_fails_on_invalid_group_id_type(self, group_helper):
         update_data = GenerateUtils.random_group_data()
 
         group_id = str(
-            random.choice([[faker.name()], faker.name(), random.random(), None, {}])
+            random.choice([[faker.name()], faker.name(), random.random(), None, {}]),
         )
         response_delete_group = group_helper.update_group(
-            group_id=group_id, json=update_data
+            group_id=group_id,
+            json=update_data,
         )
 
         expected_result = requests.status_codes.codes.unprocessable
         assert response_delete_group.status_code == expected_result, (
-            f"Wrong status code. "
-            f"Actual: {response_delete_group.status_code}, "
-            f"but expected: {expected_result}"
+            f"Wrong status code. Actual: {response_delete_group.status_code}, but expected: {expected_result}"
         )

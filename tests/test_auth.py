@@ -1,6 +1,5 @@
 from faker import Faker
 
-
 from logger.logger import Logger
 from services.auth.auth_service import AuthService
 from services.auth.models.login_request import LoginRequest
@@ -11,7 +10,9 @@ faker = Faker()
 
 class TestAuth:
     def test_successful_user_registration_flow(
-        self, auth_service_anonym, generate_valid_password
+        self,
+        auth_service_anonym,
+        generate_valid_password,
     ):
         Logger.info("Step 1. Register user")
         username = faker.user_name()
@@ -19,7 +20,10 @@ class TestAuth:
         email = faker.email()
 
         register = RegisterRequest(
-            username=username, password=password, password_repeat=password, email=email
+            username=username,
+            password=password,
+            password_repeat=password,
+            email=email,
         )
 
         register_response = auth_service_anonym.register_user(register_request=register)
@@ -27,12 +31,13 @@ class TestAuth:
         actual_result = register_response.detail
         expected_result = "User registered"
         assert actual_result == expected_result, (
-            f"Incorrect message about successful registration."
-            f"Actual: {actual_result}, but expected: {expected_result}"
+            f"Incorrect message about successful registration.Actual: {actual_result}, but expected: {expected_result}"
         )
 
     def test_successful_login_after_registration(
-        self, auth_service_anonym, generate_valid_password
+        self,
+        auth_service_anonym,
+        generate_valid_password,
     ):
         Logger.info("Step 1. Register user")
         username = faker.user_name()
@@ -40,7 +45,10 @@ class TestAuth:
         email = faker.email()
 
         register = RegisterRequest(
-            username=username, password=password, password_repeat=password, email=email
+            username=username,
+            password=password,
+            password_repeat=password,
+            email=email,
         )
 
         auth_service_anonym.register_user(register_request=register)
@@ -56,7 +64,9 @@ class TestAuth:
         assert response.access_token, "access token should not be empty"
 
     def test_complete_user_lifecycle_registration_login_get_user_info(
-        self, auth_api_utils_anonym, generate_valid_password
+        self,
+        auth_api_utils_anonym,
+        generate_valid_password,
     ):
         auth_service = AuthService(api_utils=auth_api_utils_anonym)
 
@@ -66,7 +76,10 @@ class TestAuth:
         email = faker.email()
 
         register = RegisterRequest(
-            username=username, password=password, password_repeat=password, email=email
+            username=username,
+            password=password,
+            password_repeat=password,
+            email=email,
         )
 
         auth_service.register_user(register_request=register)
@@ -81,7 +94,7 @@ class TestAuth:
 
         Logger.info("Step 3. Update session headers")
         auth_api_utils_anonym.update_headers(
-            headers={"Authorization": f"Bearer {access_token}"}
+            headers={"Authorization": f"Bearer {access_token}"},
         )
 
         Logger.info("Step 4. Get user info")
@@ -89,20 +102,23 @@ class TestAuth:
 
         expected_result = username
         assert expected_result == user_info_response.username, (
-            f"Wrong username. "
-            f"Actual: {user_info_response.username}, "
-            f"but expected: {expected_result}"
+            f"Wrong username. Actual: {user_info_response.username}, but expected: {expected_result}"
         )
 
     def test_registration_validation_error_model_email_is_empty(
-        self, auth_service_anonym, generate_valid_password
+        self,
+        auth_service_anonym,
+        generate_valid_password,
     ):
         Logger.info("Step 1. Register user")
         username = faker.user_name()
         password = generate_valid_password
 
         register = RegisterRequest(
-            username=username, password=password, password_repeat=password, email=""
+            username=username,
+            password=password,
+            password_repeat=password,
+            email="",
         )
 
         register_response = auth_service_anonym.register_user(register_request=register)

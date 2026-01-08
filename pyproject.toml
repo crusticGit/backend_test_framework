@@ -1,0 +1,64 @@
+[tool.ruff]
+line-length = 120
+
+[tool.ruff.lint]
+# Базовые правила
+select = [
+    "E", # pycodestyle errors
+    "F", # pyflakes
+    "W", # pycodestyle warnings
+    "C4", # flake8-comprehensions
+    "B", # flake8-bugbear
+    "I", # isort
+    "UP", # pyupgrade
+    "RUF", # ruff-specific
+]
+
+# Отключаем правила, которые не подходят для тестов
+ignore = [
+    "D", # pydocstyle - не нужны docstrings в тестах
+    "S101", # assert в тестах - нормально
+    "ANN", # Аннотации типов в тестах
+    "ARG", # Неиспользуемые аргументы в тестах
+    "PLR0913", # Слишком много аргументов - часто в тестах нормально
+    "FBT", # Boolean-typed arguments
+    "PT003", # pytest fixture scope
+    "PGH003", # type: ignore
+    "UP006", # Использование Dict вместо dict
+    "UP035", # typing.Dict deprecated
+    "COM812", # Trailing commas - можно добавить автофиксом
+    "S311", # random в тестах - нормально
+    "C416", # List comprehensions
+    "B007", # Неиспользуемые переменные цикла в тестах
+    "RET504", # Необходимые назначения перед return
+]
+
+# Настройки для тестов
+[tool.ruff.lint.per-file-ignores]
+"tests/**/*.py" = [
+    "ANN", # Аннотации типов
+    "D", # Docstrings
+    "S101", # assert
+    "S311", # random
+    "ARG", # Неиспользуемые аргументы
+    "B007", # Неиспользуемые переменные цикла
+    "COM812", # Trailing commas
+    "C416", # List comprehensions
+]
+
+[tool.ruff.lint.isort]
+known-first-party = ["tests", "utils", "logger", "services"]
+
+[tool.ruff.format]
+# Автоформатирование
+quote-style = "double"
+skip-magic-trailing-comma = false
+indent-style = "space"
+
+# Исключаем
+exclude = [
+    ".venv",
+    "__pycache__",
+    ".pytest_cache",
+    ".git",
+]

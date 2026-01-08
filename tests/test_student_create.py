@@ -27,7 +27,7 @@ class TestStudent:
         )
 
         student_response = university_service_admin.create_student(
-            student_request=student
+            student_request=student,
         )
 
         # в высокоуровневых тестах не интересуют хедеры/статус коды(интересуют данные->
@@ -35,7 +35,5 @@ class TestStudent:
 
         expected_result = group_response.id
         assert student_response.group_id == expected_result, (
-            f"Wrong group id. "
-            f"Actual: {student_response.group_id}, "
-            f"but expected: {expected_result}"
+            f"Wrong group id. Actual: {student_response.group_id}, but expected: {expected_result}"
         )

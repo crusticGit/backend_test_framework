@@ -19,18 +19,19 @@ class TeacherHelper(BaseHelper):
 
     def get_teacher(self, teacher_id: int) -> requests.Response:
         response = self.api_utils.get(
-            self.TEACHER_BY_ID_ENDPOINT.format(teacher_id=str(teacher_id))
+            self.TEACHER_BY_ID_ENDPOINT.format(teacher_id=str(teacher_id)),
         )
         return response
 
     def delete_teacher(self, teacher_id: int) -> requests.Response:
         response = self.api_utils.delete(
-            self.TEACHER_BY_ID_ENDPOINT.format(teacher_id=str(teacher_id))
+            self.TEACHER_BY_ID_ENDPOINT.format(teacher_id=str(teacher_id)),
         )
         return response
 
     def update_teacher(self, teacher_id: int, json: dict) -> requests.Response:
         response = self.api_utils.put(
-            self.TEACHER_BY_ID_ENDPOINT.format(teacher_id=str(teacher_id)), json=json
+            self.TEACHER_BY_ID_ENDPOINT.format(teacher_id=str(teacher_id)),
+            json=json,
         )
         return response

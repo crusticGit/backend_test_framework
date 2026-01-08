@@ -44,7 +44,8 @@ class UniversityService(BaseService):
         return StudentResponse(**response.json())
 
     def create_teacher(
-        self, teacher_request: TeacherRequest
+        self,
+        teacher_request: TeacherRequest,
     ) -> TeacherResponse | ValidationErrorResponse:
         response = self.teacher_helper.post_teacher(json=teacher_request.model_dump())
         if response.status_code == 201:
@@ -57,10 +58,15 @@ class UniversityService(BaseService):
         return GradeResponse(**response.json())
 
     def get_grade_statistics(
-        self, student_id: int, teacher_id: int, group_id: int
+        self,
+        student_id: int,
+        teacher_id: int,
+        group_id: int,
     ) -> GradeStatisticResponse:
         response = self.grade_helper.get_stats(
-            student_id=student_id, teacher_id=teacher_id, group_id=group_id
+            student_id=student_id,
+            teacher_id=teacher_id,
+            group_id=group_id,
         )
 
         return GradeStatisticResponse(**response.json())
@@ -78,7 +84,7 @@ class UniversityService(BaseService):
         )
 
         student_response = StudentResponse(
-            **self.student_helper.post_student(json=student_data.model_dump()).json()
+            **self.student_helper.post_student(json=student_data.model_dump()).json(),
         )
 
         return student_response
@@ -91,7 +97,7 @@ class UniversityService(BaseService):
         )
 
         teacher_response = TeacherResponse(
-            **self.teacher_helper.post_teacher(json=teacher_data.model_dump()).json()
+            **self.teacher_helper.post_teacher(json=teacher_data.model_dump()).json(),
         )
 
         return teacher_response
@@ -99,7 +105,7 @@ class UniversityService(BaseService):
     def create_random_group(self) -> GroupResponse:
         group_data = GroupRequest(name=faker.name() + str(random.randint(1, 1000)))
         group_response = GroupResponse(
-            **self.group_helper.post_group(group_data.model_dump()).json()
+            **self.group_helper.post_group(group_data.model_dump()).json(),
         )
 
         return group_response

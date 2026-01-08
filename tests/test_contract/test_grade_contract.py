@@ -28,24 +28,24 @@ class TestGradeContract:
         response = grade_helper.post_grade(grade_data)
         expected_result = requests.status_codes.codes.forbidden
         assert response.status_code == expected_result, (
-            f"Wrong status code. "
-            f"Actual: {response.status_code}, "
-            f"but expected: {expected_result}"
+            f"Wrong status code. Actual: {response.status_code}, but expected: {expected_result}"
         )
 
     def test_create_grade_admin(
-        self, grade_helper, teacher_helper, student_helper, group_helper
+        self,
+        grade_helper,
+        teacher_helper,
+        student_helper,
+        group_helper,
     ):
-        group_id = group_helper.post_group(GenerateUtils.random_group_data()).json()[
-            "id"
-        ]
+        group_id = group_helper.post_group(GenerateUtils.random_group_data()).json()["id"]
 
         teacher_id = teacher_helper.post_teacher(
-            GenerateUtils.random_teacher_data()
+            GenerateUtils.random_teacher_data(),
         ).json()["id"]
 
         student_id = student_helper.post_student(
-            GenerateUtils.random_student_data(group_id)
+            GenerateUtils.random_student_data(group_id),
         ).json()["id"]
 
         grade_data = GenerateUtils.random_grade_data(teacher_id, student_id)
@@ -53,13 +53,15 @@ class TestGradeContract:
         response = grade_helper.post_grade(grade_data)
         expected_result = requests.status_codes.codes.created
         assert response.status_code == expected_result, (
-            f"Wrong status code. "
-            f"Actual: {response.status_code}, "
-            f"but expected: {expected_result}"
+            f"Wrong status code. Actual: {response.status_code}, but expected: {expected_result}"
         )
 
     def test_create_grade_fails_on_student_not_found(
-        self, grade_helper, teacher_helper, student_helper, group_helper
+        self,
+        grade_helper,
+        teacher_helper,
+        student_helper,
+        group_helper,
     ):
         group_id = group_helper.post_group({"name": faker.name()}).json()["id"]
 
@@ -68,7 +70,7 @@ class TestGradeContract:
                 "first_name": faker.name(),
                 "last_name": faker.last_name(),
                 "subject": random.choice([subject.value for subject in SubjectEnum]),
-            }
+            },
         ).json()["id"]
 
         student_id = student_helper.post_student(
@@ -79,7 +81,7 @@ class TestGradeContract:
                 "degree": random.choice([degree for degree in DegreeEnum]),
                 "phone": faker.numerify("+7##########"),
                 "group_id": group_id,
-            }
+            },
         ).json()["id"]
 
         student_helper.delete_student(student_id)
@@ -95,13 +97,15 @@ class TestGradeContract:
         response = grade_helper.post_grade(grade_data)
         expected_result = requests.status_codes.codes.not_found
         assert response.status_code == expected_result, (
-            f"Wrong status code. "
-            f"Actual: {response.status_code}, "
-            f"but expected: {expected_result}"
+            f"Wrong status code. Actual: {response.status_code}, but expected: {expected_result}"
         )
 
     def test_create_grade_fails_on_teacher_not_found(
-        self, grade_helper, teacher_helper, student_helper, group_helper
+        self,
+        grade_helper,
+        teacher_helper,
+        student_helper,
+        group_helper,
     ):
         group_id = group_helper.post_group({"name": faker.name()}).json()["id"]
 
@@ -110,7 +114,7 @@ class TestGradeContract:
                 "first_name": faker.name(),
                 "last_name": faker.last_name(),
                 "subject": random.choice([subject.value for subject in SubjectEnum]),
-            }
+            },
         ).json()["id"]
 
         student_id = student_helper.post_student(
@@ -121,7 +125,7 @@ class TestGradeContract:
                 "degree": random.choice([degree for degree in DegreeEnum]),
                 "phone": faker.numerify("+7##########"),
                 "group_id": group_id,
-            }
+            },
         ).json()["id"]
 
         teacher_helper.delete_teacher(teacher_id)
@@ -137,9 +141,7 @@ class TestGradeContract:
         response = grade_helper.post_grade(grade_data)
         expected_result = requests.status_codes.codes.not_found
         assert response.status_code == expected_result, (
-            f"Wrong status code. "
-            f"Actual: {response.status_code}, "
-            f"but expected: {expected_result}"
+            f"Wrong status code. Actual: {response.status_code}, but expected: {expected_result}"
         )
 
     def test_delete_grade_admin(
@@ -157,7 +159,7 @@ class TestGradeContract:
                 "first_name": faker.name(),
                 "last_name": faker.last_name(),
                 "subject": random.choice([subject.value for subject in SubjectEnum]),
-            }
+            },
         ).json()["id"]
 
         student_id = student_helper.post_student(
@@ -168,7 +170,7 @@ class TestGradeContract:
                 "degree": random.choice([degree for degree in DegreeEnum]),
                 "phone": faker.numerify("+7##########"),
                 "group_id": group_id,
-            }
+            },
         ).json()["id"]
 
         grade = random.randint(GRADE_MIN, GRADE_MAX)
@@ -184,13 +186,15 @@ class TestGradeContract:
 
         expected_result = requests.status_codes.codes.ok
         assert response.status_code == expected_result, (
-            f"Wrong status code. "
-            f"Actual: {response.status_code}, "
-            f"but expected: {expected_result}"
+            f"Wrong status code. Actual: {response.status_code}, but expected: {expected_result}"
         )
 
     def test_delete_grade_fails_on_grade_not_exists(
-        self, grade_helper, teacher_helper, student_helper, group_helper
+        self,
+        grade_helper,
+        teacher_helper,
+        student_helper,
+        group_helper,
     ):
         group_id = group_helper.post_group({"name": faker.name()}).json()["id"]
 
@@ -199,7 +203,7 @@ class TestGradeContract:
                 "first_name": faker.name(),
                 "last_name": faker.last_name(),
                 "subject": random.choice([subject.value for subject in SubjectEnum]),
-            }
+            },
         ).json()["id"]
 
         student_id = student_helper.post_student(
@@ -210,7 +214,7 @@ class TestGradeContract:
                 "degree": random.choice([degree for degree in DegreeEnum]),
                 "phone": faker.numerify("+7##########"),
                 "group_id": group_id,
-            }
+            },
         ).json()["id"]
 
         grade = random.randint(GRADE_MIN, GRADE_MAX)
@@ -228,13 +232,15 @@ class TestGradeContract:
 
         expected_result = requests.status_codes.codes.not_found
         assert response.status_code == expected_result, (
-            f"Wrong status code. "
-            f"Actual: {response.status_code}, "
-            f"but expected: {expected_result}"
+            f"Wrong status code. Actual: {response.status_code}, but expected: {expected_result}"
         )
 
     def test_update_grade_teacher_successfully(
-        self, grade_helper, teacher_helper, student_helper, group_helper
+        self,
+        grade_helper,
+        teacher_helper,
+        student_helper,
+        group_helper,
     ):
         group_id = group_helper.post_group({"name": faker.name()}).json()["id"]
 
@@ -243,7 +249,7 @@ class TestGradeContract:
                 "first_name": faker.name(),
                 "last_name": faker.last_name(),
                 "subject": random.choice([subject.value for subject in SubjectEnum]),
-            }
+            },
         ).json()["id"]
 
         student_id = student_helper.post_student(
@@ -254,7 +260,7 @@ class TestGradeContract:
                 "degree": random.choice([degree for degree in DegreeEnum]),
                 "phone": faker.numerify("+7##########"),
                 "group_id": group_id,
-            }
+            },
         ).json()["id"]
 
         grade = random.randint(GRADE_MIN, GRADE_MAX)
@@ -270,7 +276,7 @@ class TestGradeContract:
                 "first_name": faker.name(),
                 "last_name": faker.last_name(),
                 "subject": random.choice([subject.value for subject in SubjectEnum]),
-            }
+            },
         ).json()["id"]
 
         grade_id = grade_helper.post_grade(grade_data).json()["id"]
@@ -280,13 +286,15 @@ class TestGradeContract:
 
         expected_result = requests.status_codes.codes.ok
         assert response.status_code == expected_result, (
-            f"Wrong status code. "
-            f"Actual: {response.status_code}, "
-            f"but expected: {expected_result}"
+            f"Wrong status code. Actual: {response.status_code}, but expected: {expected_result}"
         )
 
     def test_update_grade_fails_on_grade_not_exists(
-        self, grade_helper, teacher_helper, student_helper, group_helper
+        self,
+        grade_helper,
+        teacher_helper,
+        student_helper,
+        group_helper,
     ):
         group_id = group_helper.post_group({"name": faker.name()}).json()["id"]
 
@@ -295,7 +303,7 @@ class TestGradeContract:
                 "first_name": faker.name(),
                 "last_name": faker.last_name(),
                 "subject": random.choice([subject.value for subject in SubjectEnum]),
-            }
+            },
         ).json()["id"]
 
         student_id = student_helper.post_student(
@@ -306,7 +314,7 @@ class TestGradeContract:
                 "degree": random.choice([degree for degree in DegreeEnum]),
                 "phone": faker.numerify("+7##########"),
                 "group_id": group_id,
-            }
+            },
         ).json()["id"]
 
         grade = random.randint(GRADE_MIN, GRADE_MAX)
@@ -324,9 +332,7 @@ class TestGradeContract:
 
         expected_result = requests.status_codes.codes.not_found
         assert response.status_code == expected_result, (
-            f"Wrong status code. "
-            f"Actual: {response.status_code}, "
-            f"but expected: {expected_result}"
+            f"Wrong status code. Actual: {response.status_code}, but expected: {expected_result}"
         )
 
     def test_get_grade_anonym(self, university_api_utils_anonym):
@@ -337,18 +343,22 @@ class TestGradeContract:
         group_id = random.randint(1, 1000)
 
         response = grade_helper.get_grade(
-            student_id=student_id, teacher_id=teacher_id, group_id=group_id
+            student_id=student_id,
+            teacher_id=teacher_id,
+            group_id=group_id,
         )
 
         expected_result = requests.status_codes.codes.forbidden
         assert response.status_code == expected_result, (
-            f"Wrong status code. "
-            f"Actual: {response.status_code}, "
-            f"but expected: {expected_result}"
+            f"Wrong status code. Actual: {response.status_code}, but expected: {expected_result}"
         )
 
     def test_get_grade_admin(
-        self, grade_helper, teacher_helper, student_helper, group_helper
+        self,
+        grade_helper,
+        teacher_helper,
+        student_helper,
+        group_helper,
     ):
         group_id = group_helper.post_group({"name": faker.name()}).json()["id"]
 
@@ -357,7 +367,7 @@ class TestGradeContract:
                 "first_name": faker.name(),
                 "last_name": faker.last_name(),
                 "subject": random.choice([subject.value for subject in SubjectEnum]),
-            }
+            },
         ).json()["id"]
 
         student_id = student_helper.post_student(
@@ -368,7 +378,7 @@ class TestGradeContract:
                 "degree": random.choice([degree for degree in DegreeEnum]),
                 "phone": faker.numerify("+7##########"),
                 "group_id": group_id,
-            }
+            },
         ).json()["id"]
 
         for i in range(random.randint(0, 7)):
@@ -377,18 +387,18 @@ class TestGradeContract:
                     "teacher_id": teacher_id,
                     "student_id": student_id,
                     "grade": random.randint(0, 5),
-                }
+                },
             )
 
         response = grade_helper.get_grade(
-            student_id=student_id, teacher_id=teacher_id, group_id=group_id
+            student_id=student_id,
+            teacher_id=teacher_id,
+            group_id=group_id,
         )
 
         expected_result = requests.status_codes.codes.ok
         assert response.status_code == expected_result, (
-            f"Wrong status code. "
-            f"Actual: {response.status_code}, "
-            f"but expected: {expected_result}"
+            f"Wrong status code. Actual: {response.status_code}, but expected: {expected_result}"
         )
 
     def test_get_stats_anonym(self, university_api_utils_anonym):
@@ -398,18 +408,22 @@ class TestGradeContract:
         group_id = random.randint(1, 1000)
 
         response = grade_helper.get_stats(
-            student_id=student_id, teacher_id=teacher_id, group_id=group_id
+            student_id=student_id,
+            teacher_id=teacher_id,
+            group_id=group_id,
         )
 
         expected_result = requests.status_codes.codes.forbidden
         assert response.status_code == expected_result, (
-            f"Wrong status code. "
-            f"Actual: {response.status_code}, "
-            f"but expected: {expected_result}"
+            f"Wrong status code. Actual: {response.status_code}, but expected: {expected_result}"
         )
 
     def test_get_stats_admin(
-        self, grade_helper, teacher_helper, student_helper, group_helper
+        self,
+        grade_helper,
+        teacher_helper,
+        student_helper,
+        group_helper,
     ):
         group_id = group_helper.post_group({"name": faker.name()}).json()["id"]
 
@@ -418,7 +432,7 @@ class TestGradeContract:
                 "first_name": faker.name(),
                 "last_name": faker.last_name(),
                 "subject": random.choice([subject.value for subject in SubjectEnum]),
-            }
+            },
         ).json()["id"]
 
         student_id = student_helper.post_student(
@@ -429,7 +443,7 @@ class TestGradeContract:
                 "degree": random.choice([degree for degree in DegreeEnum]),
                 "phone": faker.numerify("+7##########"),
                 "group_id": group_id,
-            }
+            },
         ).json()["id"]
 
         for i in range(random.randint(0, 7)):
@@ -438,16 +452,16 @@ class TestGradeContract:
                     "teacher_id": teacher_id,
                     "student_id": student_id,
                     "grade": random.randint(0, 5),
-                }
+                },
             )
 
         response = grade_helper.get_stats(
-            student_id=student_id, teacher_id=teacher_id, group_id=group_id
+            student_id=student_id,
+            teacher_id=teacher_id,
+            group_id=group_id,
         )
 
         expected_result = requests.status_codes.codes.ok
         assert response.status_code == expected_result, (
-            f"Wrong status code. "
-            f"Actual: {response.status_code}, "
-            f"but expected: {expected_result}"
+            f"Wrong status code. Actual: {response.status_code}, but expected: {expected_result}"
         )

@@ -1,13 +1,13 @@
 import random
-from typing import Dict, Any
+from typing import Any
 
 from faker import Faker
 
 from services.auth.models.register_request import (
-    PASSWORD_MIN_LENGTH,
     PASSWORD_MAX_LENGTH,
+    PASSWORD_MIN_LENGTH,
 )
-from services.university.models.base_grade import GRADE_MIN, GRADE_MAX
+from services.university.models.base_grade import GRADE_MAX, GRADE_MIN
 from services.university.models.base_student import DegreeEnum
 from services.university.models.base_teacher import SubjectEnum
 
@@ -83,7 +83,7 @@ class GenerateUtils:
         )
 
     @staticmethod
-    def random_user_data_with_password(password: str) -> Dict[str, Any]:
+    def random_user_data_with_password(password: str) -> dict[str, Any]:
         return {
             "username": faker.user_name() + str(random.randint(1, 10000)),
             "password": password,
@@ -92,7 +92,7 @@ class GenerateUtils:
         }
 
     @staticmethod
-    def random_user_data() -> Dict[str, Any]:
+    def random_user_data() -> dict[str, Any]:
         password = GenerateUtils.random_valid_password()
 
         return {
@@ -103,7 +103,7 @@ class GenerateUtils:
         }
 
     @staticmethod
-    def random_student_data(group_id: int) -> Dict[str, Any]:
+    def random_student_data(group_id: int) -> dict[str, Any]:
         return {
             "first_name": faker.first_name(),
             "last_name": faker.last_name(),
@@ -114,7 +114,7 @@ class GenerateUtils:
         }
 
     @staticmethod
-    def random_teacher_data() -> Dict[str, Any]:
+    def random_teacher_data() -> dict[str, Any]:
         return {
             "first_name": faker.first_name(),
             "last_name": faker.last_name(),
@@ -122,11 +122,11 @@ class GenerateUtils:
         }
 
     @staticmethod
-    def random_group_data() -> Dict[str, Any]:
+    def random_group_data() -> dict[str, Any]:
         return {"name": f"group-{faker.company()}-{random.randint(1, 10000)}"}
 
     @staticmethod
-    def random_grade_data(teacher_id: int, student_id: int) -> Dict[str, Any]:
+    def random_grade_data(teacher_id: int, student_id: int) -> dict[str, Any]:
         return {
             "teacher_id": teacher_id,
             "student_id": student_id,

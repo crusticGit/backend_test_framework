@@ -5,9 +5,9 @@ import requests
 from faker import Faker
 
 from services.auth.models.register_request import (
-    RegisterRequest,
-    PASSWORD_MIN_LENGTH,
     PASSWORD_MAX_LENGTH,
+    PASSWORD_MIN_LENGTH,
+    RegisterRequest,
 )
 from utils.generate_utils import GenerateUtils
 
@@ -21,9 +21,7 @@ class TestAuthContract:
 
         expected_result = requests.status_codes.codes.created
         assert response.status_code == expected_result, (
-            f"Wrong status code. "
-            f"Actual: {response.status_code}, "
-            f"but expected: {expected_result}"
+            f"Wrong status code. Actual: {response.status_code}, but expected: {expected_result}"
         )
 
     def test_register_username_is_empty(self, auth_helper, generate_valid_password):
@@ -41,9 +39,7 @@ class TestAuthContract:
 
         expected_result = requests.status_codes.codes.conflict
         assert response.status_code == expected_result, (
-            f"Wrong status code. "
-            f"Actual: {response.status_code}, "
-            f"but expected: {expected_result}"
+            f"Wrong status code. Actual: {response.status_code}, but expected: {expected_result}"
         )
 
     def test_register_existing_name(self, auth_helper):
@@ -61,9 +57,7 @@ class TestAuthContract:
 
         expected_result = requests.status_codes.codes.conflict
         assert response.status_code == expected_result, (
-            f"Wrong status code. "
-            f"Actual: {response.status_code}, "
-            f"but expected: {expected_result}"
+            f"Wrong status code. Actual: {response.status_code}, but expected: {expected_result}"
         )
 
     def test_register_existing_email(self, auth_helper, generate_valid_password):
@@ -81,9 +75,7 @@ class TestAuthContract:
 
         expected_result = requests.status_codes.codes.conflict
         assert response.status_code == expected_result, (
-            f"Wrong status code. "
-            f"Actual: {response.status_code}, "
-            f"but expected: {expected_result}"
+            f"Wrong status code. Actual: {response.status_code}, but expected: {expected_result}"
         )
 
     def test_register_invalid_email(self, auth_helper):
@@ -95,9 +87,7 @@ class TestAuthContract:
 
         expected_result = requests.status_codes.codes.unprocessable
         assert response.status_code == expected_result, (
-            f"Wrong status code. "
-            f"Actual: {response.status_code}, "
-            f"but expected: {expected_result}"
+            f"Wrong status code. Actual: {response.status_code}, but expected: {expected_result}"
         )
 
     def test_register_password_mismatch(self, auth_helper):
@@ -112,9 +102,7 @@ class TestAuthContract:
 
         expected_result = requests.status_codes.codes.unprocessable
         assert response.status_code == expected_result, (
-            f"Wrong status code. "
-            f"Actual: {response.status_code}, "
-            f"but expected: {expected_result}"
+            f"Wrong status code. Actual: {response.status_code}, but expected: {expected_result}"
         )
 
     def test_register_password_too_short(self, auth_helper):
@@ -132,9 +120,7 @@ class TestAuthContract:
 
         expected_result = requests.status_codes.codes.unprocessable
         assert response.status_code == expected_result, (
-            f"Wrong status code. "
-            f"Actual: {response.status_code}, "
-            f"but expected: {expected_result}"
+            f"Wrong status code. Actual: {response.status_code}, but expected: {expected_result}"
         )
 
     def test_register_password_too_long(self, auth_helper):
@@ -159,16 +145,18 @@ class TestAuthContract:
 
         expected_result = requests.status_codes.codes.unprocessable
         assert response.status_code == expected_result, (
-            f"Wrong status code. "
-            f"Actual: {response.status_code}, "
-            f"but expected: {expected_result}"
+            f"Wrong status code. Actual: {response.status_code}, but expected: {expected_result}"
         )
 
     @pytest.mark.parametrize(
-        "required_field", ["username", "password", "password_repeat", "email"]
+        "required_field",
+        ["username", "password", "password_repeat", "email"],
     )
     def test_register_should_fail_when_required_field_is_missing(
-        self, generate_valid_password, auth_helper, required_field
+        self,
+        generate_valid_password,
+        auth_helper,
+        required_field,
     ):
         name = faker.user_name()
         password = generate_valid_password
@@ -187,9 +175,7 @@ class TestAuthContract:
 
         expected_result = requests.status_codes.codes.unprocessable
         assert response.status_code == expected_result, (
-            f"Wrong status code. "
-            f"Actual: {response.status_code}, "
-            f"but expected: {expected_result}"
+            f"Wrong status code. Actual: {response.status_code}, but expected: {expected_result}"
         )
 
     def test_login_valid_data(self, auth_helper, generate_valid_password):
@@ -211,9 +197,7 @@ class TestAuthContract:
 
         expected_result = requests.status_codes.codes.ok
         assert login_response.status_code == expected_result, (
-            f"Wrong status code. "
-            f"Actual: {login_response.status_code}, "
-            f"but expected: {expected_result}"
+            f"Wrong status code. Actual: {login_response.status_code}, but expected: {expected_result}"
         )
 
     def test_login_invalid_password(self, auth_helper, generate_valid_password):
@@ -244,9 +228,7 @@ class TestAuthContract:
 
         expected_result = requests.status_codes.codes.unauthorized
         assert login_response.status_code == expected_result, (
-            f"Wrong status code. "
-            f"Actual: {login_response.status_code}, "
-            f"but expected: {expected_result}"
+            f"Wrong status code. Actual: {login_response.status_code}, but expected: {expected_result}"
         )
 
     def test_login_invalid_username(self, auth_helper, generate_valid_password):
@@ -268,14 +250,15 @@ class TestAuthContract:
 
         expected_result = requests.status_codes.codes.unauthorized
         assert login_response.status_code == expected_result, (
-            f"Wrong status code. "
-            f"Actual: {login_response.status_code}, "
-            f"but expected: {expected_result}"
+            f"Wrong status code. Actual: {login_response.status_code}, but expected: {expected_result}"
         )
 
     @pytest.mark.parametrize("required_field", ["username", "password"])
     def test_login_should_fail_when_required_field_is_missing(
-        self, generate_valid_password, auth_helper, required_field
+        self,
+        generate_valid_password,
+        auth_helper,
+        required_field,
     ):
         name = faker.user_name()
         password = generate_valid_password
@@ -297,7 +280,5 @@ class TestAuthContract:
 
         expected_result = requests.status_codes.codes.unprocessable
         assert login_response.status_code == expected_result, (
-            f"Wrong status code. "
-            f"Actual: {login_response.status_code}, "
-            f"but expected: {expected_result}"
+            f"Wrong status code. Actual: {login_response.status_code}, but expected: {expected_result}"
         )

@@ -21,9 +21,7 @@ class TestStudentContract:
         response = student_helper.post_student(student_data)
         expected_result = requests.status_codes.codes.forbidden
         assert response.status_code == expected_result, (
-            f"Wrong status code. "
-            f"Actual: {response.status_code}, "
-            f"but expected: {expected_result}"
+            f"Wrong status code. Actual: {response.status_code}, but expected: {expected_result}"
         )
 
     def test_create_student_admin(self, student_helper, group_helper):
@@ -35,13 +33,13 @@ class TestStudentContract:
 
         expected_result = requests.status_codes.codes.created
         assert response.status_code == expected_result, (
-            f"Wrong status code. "
-            f"Actual: {response.status_code}, "
-            f"but expected: {expected_result}"
+            f"Wrong status code. Actual: {response.status_code}, but expected: {expected_result}"
         )
 
     def test_create_student_fails_on_group_not_found(
-        self, student_helper, group_helper
+        self,
+        student_helper,
+        group_helper,
     ):
         group_data = GenerateUtils.random_group_data()
         group_id = group_helper.post_group(group_data).json()["id"]
@@ -52,9 +50,7 @@ class TestStudentContract:
         response = student_helper.post_student(student_data)
         expected_result = requests.status_codes.codes.not_found
         assert response.status_code == expected_result, (
-            f"Wrong status code. "
-            f"Actual: {response.status_code}, "
-            f"but expected: {expected_result}"
+            f"Wrong status code. Actual: {response.status_code}, but expected: {expected_result}"
         )
 
     def test_get_all_students_anonym(self, university_api_utils_anonym):
@@ -63,9 +59,7 @@ class TestStudentContract:
 
         expected_result = requests.status_codes.codes.forbidden
         assert response.status_code == expected_result, (
-            f"Wrong status code. "
-            f"Actual: {response.status_code}, "
-            f"but expected: {expected_result}"
+            f"Wrong status code. Actual: {response.status_code}, but expected: {expected_result}"
         )
 
     def test_get_all_students_admin(self, student_helper):
@@ -73,9 +67,7 @@ class TestStudentContract:
 
         expected_result = requests.status_codes.codes.ok
         assert response.status_code == expected_result, (
-            f"Wrong status code. "
-            f"Actual: {response.status_code}, "
-            f"but expected: {expected_result}"
+            f"Wrong status code. Actual: {response.status_code}, but expected: {expected_result}"
         )
 
     def test_delete_student_anonym(self, university_api_utils_anonym):
@@ -85,9 +77,7 @@ class TestStudentContract:
 
         expected_result = requests.status_codes.codes.forbidden
         assert response.status_code == expected_result, (
-            f"Wrong status code. "
-            f"Actual: {response.status_code}, "
-            f"but expected: {expected_result}"
+            f"Wrong status code. Actual: {response.status_code}, but expected: {expected_result}"
         )
 
     def test_delete_student_admin(self, student_helper, group_helper):
@@ -101,13 +91,13 @@ class TestStudentContract:
 
         expected_result = requests.status_codes.codes.ok
         assert response.status_code == expected_result, (
-            f"Wrong status code. "
-            f"Actual: {response.status_code}, "
-            f"but expected: {expected_result}"
+            f"Wrong status code. Actual: {response.status_code}, but expected: {expected_result}"
         )
 
     def test_delete_student_fails_on_student_not_found(
-        self, group_helper, student_helper
+        self,
+        group_helper,
+        student_helper,
     ):
         group_data = GenerateUtils.random_group_data()
         group_id = group_helper.post_group(group_data).json()["id"]
@@ -120,9 +110,7 @@ class TestStudentContract:
 
         expected_result = requests.status_codes.codes.not_found
         assert response.status_code == expected_result, (
-            f"Wrong status code. "
-            f"Actual: {response.status_code}, "
-            f"but expected: {expected_result}"
+            f"Wrong status code. Actual: {response.status_code}, but expected: {expected_result}"
         )
 
     def test_get_student_anonym(self, university_api_utils_anonym):
@@ -132,9 +120,7 @@ class TestStudentContract:
 
         expected_result = requests.status_codes.codes.forbidden
         assert response.status_code == expected_result, (
-            f"Wrong status code. "
-            f"Actual: {response.status_code}, "
-            f"but expected: {expected_result}"
+            f"Wrong status code. Actual: {response.status_code}, but expected: {expected_result}"
         )
 
     def test_get_student_admin(self, student_helper, group_helper):
@@ -148,9 +134,7 @@ class TestStudentContract:
 
         expected_result = requests.status_codes.codes.ok
         assert response.status_code == expected_result, (
-            f"Wrong status code. "
-            f"Actual: {response.status_code}, "
-            f"but expected: {expected_result}"
+            f"Wrong status code. Actual: {response.status_code}, but expected: {expected_result}"
         )
 
     def test_update_student_anonym(self, university_api_utils_anonym):
@@ -160,9 +144,7 @@ class TestStudentContract:
 
         expected_result = requests.status_codes.codes.forbidden
         assert response.status_code == expected_result, (
-            f"Wrong status code. "
-            f"Actual: {response.status_code}, "
-            f"but expected: {expected_result}"
+            f"Wrong status code. Actual: {response.status_code}, but expected: {expected_result}"
         )
 
     def test_update_student_admin(self, student_helper, group_helper):
@@ -178,14 +160,13 @@ class TestStudentContract:
         update_student_data = GenerateUtils.random_student_data(new_group_id)
 
         response_update_student = student_helper.update_student(
-            student_id, update_student_data
+            student_id,
+            update_student_data,
         )
 
         expected_result = requests.status_codes.codes.ok
         assert response_update_student.status_code == expected_result, (
-            f"Wrong status code. "
-            f"Actual: {response_update_student.status_code}, "
-            f"but expected: {expected_result}"
+            f"Wrong status code. Actual: {response_update_student.status_code}, but expected: {expected_result}"
         )
 
     def test_update_student_fails_on_email_taken(self, student_helper, group_helper):
@@ -194,12 +175,12 @@ class TestStudentContract:
 
         existing_student = StudentResponse(
             **student_helper.post_student(
-                GenerateUtils.random_student_data(group_id)
-            ).json()
+                GenerateUtils.random_student_data(group_id),
+            ).json(),
         )
 
         new_student = student_helper.post_student(
-            GenerateUtils.random_student_data(group_id)
+            GenerateUtils.random_student_data(group_id),
         )
         student_id = new_student.json()["id"]
 
@@ -213,12 +194,11 @@ class TestStudentContract:
         }
 
         response_update_student = student_helper.update_student(
-            student_id, update_student_data
+            student_id,
+            update_student_data,
         )
 
         expected_result = requests.status_codes.codes.conflict
         assert response_update_student.status_code == expected_result, (
-            f"Wrong status code. "
-            f"Actual: {response_update_student.status_code}, "
-            f"but expected: {expected_result}"
+            f"Wrong status code. Actual: {response_update_student.status_code}, but expected: {expected_result}"
         )

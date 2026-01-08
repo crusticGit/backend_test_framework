@@ -19,18 +19,19 @@ class GroupHelper(BaseHelper):
 
     def get_group(self, group_id: int) -> requests.Response:
         response = self.api_utils.get(
-            self.GROUP_BY_ID_ENDPOINT.format(group_id=str(group_id))
+            self.GROUP_BY_ID_ENDPOINT.format(group_id=str(group_id)),
         )
         return response
 
     def delete_group(self, group_id: int) -> requests.Response:
         response = self.api_utils.delete(
-            self.GROUP_BY_ID_ENDPOINT.format(group_id=str(group_id))
+            self.GROUP_BY_ID_ENDPOINT.format(group_id=str(group_id)),
         )
         return response
 
     def update_group(self, group_id: int, json: dict) -> requests.Response:
         response = self.api_utils.put(
-            self.GROUP_BY_ID_ENDPOINT.format(group_id=str(group_id)), json=json
+            self.GROUP_BY_ID_ENDPOINT.format(group_id=str(group_id)),
+            json=json,
         )
         return response
