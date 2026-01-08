@@ -7,7 +7,6 @@ from services.university.helpers.student_helper import StudentHelper
 from services.university.models.base_student import DegreeEnum
 from services.university.models.student_response import StudentResponse
 from utils.generate_utils import GenerateUtils
-from ..conftest import student_helper
 
 faker = Faker()
 

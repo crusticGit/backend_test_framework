@@ -1,6 +1,6 @@
 from faker import Faker
 
-from conftest import generate_valid_password
+
 from logger.logger import Logger
 from services.auth.auth_service import AuthService
 from services.auth.models.login_request import LoginRequest

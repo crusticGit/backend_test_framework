@@ -8,7 +8,6 @@ from services.university.models.base_grade import GRADE_MAX, GRADE_MIN
 from services.university.models.base_student import DegreeEnum
 from services.university.models.base_teacher import SubjectEnum
 from utils.generate_utils import GenerateUtils
-from ..conftest import grade_helper
 
 faker = Faker()
 
