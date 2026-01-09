@@ -29,10 +29,12 @@ jobs:
         run: ruff format --check .
 
 
-  setup-services:
-    name: Setup test services
+  test:
+    name: Run api tests
     needs: [ lint ]
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -46,17 +48,6 @@ jobs:
           AUTH_SERVICE_INTERNAL_URL: ${{ vars.AUTH_SERVICE_INTERNAL_URL }}
           UNIVERSITY_SERVICE_INTERNAL_URL: ${{ vars.UNIVERSITY_SERVICE_INTERNAL_URL }}
         run: docker compose up -d
-
-  test:
-    name: Run api tests
-    needs: [ setup-services ]
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
 
       - name: Build tests container
         run: docker build -t api-tests -f Dockerfile .
