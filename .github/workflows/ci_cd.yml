@@ -62,13 +62,13 @@ jobs:
             --tb=short \
             --alluredir=allure-results
 
-#      - name: Store Allure results
-#        if: always()
-#        uses: actions/upload-artifact@v4.4.0
-#        with:
-#          name: allure-results
-#          path: allure-results
-#          retention-days: 3
+      - name: Store Allure results
+        if: always()
+        uses: actions/upload-artifact@v4.4.0
+        with:
+          name: allure-results
+          path: allure-results
+          retention-days: 3
 
       - name: Cleanup
         if: always()
