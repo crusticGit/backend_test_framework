@@ -47,32 +47,22 @@ jobs:
           UNIVERSITY_SERVICE_INTERNAL_URL: ${{ vars.UNIVERSITY_SERVICE_INTERNAL_URL }}
         run: docker compose up -d
 
-#  test:
-#    name: Run API tests
-#    needs: [ setup-services ]
-#    runs-on: ubuntu-latest
-#    permissions:
-#      contents: write
-#
-#    steps:
-#      - name: Checkout repository
-#        uses: actions/checkout@v4
-#
-#      - name: Build tests container
-#        run: docker build -t api-tests -f Dockerfile.tests .
-#
-#      - name: Run API tests inside Docker container
-#        run: |
-#          docker run --rm --network=api-tests-network \
-#          -v $(pwd)/allure-results:/app/allure-results \
-#          -e AUTH_SERVICE_API_URL='http://auth:8000' \
-#          -e UNIVERSITY_SERVICE_API_URL='http://university:8000' \
-#          api-tests pytest
-#
-#      - name: Store Allure results
-#        if: always()
-#        uses: actions/upload-artifact@v4
-#        with:
-#          name: allure-results
-#          path: allure-results
-#          retention-days: 1
+  test:
+    name: Run api tests
+    needs: [ setup-services ]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Build tests container
+        run: docker build -t api-tests -f Dockerfile .
+
+      - name: Run API tests inside Docker container
+        run: |
+          docker run --rm --network=api-tests-network \
+            api-tests pytest -v
+
