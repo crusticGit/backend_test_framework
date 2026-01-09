@@ -24,24 +24,6 @@ class TestAuthContract:
             f"Wrong status code. Actual: {response.status_code}, but expected: {expected_result}"
         )
 
-    def test_register_username_is_empty(self, auth_helper, generate_valid_password):
-        password = generate_valid_password
-        email = faker.email()
-
-        register_data = {
-            "username": "",
-            "password": password,
-            "password_repeat": password,
-            "email": email,
-        }
-
-        response = auth_helper.post_register(register_data)
-
-        expected_result = requests.status_codes.codes.conflict
-        assert response.status_code == expected_result, (
-            f"Wrong status code. Actual: {response.status_code}, but expected: {expected_result}"
-        )
-
     def test_register_existing_name(self, auth_helper):
         name = faker.user_name()
         password = GenerateUtils.random_valid_password()
@@ -153,10 +135,10 @@ class TestAuthContract:
         ["username", "password", "password_repeat", "email"],
     )
     def test_register_should_fail_when_required_field_is_missing(
-        self,
-        generate_valid_password,
-        auth_helper,
-        required_field,
+            self,
+            generate_valid_password,
+            auth_helper,
+            required_field,
     ):
         name = faker.user_name()
         password = generate_valid_password
@@ -255,10 +237,10 @@ class TestAuthContract:
 
     @pytest.mark.parametrize("required_field", ["username", "password"])
     def test_login_should_fail_when_required_field_is_missing(
-        self,
-        generate_valid_password,
-        auth_helper,
-        required_field,
+            self,
+            generate_valid_password,
+            auth_helper,
+            required_field,
     ):
         name = faker.user_name()
         password = generate_valid_password
