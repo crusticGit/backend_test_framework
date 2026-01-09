@@ -1,3 +1,5 @@
+import os
+
 from services.auth.helpers.authorization_helper import AuthorizationHelper
 from services.auth.helpers.user_helper import UserHelper
 from services.auth.models.login_request import LoginRequest
@@ -11,7 +13,7 @@ from utils.api_utils import ApiUtils
 
 
 class AuthService(BaseService):
-    SERVICE_URL = "http://localhost:8000"
+    SERVICE_URL = os.getenv("AUTH_SERVICE_API_URL", "http://127.0.0.1:8000")
 
     def __init__(self, api_utils: ApiUtils):
         super().__init__(api_utils)
@@ -20,8 +22,8 @@ class AuthService(BaseService):
         self.user_helper = UserHelper(self.api_utils)
 
     def register_user(
-        self,
-        register_request: RegisterRequest,
+            self,
+            register_request: RegisterRequest,
     ) -> SuccessResponse | ValidationErrorResponse:
         response = self.authorization_helper.post_register(
             data=register_request.model_dump(),

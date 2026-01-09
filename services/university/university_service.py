@@ -1,3 +1,4 @@
+import os
 import random
 
 from faker import Faker
@@ -25,7 +26,7 @@ faker = Faker()
 
 
 class UniversityService(BaseService):
-    SERVICE_URL = "http://localhost:8001"
+    SERVICE_URL = os.getenv("UNIVERSITY_SERVICE_API_URL", "http://127.0.0.1:8001")
 
     def __init__(self, api_utils: ApiUtils):
         super().__init__(api_utils)
@@ -44,8 +45,8 @@ class UniversityService(BaseService):
         return StudentResponse(**response.json())
 
     def create_teacher(
-        self,
-        teacher_request: TeacherRequest,
+            self,
+            teacher_request: TeacherRequest,
     ) -> TeacherResponse | ValidationErrorResponse:
         response = self.teacher_helper.post_teacher(json=teacher_request.model_dump())
         if response.status_code == 201:
@@ -58,10 +59,10 @@ class UniversityService(BaseService):
         return GradeResponse(**response.json())
 
     def get_grade_statistics(
-        self,
-        student_id: int,
-        teacher_id: int,
-        group_id: int,
+            self,
+            student_id: int,
+            teacher_id: int,
+            group_id: int,
     ) -> GradeStatisticResponse:
         response = self.grade_helper.get_stats(
             student_id=student_id,
