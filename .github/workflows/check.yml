@@ -1,4 +1,5 @@
 name: Check pipeline
+
 on:
   push:
     branches: [ ci_cd ]
