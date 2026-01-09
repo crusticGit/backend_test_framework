@@ -135,10 +135,10 @@ class TestAuthContract:
         ["username", "password", "password_repeat", "email"],
     )
     def test_register_should_fail_when_required_field_is_missing(
-            self,
-            generate_valid_password,
-            auth_helper,
-            required_field,
+        self,
+        generate_valid_password,
+        auth_helper,
+        required_field,
     ):
         name = faker.user_name()
         password = generate_valid_password
@@ -237,10 +237,10 @@ class TestAuthContract:
 
     @pytest.mark.parametrize("required_field", ["username", "password"])
     def test_login_should_fail_when_required_field_is_missing(
-            self,
-            generate_valid_password,
-            auth_helper,
-            required_field,
+        self,
+        generate_valid_password,
+        auth_helper,
+        required_field,
     ):
         name = faker.user_name()
         password = generate_valid_password
