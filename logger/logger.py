@@ -5,7 +5,6 @@ from logging.handlers import RotatingFileHandler
 
 from logger.logger_config import LoggerConfig
 
-
 class Logger:
     if not os.path.isdir(LoggerConfig.LOGS_DIR_NAME):
         os.makedirs(LoggerConfig.LOGS_DIR_NAME)
