@@ -22,8 +22,8 @@ class AuthService(BaseService):
         self.user_helper = UserHelper(self.api_utils)
 
     def register_user(
-            self,
-            register_request: RegisterRequest,
+        self,
+        register_request: RegisterRequest,
     ) -> SuccessResponse | ValidationErrorResponse:
         response = self.authorization_helper.post_register(
             data=register_request.model_dump(),
