@@ -38,6 +38,13 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Start services
+        env:
+          POSTGRES_USER: ${{ vars.POSTGRES_USER }}
+          POSTGRES_PASSWORD: ${{ secrets.POSTGRES_PASSWORD }}
+          POSTGRES_DB_AUTH: ${{ vars.POSTGRES_DB_AUTH }}
+          POSTGRES_DB_UNIVERSITY: ${{ vars.POSTGRES_DB_UNIVERSITY }}
+          AUTH_SERVICE_INTERNAL_URL: ${{ vars.AUTH_SERVICE_INTERNAL_URL }}
+          UNIVERSITY_SERVICE_INTERNAL_URL: ${{ vars.UNIVERSITY_SERVICE_INTERNAL_URL }}
         run: docker compose up -d
 
 #  test:
