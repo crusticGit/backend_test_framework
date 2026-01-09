@@ -52,15 +52,68 @@ jobs:
       - name: Build tests container
         run: docker build -t api-tests -f Dockerfile .
 
-      - name: Run API tests inside Docker container
+      - name: Run API tests with Allure
         run: |
           docker run --rm --network=api-tests-network \
             -e AUTH_SERVICE_API_URL='http://auth:8000' \
             -e UNIVERSITY_SERVICE_API_URL='http://university:8000' \
+            -v $(pwd)/allure-results:/app/allure-results \
             api-tests pytest -v \
             --tb=short 
+            --alluredir=allure-results
+
+      - name: Store Allure results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: allure-results
+          path: allure-results
+          retention-days: 3
 
       - name: Cleanup
         if: always()
         run: docker compose down -v
 
+  allure-report:
+    name: Allure report
+    needs: [ test ]
+    if: always()
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pages: write
+      id-token: write
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Download Allure results
+        uses: actions/download-artifact@v4
+        with:
+          name: allure-results
+          path: allure-results
+
+      - name: Generate and Deploy Allure report
+        uses: simple-elf/allure-report-action@master
+        with:
+          allure_results: allure-results
+          gh_pages: gh-pages
+          subfolder: latest
+          keep_history: true
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v3
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: './allure-report'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2
