@@ -47,7 +47,7 @@ jobs:
           POSTGRES_DB_UNIVERSITY: ${{ vars.POSTGRES_DB_UNIVERSITY }}
           AUTH_SERVICE_INTERNAL_URL: ${{ vars.AUTH_SERVICE_INTERNAL_URL }}
           UNIVERSITY_SERVICE_INTERNAL_URL: ${{ vars.UNIVERSITY_SERVICE_INTERNAL_URL }}
-        run: docker compose up -d
+        run: docker compose up -d && docker compose logs -f
 
       - name: Build tests container
         run: docker build -t api-tests -f Dockerfile .
@@ -56,4 +56,8 @@ jobs:
         run: |
           docker run --rm --network=api-tests-network \
             api-tests pytest -v
+
+      - name: Cleanup
+        if: always()
+        run: docker compose down -v
 
