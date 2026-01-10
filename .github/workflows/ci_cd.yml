@@ -96,44 +96,20 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: allure-results
-          path: allure-results/
+          path: allure-results
 
-      - name: Setup Java for Allure
-        uses: actions/setup-java@v4
+      - name: Generate and Deploy Allure report
+        uses: simple-elf/allure-report-action@master
         with:
-          distribution: 'temurin'
-          java-version: '17'
-
-      - name: Install Allure Commandline
-        run: |
-          ALLURE_VERSION="2.27.0"
-          wget -q https://github.com/allure-framework/allure2/releases/download/$ALLURE_VERSION/allure-$ALLURE_VERSION.tgz
-          tar -xzf allure-$ALLURE_VERSION.tgz
-          sudo mv allure-$ALLURE_VERSION /opt/allure
-          sudo ln -sf /opt/allure/bin/allure /usr/bin/allure
-          allure --version
-
-      - name: Generate Allure report
-        run: |
-          
-          mkdir -p allure-report
-          allure generate allure-results --clean -o allure-report
-          cat > allure-report/index.html << 'EOF'
-          <!DOCTYPE html>
-          <html>
-          <head>
-              <meta http-equiv="refresh" content="0; url=allure-report/index.html">
-          </head>
-          <body>
-              <p>Redirecting to Allure report...</p>
-          </body>
-          </html>
-          EOF
+          allure_results: allure-results
+          gh_pages: gh-pages
+          subfolder: latest
+          keep_history: true
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
-      - name: Upload Pages artifact
+      - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: './allure-report'
