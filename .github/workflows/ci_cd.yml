@@ -33,8 +33,6 @@ jobs:
     name: Run api tests
     needs: [ lint ]
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -81,12 +79,6 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-      pages: write
-      id-token: write
-
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
       - name: Checkout repository
@@ -115,29 +107,37 @@ jobs:
 
       - name: Generate Allure report
         run: |
+          mkdir -p public
+          allure generate allure-results --clean -o public
           
-          mkdir -p allure-report
-          allure generate allure-results --clean -o allure-report
-          cat > allure-report/index.html << 'EOF'
+          cat > public/index.html << 'EOF'
           <!DOCTYPE html>
           <html>
           <head>
-              <meta http-equiv="refresh" content="0; url=allure-report/index.html">
+              <meta charset="UTF-8">
+              <title>Test Reports</title>
+              <meta http-equiv="refresh" content="2; url=./index.html">
+              <style>
+                  body { font-family: Arial, sans-serif; margin: 40px; }
+                  h1 { color: #333; }
+                  a { color: #0366d6; text-decoration: none; }
+                  a:hover { text-decoration: underline; }
+              </style>
           </head>
           <body>
+              <h1>📊 Test Reports</h1>
               <p>Redirecting to Allure report...</p>
+              <p>If not redirected, <a href="./index.html">click here</a></p>
           </body>
           </html>
           EOF
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
-
-      - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: './allure-report'
-
       - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v3
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+          publish_branch: gh-pages
+          force_orphan: true
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
