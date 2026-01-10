@@ -1,0 +1,5 @@
+INFO     Logger:logger.py:35 Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' 'http://university:8000/grades/?student_id=791&teacher_id=606&group_id=988'
+INFO     Logger:logger.py:35 Response status code="403", elapsed_time="0:00:00.002122"
+{
+  "detail": "Access denied"
+}

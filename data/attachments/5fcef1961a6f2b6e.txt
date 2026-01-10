@@ -1,0 +1,78 @@
+[2026-01-10 19:40:14,203 - INFO] - Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 162' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=jboydtestUser599&password=L1HynCY1W%29Hj%2AnKvlfnl6M%24x0%5E1%2B9e&password_repeat=L1HynCY1W%29Hj%2AnKvlfnl6M%24x0%5E1%2B9e&email=dcastillo%40example.net' http://auth:8000/auth/register/
+[2026-01-10 19:40:14,203 - INFO] - Response status code="201", elapsed_time="0:00:00.259593"
+{
+  "detail": "User registered"
+}
+
+[2026-01-10 19:40:14,540 - INFO] - Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 75' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=jboydtestUser599&password=L1HynCY1W%29Hj%2AnKvlfnl6M%24x0%5E1%2B9e' http://auth:8000/auth/login/
+[2026-01-10 19:40:14,540 - INFO] - Response status code="200", elapsed_time="0:00:00.295737"
+{
+  "access_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjQwLCJ1c2VybmFtZSI6Impib3lkdGVzdFVzZXI1OTkiLCJleHAiOjE3NjgwODEyMTQsImlhdCI6MTc2ODA3NDAxNH0.dhc1gOZTAcmJG8rz2BqFqvefYp3LzfeiFJ4sIKKs5cA29_f53Qla5mYfT9lzuBa8WlymX15XHemOz5S6j9SU5zoU39qYb_7TbvaiSMxuVXhb3CWMqwUwyeHLmzb0NqZwMVwDKGqSGMTs0L0B77u1wkCRSQ2dPP7tOzhiO9HVuYPdQ5F2uyy4yUHwZgTMLHLYUSLUs-wjV_tE9TZHMf5rpCaXrUz8EOWyPvb_4VN-GkuGhWQdOTFHCq0gOwfiwD2wy8wl7wnw_Kipbij__xQHhh9emszulrY-fRFCcFmeJEtsVv0dFH9mTk5fwWHqU1zxoo7P6ZkFb8u8QXmTW7TGAA",
+  "token_type": "Bearer"
+}
+
+[2026-01-10 19:40:14,551 - INFO] - Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjQwLCJ1c2VybmFtZSI6Impib3lkdGVzdFVzZXI1OTkiLCJleHAiOjE3NjgwODEyMTQsImlhdCI6MTc2ODA3NDAxNH0.dhc1gOZTAcmJG8rz2BqFqvefYp3LzfeiFJ4sIKKs5cA29_f53Qla5mYfT9lzuBa8WlymX15XHemOz5S6j9SU5zoU39qYb_7TbvaiSMxuVXhb3CWMqwUwyeHLmzb0NqZwMVwDKGqSGMTs0L0B77u1wkCRSQ2dPP7tOzhiO9HVuYPdQ5F2uyy4yUHwZgTMLHLYUSLUs-wjV_tE9TZHMf5rpCaXrUz8EOWyPvb_4VN-GkuGhWQdOTFHCq0gOwfiwD2wy8wl7wnw_Kipbij__xQHhh9emszulrY-fRFCcFmeJEtsVv0dFH9mTk5fwWHqU1zxoo7P6ZkFb8u8QXmTW7TGAA' http://university:8000/teachers/
+[2026-01-10 19:40:14,551 - INFO] - Response status code="200", elapsed_time="0:00:00.009179"
+[
+  {
+    "first_name": "Amanda",
+    "last_name": "Salazar",
+    "subject": "Geography",
+    "id": 1
+  },
+  {
+    "first_name": "Jenny Durham",
+    "last_name": "Harris",
+    "subject": "Physics",
+    "id": 2
+  },
+  {
+    "first_name": "Anthony Long",
+    "last_name": "Carney",
+    "subject": "Physics",
+    "id": 4
+  },
+  {
+    "first_name": "Kimberly Jordan",
+    "last_name": "Pena",
+    "subject": "Physics",
+    "id": 5
+  },
+  {
+    "first_name": "Anna Fox",
+    "last_name": "Blackwell",
+    "subject": "Mathematics",
+    "id": 6
+  },
+  {
+    "first_name": "Susan Vazquez",
+    "last_name": "Velazquez",
+    "subject": "Mathematics",
+    "id": 7
+  },
+  {
+    "first_name": "Nichole Stevens",
+    "last_name": "Parker",
+    "subject": "Geography",
+    "id": 8
+  },
+  {
+    "first_name": "Paula Richmond",
+    "last_name": "Taylor",
+    "subject": "Mathematics",
+    "id": 9
+  },
+  {
+    "first_name": "Heather Sanchez",
+    "last_name": "Kerr",
+    "subject": "Physics",
+    "id": 10
+  },
+  {
+    "first_name": "Carla",
+    "last_name": "Brown",
+    "subject": "Physics",
+    "id": 11
+  }
+]
+

@@ -1,0 +1,33 @@
+[2026-01-10 19:40:24,335 - INFO] - Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 160' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=bryanvanessatestUser-125&password=8b%29%2A7SGnMYk%40NdisD7q_Gvh_saRAPK&password_repeat=8b%29%2A7SGnMYk%40NdisD7q_Gvh_saRAPK&email=jason58%40example.net' http://auth:8000/auth/register/
+[2026-01-10 19:40:24,335 - INFO] - Response status code="201", elapsed_time="0:00:00.258976"
+{
+  "detail": "User registered"
+}
+
+[2026-01-10 19:40:24,679 - INFO] - Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 79' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=bryanvanessatestUser-125&password=8b%29%2A7SGnMYk%40NdisD7q_Gvh_saRAPK' http://auth:8000/auth/login/
+[2026-01-10 19:40:24,679 - INFO] - Response status code="200", elapsed_time="0:00:00.303198"
+{
+  "access_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjU0LCJ1c2VybmFtZSI6ImJyeWFudmFuZXNzYXRlc3RVc2VyLTEyNSIsImV4cCI6MTc2ODA4MTIyNCwiaWF0IjoxNzY4MDc0MDI0fQ.QWLOXcY8H3ptGEvye_HczezOZ7lyliRwwlrcBSQo7TNDpvDQnuC65Nxgucv_csS1hoJdt2Pso118PV6YzSgpd4jN6cZoFfFt8KSMzni08BxjGKuYJwdLOwsHRJ-OrMM1OvIFxDVioOlgvMMdeEUY7IEyzwEcjb1wPryVXqEjyqqgOG7AK5lFYWGN6fXytk0YVLe7xo9EXwwQm4q1OreKufOAsK2xwNnp1KREc30o7xnO_3Rq1DT5im0ZIJEZia4OexaNgic1YxwKDa_qlNfatCqYR9xczCj17V5CEZhrJRcs826pRa6rkntUg9MIqFdg6XY0zI9TKRxeAuroayh1NQ",
+  "token_type": "Bearer"
+}
+
+[2026-01-10 19:40:24,680 - INFO] - Step 1. Create teacher
+[2026-01-10 19:40:24,689 - INFO] - Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjU0LCJ1c2VybmFtZSI6ImJyeWFudmFuZXNzYXRlc3RVc2VyLTEyNSIsImV4cCI6MTc2ODA4MTIyNCwiaWF0IjoxNzY4MDc0MDI0fQ.QWLOXcY8H3ptGEvye_HczezOZ7lyliRwwlrcBSQo7TNDpvDQnuC65Nxgucv_csS1hoJdt2Pso118PV6YzSgpd4jN6cZoFfFt8KSMzni08BxjGKuYJwdLOwsHRJ-OrMM1OvIFxDVioOlgvMMdeEUY7IEyzwEcjb1wPryVXqEjyqqgOG7AK5lFYWGN6fXytk0YVLe7xo9EXwwQm4q1OreKufOAsK2xwNnp1KREc30o7xnO_3Rq1DT5im0ZIJEZia4OexaNgic1YxwKDa_qlNfatCqYR9xczCj17V5CEZhrJRcs826pRa6rkntUg9MIqFdg6XY0zI9TKRxeAuroayh1NQ' -H 'Content-Length: 52' -H 'Content-Type: application/json' -d '{"first_name": "Danielle", "subject": "Mathematics"}' http://university:8000/teachers/
+[2026-01-10 19:40:24,689 - INFO] - Response status code="422", elapsed_time="0:00:00.007632"
+{
+  "detail": [
+    {
+      "type": "missing",
+      "loc": [
+        "body",
+        "last_name"
+      ],
+      "msg": "Field required",
+      "input": {
+        "first_name": "Danielle",
+        "subject": "Mathematics"
+      }
+    }
+  ]
+}
+

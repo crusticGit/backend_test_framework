@@ -1,0 +1,31 @@
+INFO     Logger:logger.py:35 Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 161' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=lisa19testUser285&password=%250EN%29ok48%5EBZi6tZ%21z18svAbnp03v0&password_repeat=%250EN%29ok48%5EBZi6tZ%21z18svAbnp03v0&email=ronaldsolis%40example.net' http://auth:8000/auth/register/
+INFO     Logger:logger.py:35 Response status code="201", elapsed_time="0:00:00.259023"
+{
+  "detail": "User registered"
+}
+
+INFO     Logger:logger.py:35 Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 74' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=lisa19testUser285&password=%250EN%29ok48%5EBZi6tZ%21z18svAbnp03v0' http://auth:8000/auth/login/
+INFO     Logger:logger.py:35 Response status code="200", elapsed_time="0:00:00.295291"
+{
+  "access_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjU1LCJ1c2VybmFtZSI6Imxpc2ExOXRlc3RVc2VyMjg1IiwiZXhwIjoxNzY4MDgxMjI1LCJpYXQiOjE3NjgwNzQwMjV9.QPDHqH7MxYcbUO8hyUbEUijHCGKfrOoGR9--KqeAdBPXfUkLOjATG1cd7W5kkPrR33w3Pd1LBt3TctAo0QNlagsrFVdZ7vQVyErd1Z1634cgU5vbgk2HwDrrNtx3OFGAPX53YZZA_1WqgtE-yZ046DQOMOBUKh6TjJYIJ3nRr5fpTse-Nk_IU4eHvF0cIVRIH8SBeedEhaOSey5QGNEuJHzyn2LZQs0JOUa7Pba7HQJy9M1DjPmTzNCEiVciN4_AOzhfdsArSVUwWykwVG_Ku_o3PVBiY8hOoIgbsIb5aZfYcZVBVjADTIoY06SvldPyBTXsQgErSGSKe698W8BWKw",
+  "token_type": "Bearer"
+}
+INFO     Logger:logger.py:35 Step 1. Create teacher
+INFO     Logger:logger.py:35 Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjU1LCJ1c2VybmFtZSI6Imxpc2ExOXRlc3RVc2VyMjg1IiwiZXhwIjoxNzY4MDgxMjI1LCJpYXQiOjE3NjgwNzQwMjV9.QPDHqH7MxYcbUO8hyUbEUijHCGKfrOoGR9--KqeAdBPXfUkLOjATG1cd7W5kkPrR33w3Pd1LBt3TctAo0QNlagsrFVdZ7vQVyErd1Z1634cgU5vbgk2HwDrrNtx3OFGAPX53YZZA_1WqgtE-yZ046DQOMOBUKh6TjJYIJ3nRr5fpTse-Nk_IU4eHvF0cIVRIH8SBeedEhaOSey5QGNEuJHzyn2LZQs0JOUa7Pba7HQJy9M1DjPmTzNCEiVciN4_AOzhfdsArSVUwWykwVG_Ku_o3PVBiY8hOoIgbsIb5aZfYcZVBVjADTIoY06SvldPyBTXsQgErSGSKe698W8BWKw' -H 'Content-Length: 48' -H 'Content-Type: application/json' -d '{"first_name": "Bryan", "last_name": "Williams"}' http://university:8000/teachers/
+INFO     Logger:logger.py:35 Response status code="422", elapsed_time="0:00:00.007248"
+{
+  "detail": [
+    {
+      "type": "missing",
+      "loc": [
+        "body",
+        "subject"
+      ],
+      "msg": "Field required",
+      "input": {
+        "first_name": "Bryan",
+        "last_name": "Williams"
+      }
+    }
+  ]
+}

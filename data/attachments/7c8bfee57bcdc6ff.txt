@@ -1,0 +1,22 @@
+INFO     Logger:logger.py:35 Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 186' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=Diana+Moody&password=nU9LnWkMCzPDmVgo%218E0jTxV%268uc%28SQ%2Aqr7SI&password_repeat=46%21h2%24VQ%21FnEMb%2BtpwtKQkvxID%29%241nKgr96La%23lk%2Bgvp%29Ab&email=kingrose%40example.org' http://auth:8000/auth/register/
+INFO     Logger:logger.py:35 Response status code="422", elapsed_time="0:00:00.002133"
+{
+  "detail": [
+    {
+      "type": "value_error",
+      "loc": [
+        "body"
+      ],
+      "msg": "Value error, Passwords do not match",
+      "input": {
+        "username": "Diana Moody",
+        "password": "nU9LnWkMCzPDmVgo!8E0jTxV&8uc(SQ*qr7SI",
+        "password_repeat": "46!h2$VQ!FnEMb+tpwtKQkvxID)$1nKgr96La#lk+gvp)Ab",
+        "email": "kingrose@example.org"
+      },
+      "ctx": {
+        "error": {}
+      }
+    }
+  ]
+}

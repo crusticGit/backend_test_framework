@@ -1,0 +1,62 @@
+[2026-01-10 19:40:03,211 - INFO] - Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 156' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=iadamstestUser-561&password=n21bAw%5EoC1%29YSTkypaG%26TblSfMDFu8&password_repeat=n21bAw%5EoC1%29YSTkypaG%26TblSfMDFu8&email=zachary87%40example.org' http://auth:8000/auth/register/
+[2026-01-10 19:40:03,211 - INFO] - Response status code="201", elapsed_time="0:00:00.259321"
+{
+  "detail": "User registered"
+}
+
+[2026-01-10 19:40:03,547 - INFO] - Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 73' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=iadamstestUser-561&password=n21bAw%5EoC1%29YSTkypaG%26TblSfMDFu8' http://auth:8000/auth/login/
+[2026-01-10 19:40:03,547 - INFO] - Response status code="200", elapsed_time="0:00:00.295247"
+{
+  "access_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjI0LCJ1c2VybmFtZSI6ImlhZGFtc3Rlc3RVc2VyLTU2MSIsImV4cCI6MTc2ODA4MTIwMywiaWF0IjoxNzY4MDc0MDAzfQ.TraEi4fYbHKtI9rTVlrZIsS_7NzJQfTEXpAZp_tQocwBc_4jS8Dp52uPslqTCQ3znYc6OefF-GuWmtppJwaTnuZSpVj76CwssKXjDcQvFPmFUSYLdzJAAMlZ_EhPh6SvIJX9HuUUbw7G6wwTvjeEGG2SUSe6FcMrn7YiFiRj9V4PGF4XYxXX4NEbmFmi7NId8EZxh8cCbYnUah13eZnHGeeHb_P3iIpYl2cidab1zCh-hLn9k6RB_CfQSp44Z7f7n2YK8PXzZIuZos18Z894w602DPtdkgwuWtpmi8HrIqhVyJbwY7_cqoxK7IsgTZ-u8diriTnyhqGvsz9nBbnpqA",
+  "token_type": "Bearer"
+}
+
+[2026-01-10 19:40:03,558 - INFO] - Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjI0LCJ1c2VybmFtZSI6ImlhZGFtc3Rlc3RVc2VyLTU2MSIsImV4cCI6MTc2ODA4MTIwMywiaWF0IjoxNzY4MDc0MDAzfQ.TraEi4fYbHKtI9rTVlrZIsS_7NzJQfTEXpAZp_tQocwBc_4jS8Dp52uPslqTCQ3znYc6OefF-GuWmtppJwaTnuZSpVj76CwssKXjDcQvFPmFUSYLdzJAAMlZ_EhPh6SvIJX9HuUUbw7G6wwTvjeEGG2SUSe6FcMrn7YiFiRj9V4PGF4XYxXX4NEbmFmi7NId8EZxh8cCbYnUah13eZnHGeeHb_P3iIpYl2cidab1zCh-hLn9k6RB_CfQSp44Z7f7n2YK8PXzZIuZos18Z894w602DPtdkgwuWtpmi8HrIqhVyJbwY7_cqoxK7IsgTZ-u8diriTnyhqGvsz9nBbnpqA' http://university:8000/groups/
+[2026-01-10 19:40:03,558 - INFO] - Response status code="200", elapsed_time="0:00:00.009578"
+[
+  {
+    "name": "group-Joseph LLC-3729",
+    "id": 1
+  },
+  {
+    "name": "Amanda Roberts",
+    "id": 2
+  },
+  {
+    "name": "Brian Nielsen",
+    "id": 3
+  },
+  {
+    "name": "Jonathan Hoover",
+    "id": 4
+  },
+  {
+    "name": "Nicholas Carter",
+    "id": 5
+  },
+  {
+    "name": "Olivia Ball",
+    "id": 6
+  },
+  {
+    "name": "Ronald Henderson",
+    "id": 7
+  },
+  {
+    "name": "Ralph Schmidt",
+    "id": 8
+  },
+  {
+    "name": "Jessica Miller",
+    "id": 9
+  },
+  {
+    "name": "group-Howe Ltd-2617",
+    "id": 10
+  },
+  {
+    "name": "group-Livingston, Black and Johnson-6762",
+    "id": 11
+  }
+]
+

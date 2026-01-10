@@ -1,0 +1,48 @@
+INFO     Logger:logger.py:35 Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 154' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=uthomastestUser-162&password=zGo6uU0u%26UohSIiYK27%23h8B3wmHkSy&password_repeat=zGo6uU0u%26UohSIiYK27%23h8B3wmHkSy&email=kimjohnson%40example.net' http://auth:8000/auth/register/
+INFO     Logger:logger.py:35 Response status code="201", elapsed_time="0:00:00.271395"
+{
+  "detail": "User registered"
+}
+
+INFO     Logger:logger.py:35 Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 72' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=uthomastestUser-162&password=zGo6uU0u%26UohSIiYK27%23h8B3wmHkSy' http://auth:8000/auth/login/
+INFO     Logger:logger.py:35 Response status code="200", elapsed_time="0:00:00.294933"
+{
+  "access_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEyLCJ1c2VybmFtZSI6InV0aG9tYXN0ZXN0VXNlci0xNjIiLCJleHAiOjE3NjgwODExOTQsImlhdCI6MTc2ODA3Mzk5NH0.mvVNczIYVUg-dSujAjjZ8uCY08z8WI0komYJSUb6jzt2soZfwJh2KPVJxh9pUjH7GZne5vKIZws-pLS4nYE5Bz5vjLNsbQ_wNYoYOAK2EFuW0Bgzf15t7rWJ81oUg6CGjIvFLfJJgDSdsdUsfa1yDS6_XJWxlLnUun8YnGvJBQC2XVhJOd4UzZF9H5sKNnL_7OYfYs7ISZrElJgzBotsCF8c9NND6qn3ypIH5zRwkWOTR94X6x0THAlOyR5JyswfPcRW4jFdZhn1MdJodlHI1r1gWFhJHHvGeyt96ny-8_rV_-H7pMy9JFVT--bWmkwqqTiup7KAzYkh6iqI4Qsxpg",
+  "token_type": "Bearer"
+}
+INFO     Logger:logger.py:35 Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEyLCJ1c2VybmFtZSI6InV0aG9tYXN0ZXN0VXNlci0xNjIiLCJleHAiOjE3NjgwODExOTQsImlhdCI6MTc2ODA3Mzk5NH0.mvVNczIYVUg-dSujAjjZ8uCY08z8WI0komYJSUb6jzt2soZfwJh2KPVJxh9pUjH7GZne5vKIZws-pLS4nYE5Bz5vjLNsbQ_wNYoYOAK2EFuW0Bgzf15t7rWJ81oUg6CGjIvFLfJJgDSdsdUsfa1yDS6_XJWxlLnUun8YnGvJBQC2XVhJOd4UzZF9H5sKNnL_7OYfYs7ISZrElJgzBotsCF8c9NND6qn3ypIH5zRwkWOTR94X6x0THAlOyR5JyswfPcRW4jFdZhn1MdJodlHI1r1gWFhJHHvGeyt96ny-8_rV_-H7pMy9JFVT--bWmkwqqTiup7KAzYkh6iqI4Qsxpg' -H 'Content-Length: 33' -H 'Content-Type: application/json' -d '{"name": "group-Joseph LLC-3729"}' http://university:8000/groups/
+INFO     Logger:logger.py:35 Response status code="201", elapsed_time="0:00:00.032290"
+{
+  "name": "group-Joseph LLC-3729",
+  "id": 1
+}
+
+INFO     Logger:logger.py:35 Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEyLCJ1c2VybmFtZSI6InV0aG9tYXN0ZXN0VXNlci0xNjIiLCJleHAiOjE3NjgwODExOTQsImlhdCI6MTc2ODA3Mzk5NH0.mvVNczIYVUg-dSujAjjZ8uCY08z8WI0komYJSUb6jzt2soZfwJh2KPVJxh9pUjH7GZne5vKIZws-pLS4nYE5Bz5vjLNsbQ_wNYoYOAK2EFuW0Bgzf15t7rWJ81oUg6CGjIvFLfJJgDSdsdUsfa1yDS6_XJWxlLnUun8YnGvJBQC2XVhJOd4UzZF9H5sKNnL_7OYfYs7ISZrElJgzBotsCF8c9NND6qn3ypIH5zRwkWOTR94X6x0THAlOyR5JyswfPcRW4jFdZhn1MdJodlHI1r1gWFhJHHvGeyt96ny-8_rV_-H7pMy9JFVT--bWmkwqqTiup7KAzYkh6iqI4Qsxpg' -H 'Content-Length: 72' -H 'Content-Type: application/json' -d '{"first_name": "Amanda", "last_name": "Salazar", "subject": "Geography"}' http://university:8000/teachers/
+INFO     Logger:logger.py:35 Response status code="201", elapsed_time="0:00:00.011531"
+{
+  "first_name": "Amanda",
+  "last_name": "Salazar",
+  "subject": "Geography",
+  "id": 1
+}
+
+INFO     Logger:logger.py:35 Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEyLCJ1c2VybmFtZSI6InV0aG9tYXN0ZXN0VXNlci0xNjIiLCJleHAiOjE3NjgwODExOTQsImlhdCI6MTc2ODA3Mzk5NH0.mvVNczIYVUg-dSujAjjZ8uCY08z8WI0komYJSUb6jzt2soZfwJh2KPVJxh9pUjH7GZne5vKIZws-pLS4nYE5Bz5vjLNsbQ_wNYoYOAK2EFuW0Bgzf15t7rWJ81oUg6CGjIvFLfJJgDSdsdUsfa1yDS6_XJWxlLnUun8YnGvJBQC2XVhJOd4UzZF9H5sKNnL_7OYfYs7ISZrElJgzBotsCF8c9NND6qn3ypIH5zRwkWOTR94X6x0THAlOyR5JyswfPcRW4jFdZhn1MdJodlHI1r1gWFhJHHvGeyt96ny-8_rV_-H7pMy9JFVT--bWmkwqqTiup7KAzYkh6iqI4Qsxpg' -H 'Content-Length: 149' -H 'Content-Type: application/json' -d '{"first_name": "Elizabeth", "last_name": "Diaz", "email": "johnsonalicia@example.com", "degree": "Doctorate", "phone": "+76160011533", "group_id": 1}' http://university:8000/students/
+INFO     Logger:logger.py:35 Response status code="201", elapsed_time="0:00:00.017722"
+{
+  "first_name": "Elizabeth",
+  "last_name": "Diaz",
+  "email": "johnsonalicia@example.com",
+  "degree": "Doctorate",
+  "phone": "+76160011533",
+  "group_id": 1,
+  "id": 1
+}
+
+INFO     Logger:logger.py:35 Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEyLCJ1c2VybmFtZSI6InV0aG9tYXN0ZXN0VXNlci0xNjIiLCJleHAiOjE3NjgwODExOTQsImlhdCI6MTc2ODA3Mzk5NH0.mvVNczIYVUg-dSujAjjZ8uCY08z8WI0komYJSUb6jzt2soZfwJh2KPVJxh9pUjH7GZne5vKIZws-pLS4nYE5Bz5vjLNsbQ_wNYoYOAK2EFuW0Bgzf15t7rWJ81oUg6CGjIvFLfJJgDSdsdUsfa1yDS6_XJWxlLnUun8YnGvJBQC2XVhJOd4UzZF9H5sKNnL_7OYfYs7ISZrElJgzBotsCF8c9NND6qn3ypIH5zRwkWOTR94X6x0THAlOyR5JyswfPcRW4jFdZhn1MdJodlHI1r1gWFhJHHvGeyt96ny-8_rV_-H7pMy9JFVT--bWmkwqqTiup7KAzYkh6iqI4Qsxpg' -H 'Content-Length: 33' -H 'Content-Type: application/x-www-form-urlencoded' -d 'teacher_id=1&student_id=1&grade=2' http://university:8000/grades/
+INFO     Logger:logger.py:35 Response status code="201", elapsed_time="0:00:00.013407"
+{
+  "teacher_id": 1,
+  "student_id": 1,
+  "grade": 2,
+  "id": 1
+}

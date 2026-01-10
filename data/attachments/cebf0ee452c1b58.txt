@@ -1,0 +1,19 @@
+[2026-01-10 19:39:51,433 - INFO] - Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 1838' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=Diana+Johnson&password=d5xk%29gHWZn%253va%25fd%24b1%2609sZA%21OLoY4K%402LKTrgte%29%28xGYvR5wVBu6k7%23UVjaL%254fBL9NcDLbpbDdnDRRvDc%40%24%40exqJZNb6Uk%24kuOrSwcncYg%40Mi2SEe%26n5tEaCPpXNyFIyW%23vE49lIteR8vzLW%21KLYAa%28cZO_ng%28bKXNIUPCTfgRk%21vl3K0%25sXTrX9NwDKz%25d0uOxYJlGlXpiZkuJrA5ut7nfY%21pNeV5H7CmMFMkudA7YVb_%28d48zm5Mokq%21ESvr7FXEW%5E%2Bn8%2A2O%21hvwL%2Ad%21S2ms%25r%405%282SBPvBkr2o38PmZLBC6SYOCsvSE9f%23NBAph4eFDBTSW%29P4N%40e1v1csVuvzbnm%24V%24kLAM33aJ%29y77eNPudW7jL15Re%2ATw%23%26ra%2BSPpN%21j6yTeDNtmQNfozaqcJnj8S%5E%25q_bOhDl%21CR%29WFz1VPvGx2%25gG%26%2A7W%29%237OgXdnq9RdyA87a%267RZ90wi%29J%28%23LOVQrKFZqV0y%28T1Ab%23f_jtRQW%29qKLxawMG1%5EdsmobjS9R%25PY4sNd%21D4SefmO4Gdi9P4hhFRuVhZD%28t5eMquyNQEuDGABGJS%40%24zmV3HiLZg3ifT0ZlE2vy%24f%25FrFD%5E%26P%40P%2BLMDTNEZ%5EPsQr%26%21VQit0xuAR%2AG%21h6ayGZa%2AyVO3heXmLl%2AQYwCmE%40%24twSk%29%25%2ALNRLPvCQZqS2Z%2BQZ6DwU5%24nJvCH8YobHJdg1nHv&password_repeat=d5xk%29gHWZn%253va%25fd%24b1%2609sZA%21OLoY4K%402LKTrgte%29%28xGYvR5wVBu6k7%23UVjaL%254fBL9NcDLbpbDdnDRRvDc%40%24%40exqJZNb6Uk%24kuOrSwcncYg%40Mi2SEe%26n5tEaCPpXNyFIyW%23vE49lIteR8vzLW%21KLYAa%28cZO_ng%28bKXNIUPCTfgRk%21vl3K0%25sXTrX9NwDKz%25d0uOxYJlGlXpiZkuJrA5ut7nfY%21pNeV5H7CmMFMkudA7YVb_%28d48zm5Mokq%21ESvr7FXEW%5E%2Bn8%2A2O%21hvwL%2Ad%21S2ms%25r%405%282SBPvBkr2o38PmZLBC6SYOCsvSE9f%23NBAph4eFDBTSW%29P4N%40e1v1csVuvzbnm%24V%24kLAM33aJ%29y77eNPudW7jL15Re%2ATw%23%26ra%2BSPpN%21j6yTeDNtmQNfozaqcJnj8S%5E%25q_bOhDl%21CR%29WFz1VPvGx2%25gG%26%2A7W%29%237OgXdnq9RdyA87a%267RZ90wi%29J%28%23LOVQrKFZqV0y%28T1Ab%23f_jtRQW%29qKLxawMG1%5EdsmobjS9R%25PY4sNd%21D4SefmO4Gdi9P4hhFRuVhZD%28t5eMquyNQEuDGABGJS%40%24zmV3HiLZg3ifT0ZlE2vy%24f%25FrFD%5E%26P%40P%2BLMDTNEZ%5EPsQr%26%21VQit0xuAR%2AG%21h6ayGZa%2AyVO3heXmLl%2AQYwCmE%40%24twSk%29%25%2ALNRLPvCQZqS2Z%2BQZ6DwU5%24nJvCH8YobHJdg1nHv&email=sandersjillian%40example.net' http://auth:8000/auth/register/
+[2026-01-10 19:39:51,433 - INFO] - Response status code="422", elapsed_time="0:00:00.002084"
+{
+  "detail": [
+    {
+      "type": "value_error",
+      "loc": [
+        "body",
+        "password"
+      ],
+      "msg": "Value error, Password length should be shorter than 100 characters",
+      "input": "d5xk)gHWZn%3va%fd$b1&09sZA!OLoY4K@2LKTrgte)(xGYvR5wVBu6k7#UVjaL%4fBL9NcDLbpbDdnDRRvDc@$@exqJZNb6Uk$kuOrSwcncYg@Mi2SEe&n5tEaCPpXNyFIyW#vE49lIteR8vzLW!KLYAa(cZO_ng(bKXNIUPCTfgRk!vl3K0%sXTrX9NwDKz%d0uOxYJlGlXpiZkuJrA5ut7nfY!pNeV5H7CmMFMkudA7YVb_(d48zm5Mokq!ESvr7FXEW^+n8*2O!hvwL*d!S2ms%r@5(2SBPvBkr2o38PmZLBC6SYOCsvSE9f#NBAph4eFDBTSW)P4N@e1v1csVuvzbnm$V$kLAM33aJ)y77eNPudW7jL15Re*Tw#&ra+SPpN!j6yTeDNtmQNfozaqcJnj8S^%q_bOhDl!CR)WFz1VPvGx2%gG&*7W)#7OgXdnq9RdyA87a&7RZ90wi)J(#LOVQrKFZqV0y(T1Ab#f_jtRQW)qKLxawMG1^dsmobjS9R%PY4sNd!D4SefmO4Gdi9P4hhFRuVhZD(t5eMquyNQEuDGABGJS@$zmV3HiLZg3ifT0ZlE2vy$f%FrFD^&P@P+LMDTNEZ^PsQr&!VQit0xuAR*G!h6ayGZa*yVO3heXmLl*QYwCmE@$twSk)%*LNRLPvCQZqS2Z+QZ6DwU5$nJvCH8YobHJdg1nHv",
+      "ctx": {
+        "error": {}
+      }
+    }
+  ]
+}
+

@@ -1,0 +1,15 @@
+[2026-01-10 19:39:49,280 - INFO] - Step 1. Register user
+[2026-01-10 19:39:49,540 - INFO] - Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 133' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=laura11&password=%23e%252DW%29V%23%2A%23kRca&password_repeat=%23e%252DW%29V%23%2A%23kRca&email=fischerkimberly%40example.org' http://auth:8000/auth/register/
+[2026-01-10 19:39:49,540 - INFO] - Response status code="201", elapsed_time="0:00:00.259359"
+{
+  "detail": "User registered"
+}
+
+[2026-01-10 19:39:49,541 - INFO] - Step 2. Login user
+[2026-01-10 19:39:49,881 - INFO] - Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 53' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=laura11&password=%23e%252DW%29V%23%2A%23kRca' http://auth:8000/auth/login/
+[2026-01-10 19:39:49,881 - INFO] - Response status code="200", elapsed_time="0:00:00.299412"
+{
+  "access_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsInVzZXJuYW1lIjoibGF1cmExMSIsImV4cCI6MTc2ODA4MTE4OSwiaWF0IjoxNzY4MDczOTg5fQ.JNfVmVHhnvqSZNxNIg0Vof4eTVNiX0_OC5Ta4YrOGCNWb013Ze7M4Q-YEr8j2uC9dSz0UUjeGvBdrw0D61QO2DOrVfOx7BXy5IWUTQU3mkjVfHw_4GAC-bN3QkgETCIsfWnoPe9ZyqgGQjWYgyTb9A0ffo3DUQcZKyvPvU-mk15ywFJdD5pVgvl9RAx_LmZYtNfjO8m2jgr0Q9tqzvuIa3RmzSkGMQXe1nK-nN9k4dx5pne2a8w7LBfiIas968YT4VMtwjCHOazRZdvwlwpNZBc62LZQnAF2OkeETB6YRkJ19OdQjmXBbGGodxsheuID7Ac0kfN494YJall8X3QeNA",
+  "token_type": "Bearer"
+}
+

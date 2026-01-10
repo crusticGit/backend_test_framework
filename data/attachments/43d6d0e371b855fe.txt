@@ -1,0 +1,19 @@
+[2026-01-10 19:40:17,413 - INFO] - Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 169' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=rebeccamaytestUser231&password=ZoEpCQCf%21526%24uTt%23%29DBDiz8ass%2Bw8&password_repeat=ZoEpCQCf%21526%24uTt%23%29DBDiz8ass%2Bw8&email=cynthiayork%40example.org' http://auth:8000/auth/register/
+[2026-01-10 19:40:17,414 - INFO] - Response status code="201", elapsed_time="0:00:00.258732"
+{
+  "detail": "User registered"
+}
+
+[2026-01-10 19:40:17,751 - INFO] - Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 80' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=rebeccamaytestUser231&password=ZoEpCQCf%21526%24uTt%23%29DBDiz8ass%2Bw8' http://auth:8000/auth/login/
+[2026-01-10 19:40:17,751 - INFO] - Response status code="200", elapsed_time="0:00:00.295979"
+{
+  "access_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjQ1LCJ1c2VybmFtZSI6InJlYmVjY2FtYXl0ZXN0VXNlcjIzMSIsImV4cCI6MTc2ODA4MTIxNywiaWF0IjoxNzY4MDc0MDE3fQ.KM4_Von5aP2tzL91wT4yVZlHxBGnZCqBU8eN_4FDdoKYWFsdPffhTmOnIBdYQopV7onKNyNO6FVMIvVVB1tyw81priVAKSKdgm74cPBhvdVjPjPGqdBaNNyiuV2Nz7JwqCWxal6H9VfZMEePxfl3KlIZxEcANVN4Iw0BEkil3iENY9BYe2Zy54AXjAdIeGHxtoDH6M-CUojABZ39nF13Ne_4SrwEiowY_9HE0mVJ8AslrcATdMax0l3YMtsFhM2VIEfFuF7qVPDmIDM3knmWfUwgFP-uXFfIj62ZU6M1S7rFnz3bnYvEGGb09r7QXw8B-V6nb37g0x-EqfEg4OfrIQ",
+  "token_type": "Bearer"
+}
+
+[2026-01-10 19:40:17,795 - INFO] - Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjQ1LCJ1c2VybmFtZSI6InJlYmVjY2FtYXl0ZXN0VXNlcjIzMSIsImV4cCI6MTc2ODA4MTIxNywiaWF0IjoxNzY4MDc0MDE3fQ.KM4_Von5aP2tzL91wT4yVZlHxBGnZCqBU8eN_4FDdoKYWFsdPffhTmOnIBdYQopV7onKNyNO6FVMIvVVB1tyw81priVAKSKdgm74cPBhvdVjPjPGqdBaNNyiuV2Nz7JwqCWxal6H9VfZMEePxfl3KlIZxEcANVN4Iw0BEkil3iENY9BYe2Zy54AXjAdIeGHxtoDH6M-CUojABZ39nF13Ne_4SrwEiowY_9HE0mVJ8AslrcATdMax0l3YMtsFhM2VIEfFuF7qVPDmIDM3knmWfUwgFP-uXFfIj62ZU6M1S7rFnz3bnYvEGGb0INVALID_SIGNATURE' http://auth:8000/users/me/
+[2026-01-10 19:40:17,795 - INFO] - Response status code="401", elapsed_time="0:00:00.001978"
+{
+  "detail": "Invalid JWT token"
+}
+

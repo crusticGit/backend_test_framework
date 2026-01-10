@@ -1,0 +1,24 @@
+INFO     Logger:logger.py:35 Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 167' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=leroy25testUser-714&password=Dj%26UEe%401%25aMb4N%24hVFI%25HBvmqm69zq&password_repeat=Dj%26UEe%401%25aMb4N%24hVFI%25HBvmqm69zq&email=markdonovan%40example.org' http://auth:8000/auth/register/
+INFO     Logger:logger.py:35 Response status code="201", elapsed_time="0:00:00.263153"
+{
+  "detail": "User registered"
+}
+
+INFO     Logger:logger.py:35 Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 78' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=leroy25testUser-714&password=Dj%26UEe%401%25aMb4N%24hVFI%25HBvmqm69zq' http://auth:8000/auth/login/
+INFO     Logger:logger.py:35 Response status code="200", elapsed_time="0:00:00.295685"
+{
+  "access_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjI1LCJ1c2VybmFtZSI6Imxlcm95MjV0ZXN0VXNlci03MTQiLCJleHAiOjE3NjgwODEyMDQsImlhdCI6MTc2ODA3NDAwNH0.ZAOF-tA6CiJYRD7px4TlQ0nNshGtKs3OdB81k6NRESD5yyLP8A_A4Rr18rTQ1NXFRNdfIFmMDQtspRo7jDWWG3bkzc5uIoNJ4iA5Y-QVNrZZb9DA8gE26ofRmFQnAOTwyA6gEu0HSqpm6Ktl2651TKn8fsQamiSp6FSKFf0aNaW0aUuLFHH1kVKM7I_boNK2IGTVD5rTrL6XwTwPmLpDDqsp-iGj0vKUWAEIPKxmCfe744Ep4VcoZ28I1Lo_nSHsKEpE-U0ItGrM0tO9GQDhWkt16y0qkj2J3KzXpoLKbnQVMr-dD_5NM7axU5zQcHHYsKRA4lB_TBLK1VmX14dObw",
+  "token_type": "Bearer"
+}
+INFO     Logger:logger.py:35 Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjI1LCJ1c2VybmFtZSI6Imxlcm95MjV0ZXN0VXNlci03MTQiLCJleHAiOjE3NjgwODEyMDQsImlhdCI6MTc2ODA3NDAwNH0.ZAOF-tA6CiJYRD7px4TlQ0nNshGtKs3OdB81k6NRESD5yyLP8A_A4Rr18rTQ1NXFRNdfIFmMDQtspRo7jDWWG3bkzc5uIoNJ4iA5Y-QVNrZZb9DA8gE26ofRmFQnAOTwyA6gEu0HSqpm6Ktl2651TKn8fsQamiSp6FSKFf0aNaW0aUuLFHH1kVKM7I_boNK2IGTVD5rTrL6XwTwPmLpDDqsp-iGj0vKUWAEIPKxmCfe744Ep4VcoZ28I1Lo_nSHsKEpE-U0ItGrM0tO9GQDhWkt16y0qkj2J3KzXpoLKbnQVMr-dD_5NM7axU5zQcHHYsKRA4lB_TBLK1VmX14dObw' -H 'Content-Length: 34' -H 'Content-Type: application/json' -d '{"name": "group-Yates-Mills-3735"}' http://university:8000/groups/
+INFO     Logger:logger.py:35 Response status code="201", elapsed_time="0:00:00.011879"
+{
+  "name": "group-Yates-Mills-3735",
+  "id": 12
+}
+
+INFO     Logger:logger.py:35 Request: curl -X DELETE -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjI1LCJ1c2VybmFtZSI6Imxlcm95MjV0ZXN0VXNlci03MTQiLCJleHAiOjE3NjgwODEyMDQsImlhdCI6MTc2ODA3NDAwNH0.ZAOF-tA6CiJYRD7px4TlQ0nNshGtKs3OdB81k6NRESD5yyLP8A_A4Rr18rTQ1NXFRNdfIFmMDQtspRo7jDWWG3bkzc5uIoNJ4iA5Y-QVNrZZb9DA8gE26ofRmFQnAOTwyA6gEu0HSqpm6Ktl2651TKn8fsQamiSp6FSKFf0aNaW0aUuLFHH1kVKM7I_boNK2IGTVD5rTrL6XwTwPmLpDDqsp-iGj0vKUWAEIPKxmCfe744Ep4VcoZ28I1Lo_nSHsKEpE-U0ItGrM0tO9GQDhWkt16y0qkj2J3KzXpoLKbnQVMr-dD_5NM7axU5zQcHHYsKRA4lB_TBLK1VmX14dObw' -H 'Content-Length: 0' http://university:8000/groups/12/
+INFO     Logger:logger.py:35 Response status code="200", elapsed_time="0:00:00.009305"
+{
+  "detail": "Group deleted"
+}

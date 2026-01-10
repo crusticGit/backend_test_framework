@@ -1,0 +1,20 @@
+[2026-01-10 19:39:51,453 - INFO] - Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 81' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=josebrown&password=q1rAKuk0v%5E%40%2A&password_repeat=q1rAKuk0v%5E%40%2A' http://auth:8000/auth/register/
+[2026-01-10 19:39:51,453 - INFO] - Response status code="422", elapsed_time="0:00:00.001832"
+{
+  "detail": [
+    {
+      "type": "missing",
+      "loc": [
+        "body",
+        "email"
+      ],
+      "msg": "Field required",
+      "input": {
+        "username": "josebrown",
+        "password": "q1rAKuk0v^@*",
+        "password_repeat": "q1rAKuk0v^@*"
+      }
+    }
+  ]
+}
+

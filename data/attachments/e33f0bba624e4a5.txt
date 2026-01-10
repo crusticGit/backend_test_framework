@@ -1,0 +1,32 @@
+[2026-01-10 19:40:08,523 - INFO] - Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 154' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=lwillistestUser980&password=SVuh5XRiFmsS8%5EG%2A6L%21VzTJpFXnHrg&password_repeat=SVuh5XRiFmsS8%5EG%2A6L%21VzTJpFXnHrg&email=iwaters%40example.com' http://auth:8000/auth/register/
+[2026-01-10 19:40:08,523 - INFO] - Response status code="201", elapsed_time="0:00:00.259566"
+{
+  "detail": "User registered"
+}
+
+[2026-01-10 19:40:08,861 - INFO] - Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 73' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=lwillistestUser980&password=SVuh5XRiFmsS8%5EG%2A6L%21VzTJpFXnHrg' http://auth:8000/auth/login/
+[2026-01-10 19:40:08,861 - INFO] - Response status code="200", elapsed_time="0:00:00.296777"
+{
+  "access_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMyLCJ1c2VybmFtZSI6Imx3aWxsaXN0ZXN0VXNlcjk4MCIsImV4cCI6MTc2ODA4MTIwOCwiaWF0IjoxNzY4MDc0MDA4fQ.HcPhpqdwtFdyInwQAZHFAe9YmmHXNVrc06AG6H1NUiRdsZ-_caBqhTrTaGBzyZFKfWWt9nh4VbcxdXe00VTAT1r6p9nXgfZ2VP5gRNgiJd6PjtY7hwm8duSHmwVINFnLoBzy7qKocb66f0q19pepc0xZ1UPedd0qg3A2-vycBOKN5oe-jm_xvnlAWbbP4FVtXflwuBXjOzRqqw4CBdKCBRmdl7r26KeailoE1NA_pbx9DHVMFvaawM3DnMPLSi9OR8f4DCahyNRNK3ayIZbBGiZOckX5MME_kcP6jIXnYHGvqRRLvlrg_SGgzSXfzEYAK3fm2VZ9NHeJhVzkcV0gMg",
+  "token_type": "Bearer"
+}
+
+[2026-01-10 19:40:08,873 - INFO] - Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMyLCJ1c2VybmFtZSI6Imx3aWxsaXN0ZXN0VXNlcjk4MCIsImV4cCI6MTc2ODA4MTIwOCwiaWF0IjoxNzY4MDc0MDA4fQ.HcPhpqdwtFdyInwQAZHFAe9YmmHXNVrc06AG6H1NUiRdsZ-_caBqhTrTaGBzyZFKfWWt9nh4VbcxdXe00VTAT1r6p9nXgfZ2VP5gRNgiJd6PjtY7hwm8duSHmwVINFnLoBzy7qKocb66f0q19pepc0xZ1UPedd0qg3A2-vycBOKN5oe-jm_xvnlAWbbP4FVtXflwuBXjOzRqqw4CBdKCBRmdl7r26KeailoE1NA_pbx9DHVMFvaawM3DnMPLSi9OR8f4DCahyNRNK3ayIZbBGiZOckX5MME_kcP6jIXnYHGvqRRLvlrg_SGgzSXfzEYAK3fm2VZ9NHeJhVzkcV0gMg' -H 'Content-Length: 50' -H 'Content-Type: application/json' -d '{"name": "group-Foley, Whitaker and Fischer-6787"}' http://university:8000/groups/
+[2026-01-10 19:40:08,873 - INFO] - Response status code="201", elapsed_time="0:00:00.010278"
+{
+  "name": "group-Foley, Whitaker and Fischer-6787",
+  "id": 17
+}
+
+[2026-01-10 19:40:08,922 - INFO] - Request: curl -X DELETE -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMyLCJ1c2VybmFtZSI6Imx3aWxsaXN0ZXN0VXNlcjk4MCIsImV4cCI6MTc2ODA4MTIwOCwiaWF0IjoxNzY4MDc0MDA4fQ.HcPhpqdwtFdyInwQAZHFAe9YmmHXNVrc06AG6H1NUiRdsZ-_caBqhTrTaGBzyZFKfWWt9nh4VbcxdXe00VTAT1r6p9nXgfZ2VP5gRNgiJd6PjtY7hwm8duSHmwVINFnLoBzy7qKocb66f0q19pepc0xZ1UPedd0qg3A2-vycBOKN5oe-jm_xvnlAWbbP4FVtXflwuBXjOzRqqw4CBdKCBRmdl7r26KeailoE1NA_pbx9DHVMFvaawM3DnMPLSi9OR8f4DCahyNRNK3ayIZbBGiZOckX5MME_kcP6jIXnYHGvqRRLvlrg_SGgzSXfzEYAK3fm2VZ9NHeJhVzkcV0gMg' -H 'Content-Length: 0' http://university:8000/groups/17/
+[2026-01-10 19:40:08,922 - INFO] - Response status code="200", elapsed_time="0:00:00.007138"
+{
+  "detail": "Group deleted"
+}
+
+[2026-01-10 19:40:08,971 - INFO] - Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMyLCJ1c2VybmFtZSI6Imx3aWxsaXN0ZXN0VXNlcjk4MCIsImV4cCI6MTc2ODA4MTIwOCwiaWF0IjoxNzY4MDc0MDA4fQ.HcPhpqdwtFdyInwQAZHFAe9YmmHXNVrc06AG6H1NUiRdsZ-_caBqhTrTaGBzyZFKfWWt9nh4VbcxdXe00VTAT1r6p9nXgfZ2VP5gRNgiJd6PjtY7hwm8duSHmwVINFnLoBzy7qKocb66f0q19pepc0xZ1UPedd0qg3A2-vycBOKN5oe-jm_xvnlAWbbP4FVtXflwuBXjOzRqqw4CBdKCBRmdl7r26KeailoE1NA_pbx9DHVMFvaawM3DnMPLSi9OR8f4DCahyNRNK3ayIZbBGiZOckX5MME_kcP6jIXnYHGvqRRLvlrg_SGgzSXfzEYAK3fm2VZ9NHeJhVzkcV0gMg' -H 'Content-Length: 146' -H 'Content-Type: application/json' -d '{"first_name": "Joyce", "last_name": "Koch", "email": "rittermadison@example.com", "degree": "Associate", "phone": "+70874560699", "group_id": 17}' http://university:8000/students/
+[2026-01-10 19:40:08,971 - INFO] - Response status code="404", elapsed_time="0:00:00.007856"
+{
+  "detail": "Group not found"
+}
+

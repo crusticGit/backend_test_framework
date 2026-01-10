@@ -1,0 +1,38 @@
+[2026-01-10 19:40:06,488 - INFO] - Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 162' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=carol26testUser168&password=%2Bz5Uu7t%26zB6RGLs5JD_%2BXav%2BETJS%28s&password_repeat=%2Bz5Uu7t%26zB6RGLs5JD_%2BXav%2BETJS%28s&email=linda35%40example.com' http://auth:8000/auth/register/
+[2026-01-10 19:40:06,488 - INFO] - Response status code="201", elapsed_time="0:00:00.261190"
+{
+  "detail": "User registered"
+}
+
+[2026-01-10 19:40:06,825 - INFO] - Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 77' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=carol26testUser168&password=%2Bz5Uu7t%26zB6RGLs5JD_%2BXav%2BETJS%28s' http://auth:8000/auth/login/
+[2026-01-10 19:40:06,825 - INFO] - Response status code="200", elapsed_time="0:00:00.295958"
+{
+  "access_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjI5LCJ1c2VybmFtZSI6ImNhcm9sMjZ0ZXN0VXNlcjE2OCIsImV4cCI6MTc2ODA4MTIwNiwiaWF0IjoxNzY4MDc0MDA2fQ.h4LCQwSm3cVtmvkYubFwE1mmAadyAEEyWoQJMlItbq7-JPodPtjRou8XwfaZHMwJWxtqE1oYu_d-yTDw1pD-2k9iHGStzJ_7muF-Ls7JZ0u-R8UJ6vpmVzxUQk79XQZnpQD9LkBEB7SM6mKshJjmfbFahLKOYqfDnfbGFbT6rgjYQCZVIPZ5BJuENLiJ7hEM1vK_cZRtrDjRXKZPw84y8MRu_JixCEVeQFe2c4-uBj4XXiXZ7gLi7Cl_hYxlWOAAfkHNXIl97zTAMqW5Cns1ODixlVyVxyYq1wmfUFJvWIZf6sloaBnnQ1qX61FwD3VNOL64Ytm3T6KiLa7_t4EBWg",
+  "token_type": "Bearer"
+}
+
+[2026-01-10 19:40:06,838 - INFO] - Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjI5LCJ1c2VybmFtZSI6ImNhcm9sMjZ0ZXN0VXNlcjE2OCIsImV4cCI6MTc2ODA4MTIwNiwiaWF0IjoxNzY4MDc0MDA2fQ.h4LCQwSm3cVtmvkYubFwE1mmAadyAEEyWoQJMlItbq7-JPodPtjRou8XwfaZHMwJWxtqE1oYu_d-yTDw1pD-2k9iHGStzJ_7muF-Ls7JZ0u-R8UJ6vpmVzxUQk79XQZnpQD9LkBEB7SM6mKshJjmfbFahLKOYqfDnfbGFbT6rgjYQCZVIPZ5BJuENLiJ7hEM1vK_cZRtrDjRXKZPw84y8MRu_JixCEVeQFe2c4-uBj4XXiXZ7gLi7Cl_hYxlWOAAfkHNXIl97zTAMqW5Cns1ODixlVyVxyYq1wmfUFJvWIZf6sloaBnnQ1qX61FwD3VNOL64Ytm3T6KiLa7_t4EBWg' -H 'Content-Length: 44' -H 'Content-Type: application/json' -d '{"name": "group-Kim, Ellis and Wright-3961"}' http://university:8000/groups/
+[2026-01-10 19:40:06,838 - INFO] - Response status code="201", elapsed_time="0:00:00.010724"
+{
+  "name": "group-Kim, Ellis and Wright-3961",
+  "id": 15
+}
+
+[2026-01-10 19:40:06,887 - INFO] - Request: curl -X DELETE -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjI5LCJ1c2VybmFtZSI6ImNhcm9sMjZ0ZXN0VXNlcjE2OCIsImV4cCI6MTc2ODA4MTIwNiwiaWF0IjoxNzY4MDc0MDA2fQ.h4LCQwSm3cVtmvkYubFwE1mmAadyAEEyWoQJMlItbq7-JPodPtjRou8XwfaZHMwJWxtqE1oYu_d-yTDw1pD-2k9iHGStzJ_7muF-Ls7JZ0u-R8UJ6vpmVzxUQk79XQZnpQD9LkBEB7SM6mKshJjmfbFahLKOYqfDnfbGFbT6rgjYQCZVIPZ5BJuENLiJ7hEM1vK_cZRtrDjRXKZPw84y8MRu_JixCEVeQFe2c4-uBj4XXiXZ7gLi7Cl_hYxlWOAAfkHNXIl97zTAMqW5Cns1ODixlVyVxyYq1wmfUFJvWIZf6sloaBnnQ1qX61FwD3VNOL64Ytm3T6KiLa7_t4EBWg' -H 'Content-Length: 0' http://university:8000/groups/15/
+[2026-01-10 19:40:06,887 - INFO] - Response status code="200", elapsed_time="0:00:00.008324"
+{
+  "detail": "Group deleted"
+}
+
+[2026-01-10 19:40:06,936 - INFO] - Request: curl -X DELETE -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjI5LCJ1c2VybmFtZSI6ImNhcm9sMjZ0ZXN0VXNlcjE2OCIsImV4cCI6MTc2ODA4MTIwNiwiaWF0IjoxNzY4MDc0MDA2fQ.h4LCQwSm3cVtmvkYubFwE1mmAadyAEEyWoQJMlItbq7-JPodPtjRou8XwfaZHMwJWxtqE1oYu_d-yTDw1pD-2k9iHGStzJ_7muF-Ls7JZ0u-R8UJ6vpmVzxUQk79XQZnpQD9LkBEB7SM6mKshJjmfbFahLKOYqfDnfbGFbT6rgjYQCZVIPZ5BJuENLiJ7hEM1vK_cZRtrDjRXKZPw84y8MRu_JixCEVeQFe2c4-uBj4XXiXZ7gLi7Cl_hYxlWOAAfkHNXIl97zTAMqW5Cns1ODixlVyVxyYq1wmfUFJvWIZf6sloaBnnQ1qX61FwD3VNOL64Ytm3T6KiLa7_t4EBWg' -H 'Content-Length: 0' http://university:8000/groups/15/
+[2026-01-10 19:40:06,936 - INFO] - Response status code="404", elapsed_time="0:00:00.007974"
+{
+  "detail": "Group not found"
+}
+
+[2026-01-10 19:40:06,985 - INFO] - Request: curl -X PUT -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjI5LCJ1c2VybmFtZSI6ImNhcm9sMjZ0ZXN0VXNlcjE2OCIsImV4cCI6MTc2ODA4MTIwNiwiaWF0IjoxNzY4MDc0MDA2fQ.h4LCQwSm3cVtmvkYubFwE1mmAadyAEEyWoQJMlItbq7-JPodPtjRou8XwfaZHMwJWxtqE1oYu_d-yTDw1pD-2k9iHGStzJ_7muF-Ls7JZ0u-R8UJ6vpmVzxUQk79XQZnpQD9LkBEB7SM6mKshJjmfbFahLKOYqfDnfbGFbT6rgjYQCZVIPZ5BJuENLiJ7hEM1vK_cZRtrDjRXKZPw84y8MRu_JixCEVeQFe2c4-uBj4XXiXZ7gLi7Cl_hYxlWOAAfkHNXIl97zTAMqW5Cns1ODixlVyVxyYq1wmfUFJvWIZf6sloaBnnQ1qX61FwD3VNOL64Ytm3T6KiLa7_t4EBWg' -H 'Content-Length: 37' -H 'Content-Type: application/json' -d '{"name": "group-White and Sons-1324"}' http://university:8000/groups/15/
+[2026-01-10 19:40:06,985 - INFO] - Response status code="404", elapsed_time="0:00:00.007962"
+{
+  "detail": "Group not found"
+}
+

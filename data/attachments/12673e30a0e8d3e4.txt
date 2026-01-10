@@ -1,0 +1,24 @@
+INFO     Logger:logger.py:35 Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 163' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=christopherleonardtestUser178&password=vz5JDT%28wrQp7Zjn2%23_7_gmal86aWLw&password_repeat=vz5JDT%28wrQp7Zjn2%23_7_gmal86aWLw&email=wholloway%40example.com' http://auth:8000/auth/register/
+INFO     Logger:logger.py:35 Response status code="201", elapsed_time="0:00:00.261339"
+{
+  "detail": "User registered"
+}
+
+INFO     Logger:logger.py:35 Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 82' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=christopherleonardtestUser178&password=vz5JDT%28wrQp7Zjn2%23_7_gmal86aWLw' http://auth:8000/auth/login/
+INFO     Logger:logger.py:35 Response status code="200", elapsed_time="0:00:00.295499"
+{
+  "access_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIyLCJ1c2VybmFtZSI6ImNocmlzdG9waGVybGVvbmFyZHRlc3RVc2VyMTc4IiwiZXhwIjoxNzY4MDgxMjAyLCJpYXQiOjE3NjgwNzQwMDJ9.FchP9glC1AEP4Ilu4tvruKN8Q0XvIeJWMUdUZC67VbJyhiHQUruDDGoHs-zWnuTCDd8mkRNxFKTaCzzzy1LAcs8xaB8UZguBYcW8E9jqH4rg1Q8Ly3okcSDzi5FAdHmobohxW9Dqd3aR7y-NAQjbvJ6FiJ4AHorLoqS-dRlA0edE2maZ7ncwMrCmJJlnwRvF5YGQOoY7JGDS3nmWf71hI1bsDe9inXGyhyjWJ2lbSruak1eh9eUeN8IeioR6s7H-Y3EOMgy3kDtTsOkYVBXQHht-pfmsjUtnl2-YuXIjeS-OletaSukvFDcR9YKGtWW1fHLKBk_gXjIZX-YvX5KRDA",
+  "token_type": "Bearer"
+}
+INFO     Logger:logger.py:35 Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIyLCJ1c2VybmFtZSI6ImNocmlzdG9waGVybGVvbmFyZHRlc3RVc2VyMTc4IiwiZXhwIjoxNzY4MDgxMjAyLCJpYXQiOjE3NjgwNzQwMDJ9.FchP9glC1AEP4Ilu4tvruKN8Q0XvIeJWMUdUZC67VbJyhiHQUruDDGoHs-zWnuTCDd8mkRNxFKTaCzzzy1LAcs8xaB8UZguBYcW8E9jqH4rg1Q8Ly3okcSDzi5FAdHmobohxW9Dqd3aR7y-NAQjbvJ6FiJ4AHorLoqS-dRlA0edE2maZ7ncwMrCmJJlnwRvF5YGQOoY7JGDS3nmWf71hI1bsDe9inXGyhyjWJ2lbSruak1eh9eUeN8IeioR6s7H-Y3EOMgy3kDtTsOkYVBXQHht-pfmsjUtnl2-YuXIjeS-OletaSukvFDcR9YKGtWW1fHLKBk_gXjIZX-YvX5KRDA' -H 'Content-Length: 52' -H 'Content-Type: application/json' -d '{"name": "group-Livingston, Black and Johnson-6762"}' http://university:8000/groups/
+INFO     Logger:logger.py:35 Response status code="201", elapsed_time="0:00:00.010462"
+{
+  "name": "group-Livingston, Black and Johnson-6762",
+  "id": 11
+}
+
+INFO     Logger:logger.py:35 Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIyLCJ1c2VybmFtZSI6ImNocmlzdG9waGVybGVvbmFyZHRlc3RVc2VyMTc4IiwiZXhwIjoxNzY4MDgxMjAyLCJpYXQiOjE3NjgwNzQwMDJ9.FchP9glC1AEP4Ilu4tvruKN8Q0XvIeJWMUdUZC67VbJyhiHQUruDDGoHs-zWnuTCDd8mkRNxFKTaCzzzy1LAcs8xaB8UZguBYcW8E9jqH4rg1Q8Ly3okcSDzi5FAdHmobohxW9Dqd3aR7y-NAQjbvJ6FiJ4AHorLoqS-dRlA0edE2maZ7ncwMrCmJJlnwRvF5YGQOoY7JGDS3nmWf71hI1bsDe9inXGyhyjWJ2lbSruak1eh9eUeN8IeioR6s7H-Y3EOMgy3kDtTsOkYVBXQHht-pfmsjUtnl2-YuXIjeS-OletaSukvFDcR9YKGtWW1fHLKBk_gXjIZX-YvX5KRDA' -H 'Content-Length: 52' -H 'Content-Type: application/json' -d '{"name": "group-Livingston, Black and Johnson-6762"}' http://university:8000/groups/
+INFO     Logger:logger.py:35 Response status code="409", elapsed_time="0:00:00.006977"
+{
+  "detail": "Group is already created"
+}

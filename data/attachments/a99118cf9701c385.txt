@@ -1,0 +1,18 @@
+INFO     Logger:logger.py:35 Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 166' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=gregoryandersontestUser-735&password=%2Bh9_Ujy5U_iKCgYi7%29J5s4cF%23%28omzQ&password_repeat=%2Bh9_Ujy5U_iKCgYi7%29J5s4cF%23%28omzQ&email=mwoods%40example.net' http://auth:8000/auth/register/
+INFO     Logger:logger.py:35 Response status code="201", elapsed_time="0:00:00.259320"
+{
+  "detail": "User registered"
+}
+
+INFO     Logger:logger.py:35 Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 84' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=gregoryandersontestUser-735&password=%2Bh9_Ujy5U_iKCgYi7%29J5s4cF%23%28omzQ' http://auth:8000/auth/login/
+INFO     Logger:logger.py:35 Response status code="200", elapsed_time="0:00:00.295221"
+{
+  "access_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIxLCJ1c2VybmFtZSI6ImdyZWdvcnlhbmRlcnNvbnRlc3RVc2VyLTczNSIsImV4cCI6MTc2ODA4MTIwMSwiaWF0IjoxNzY4MDc0MDAxfQ.icsKspHTrxtNZ4eiLarOggVWdAsk8EpdaH3whEV7e-hiRiIjkCEzP5UKFBvb7uQehgxVs1oUZonxAsgMS_3Zq4S3ahFq-qnl2G2MFMZBfM1gSogdKupcfxfn16oI0Jxt6d6Hp5nVMtjPLQtub3VQ5Ottm1JbmsUthIz3LNn25WG8XgBVIkvRzZWqtt2jqdJrFRxjMDTgcEX-z4VkguPp5LhDoHWkH-FDwW12_9bxd7HjctvTRqkvwbAc701CbRfd3Maqp91VijroI-NbGX8WGDBm6JsoCuJZnTLdLFwUqZUesk1YF9lIbmBrJvhA5O-kjTZ3BkMxcV6Xa1OCeUR5Yw",
+  "token_type": "Bearer"
+}
+INFO     Logger:logger.py:35 Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIxLCJ1c2VybmFtZSI6ImdyZWdvcnlhbmRlcnNvbnRlc3RVc2VyLTczNSIsImV4cCI6MTc2ODA4MTIwMSwiaWF0IjoxNzY4MDc0MDAxfQ.icsKspHTrxtNZ4eiLarOggVWdAsk8EpdaH3whEV7e-hiRiIjkCEzP5UKFBvb7uQehgxVs1oUZonxAsgMS_3Zq4S3ahFq-qnl2G2MFMZBfM1gSogdKupcfxfn16oI0Jxt6d6Hp5nVMtjPLQtub3VQ5Ottm1JbmsUthIz3LNn25WG8XgBVIkvRzZWqtt2jqdJrFRxjMDTgcEX-z4VkguPp5LhDoHWkH-FDwW12_9bxd7HjctvTRqkvwbAc701CbRfd3Maqp91VijroI-NbGX8WGDBm6JsoCuJZnTLdLFwUqZUesk1YF9lIbmBrJvhA5O-kjTZ3BkMxcV6Xa1OCeUR5Yw' -H 'Content-Length: 31' -H 'Content-Type: application/json' -d '{"name": "group-Howe Ltd-2617"}' http://university:8000/groups/
+INFO     Logger:logger.py:35 Response status code="201", elapsed_time="0:00:00.010916"
+{
+  "name": "group-Howe Ltd-2617",
+  "id": 10
+}

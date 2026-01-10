@@ -1,0 +1,20 @@
+[2026-01-10 19:39:50,531 - INFO] - Step 1. Register user
+[2026-01-10 19:39:50,535 - INFO] - Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 80' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=michael19&password=neohslcbu5P%2A&password_repeat=neohslcbu5P%2A&email=' http://auth:8000/auth/register/
+[2026-01-10 19:39:50,535 - INFO] - Response status code="422", elapsed_time="0:00:00.002430"
+{
+  "detail": [
+    {
+      "type": "value_error",
+      "loc": [
+        "body",
+        "email"
+      ],
+      "msg": "value is not a valid email address: An email address must have an @-sign.",
+      "input": "",
+      "ctx": {
+        "reason": "An email address must have an @-sign."
+      }
+    }
+  ]
+}
+

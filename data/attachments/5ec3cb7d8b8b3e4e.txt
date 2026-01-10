@@ -1,0 +1,24 @@
+[2026-01-10 19:39:53,185 - INFO] - Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 244' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=timothy98&password=%28vX9RKBgaf%2966QWRfd2Sl%29acCci5qWhw5%5E%23SFtZT%28D1_%25fOb5L1bHrwNc4ImQlzEtBxxn9XO&password_repeat=%28vX9RKBgaf%2966QWRfd2Sl%29acCci5qWhw5%5E%23SFtZT%28D1_%25fOb5L1bHrwNc4ImQlzEtBxxn9XO&email=eriley%40example.net' http://auth:8000/auth/register/
+[2026-01-10 19:39:53,186 - INFO] - Response status code="201", elapsed_time="0:00:00.259536"
+{
+  "detail": "User registered"
+}
+
+[2026-01-10 19:39:53,228 - INFO] - Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 95' -H 'Content-Type: application/x-www-form-urlencoded' -d password=%28vX9RKBgaf%2966QWRfd2Sl%29acCci5qWhw5%5E%23SFtZT%28D1_%25fOb5L1bHrwNc4ImQlzEtBxxn9XO http://auth:8000/auth/login/
+[2026-01-10 19:39:53,228 - INFO] - Response status code="422", elapsed_time="0:00:00.001713"
+{
+  "detail": [
+    {
+      "type": "missing",
+      "loc": [
+        "body",
+        "username"
+      ],
+      "msg": "Field required",
+      "input": {
+        "password": "(vX9RKBgaf)66QWRfd2Sl)acCci5qWhw5^#SFtZT(D1_%fOb5L1bHrwNc4ImQlzEtBxxn9XO"
+      }
+    }
+  ]
+}
+

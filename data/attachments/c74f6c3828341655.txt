@@ -1,0 +1,24 @@
+[2026-01-10 19:39:53,491 - INFO] - Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 134' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=lmunoz&password=RuwFNxVj7%2BY8Bji%2323n%2BSDLV3&password_repeat=RuwFNxVj7%2BY8Bji%2323n%2BSDLV3&email=heather07%40example.net' http://auth:8000/auth/register/
+[2026-01-10 19:39:53,491 - INFO] - Response status code="201", elapsed_time="0:00:00.259243"
+{
+  "detail": "User registered"
+}
+
+[2026-01-10 19:39:53,534 - INFO] - Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 15' -H 'Content-Type: application/x-www-form-urlencoded' -d username=lmunoz http://auth:8000/auth/login/
+[2026-01-10 19:39:53,534 - INFO] - Response status code="422", elapsed_time="0:00:00.001683"
+{
+  "detail": [
+    {
+      "type": "missing",
+      "loc": [
+        "body",
+        "password"
+      ],
+      "msg": "Field required",
+      "input": {
+        "username": "lmunoz"
+      }
+    }
+  ]
+}
+

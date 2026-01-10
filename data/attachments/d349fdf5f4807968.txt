@@ -1,0 +1,6 @@
+[2026-01-10 19:40:05,559 - INFO] - Request: curl -X PUT -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 2' -H 'Content-Type: application/json' -d '{}' http://university:8000/groups/3542/
+[2026-01-10 19:40:05,559 - INFO] - Response status code="403", elapsed_time="0:00:00.001885"
+{
+  "detail": "Access denied"
+}
+

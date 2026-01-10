@@ -1,0 +1,44 @@
+[2026-01-10 19:40:11,333 - INFO] - Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 166' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=taylorvanessatestUser99&password=%284FZ77%2B2L%40lvc6FXHmW%21TaV%23Wrjp6z&password_repeat=%284FZ77%2B2L%40lvc6FXHmW%21TaV%23Wrjp6z&email=jprice%40example.com' http://auth:8000/auth/register/
+[2026-01-10 19:40:11,334 - INFO] - Response status code="201", elapsed_time="0:00:00.259522"
+{
+  "detail": "User registered"
+}
+
+[2026-01-10 19:40:11,670 - INFO] - Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 82' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=taylorvanessatestUser99&password=%284FZ77%2B2L%40lvc6FXHmW%21TaV%23Wrjp6z' http://auth:8000/auth/login/
+[2026-01-10 19:40:11,670 - INFO] - Response status code="200", elapsed_time="0:00:00.295206"
+{
+  "access_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjM2LCJ1c2VybmFtZSI6InRheWxvcnZhbmVzc2F0ZXN0VXNlcjk5IiwiZXhwIjoxNzY4MDgxMjExLCJpYXQiOjE3NjgwNzQwMTF9.PWfZ_fzU0Nwwf0i2MV7vgY_RpspEejeePaSIlvI5RzR1Zj46ddt1klAeUxRlFCMo0smxMO6lHd0pGx1RBG__tdEXmA7RHPL0oaajbheWimXTv1TMhjrBif4w-E6tz9FGWqQJZ4UtpHmnJCSzZ1abhVnI2eyQGPXWihcVYibMz6R_jKc98C7P9oyAoV1lyBwDgw_OnRADgZLd1VXSWbNJ97o_6spjoRQyJDN_roeaAcGetHlf-zjIJinM_GP9uVLC2VNY77bLTl9Bsqh1OGvzoacXfuwEreP0JtsHEKZam322YXJOxfM8IcwNxOKbZcpLh-qsQQrNgAixu5qynIFCpA",
+  "token_type": "Bearer"
+}
+
+[2026-01-10 19:40:11,682 - INFO] - Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjM2LCJ1c2VybmFtZSI6InRheWxvcnZhbmVzc2F0ZXN0VXNlcjk5IiwiZXhwIjoxNzY4MDgxMjExLCJpYXQiOjE3NjgwNzQwMTF9.PWfZ_fzU0Nwwf0i2MV7vgY_RpspEejeePaSIlvI5RzR1Zj46ddt1klAeUxRlFCMo0smxMO6lHd0pGx1RBG__tdEXmA7RHPL0oaajbheWimXTv1TMhjrBif4w-E6tz9FGWqQJZ4UtpHmnJCSzZ1abhVnI2eyQGPXWihcVYibMz6R_jKc98C7P9oyAoV1lyBwDgw_OnRADgZLd1VXSWbNJ97o_6spjoRQyJDN_roeaAcGetHlf-zjIJinM_GP9uVLC2VNY77bLTl9Bsqh1OGvzoacXfuwEreP0JtsHEKZam322YXJOxfM8IcwNxOKbZcpLh-qsQQrNgAixu5qynIFCpA' -H 'Content-Length: 37' -H 'Content-Type: application/json' -d '{"name": "group-Sanchez-Garcia-5652"}' http://university:8000/groups/
+[2026-01-10 19:40:11,682 - INFO] - Response status code="201", elapsed_time="0:00:00.010262"
+{
+  "name": "group-Sanchez-Garcia-5652",
+  "id": 20
+}
+
+[2026-01-10 19:40:11,733 - INFO] - Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjM2LCJ1c2VybmFtZSI6InRheWxvcnZhbmVzc2F0ZXN0VXNlcjk5IiwiZXhwIjoxNzY4MDgxMjExLCJpYXQiOjE3NjgwNzQwMTF9.PWfZ_fzU0Nwwf0i2MV7vgY_RpspEejeePaSIlvI5RzR1Zj46ddt1klAeUxRlFCMo0smxMO6lHd0pGx1RBG__tdEXmA7RHPL0oaajbheWimXTv1TMhjrBif4w-E6tz9FGWqQJZ4UtpHmnJCSzZ1abhVnI2eyQGPXWihcVYibMz6R_jKc98C7P9oyAoV1lyBwDgw_OnRADgZLd1VXSWbNJ97o_6spjoRQyJDN_roeaAcGetHlf-zjIJinM_GP9uVLC2VNY77bLTl9Bsqh1OGvzoacXfuwEreP0JtsHEKZam322YXJOxfM8IcwNxOKbZcpLh-qsQQrNgAixu5qynIFCpA' -H 'Content-Length: 148' -H 'Content-Type: application/json' -d '{"first_name": "Kyle", "last_name": "Sandoval", "email": "walkerheather@example.com", "degree": "Bachelor", "phone": "+75534199278", "group_id": 20}' http://university:8000/students/
+[2026-01-10 19:40:11,733 - INFO] - Response status code="201", elapsed_time="0:00:00.009498"
+{
+  "first_name": "Kyle",
+  "last_name": "Sandoval",
+  "email": "walkerheather@example.com",
+  "degree": "Bachelor",
+  "phone": "+75534199278",
+  "group_id": 20,
+  "id": 13
+}
+
+[2026-01-10 19:40:11,782 - INFO] - Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjM2LCJ1c2VybmFtZSI6InRheWxvcnZhbmVzc2F0ZXN0VXNlcjk5IiwiZXhwIjoxNzY4MDgxMjExLCJpYXQiOjE3NjgwNzQwMTF9.PWfZ_fzU0Nwwf0i2MV7vgY_RpspEejeePaSIlvI5RzR1Zj46ddt1klAeUxRlFCMo0smxMO6lHd0pGx1RBG__tdEXmA7RHPL0oaajbheWimXTv1TMhjrBif4w-E6tz9FGWqQJZ4UtpHmnJCSzZ1abhVnI2eyQGPXWihcVYibMz6R_jKc98C7P9oyAoV1lyBwDgw_OnRADgZLd1VXSWbNJ97o_6spjoRQyJDN_roeaAcGetHlf-zjIJinM_GP9uVLC2VNY77bLTl9Bsqh1OGvzoacXfuwEreP0JtsHEKZam322YXJOxfM8IcwNxOKbZcpLh-qsQQrNgAixu5qynIFCpA' http://university:8000/students/13/
+[2026-01-10 19:40:11,782 - INFO] - Response status code="200", elapsed_time="0:00:00.007850"
+{
+  "first_name": "Kyle",
+  "last_name": "Sandoval",
+  "email": "walkerheather@example.com",
+  "degree": "Bachelor",
+  "phone": "+75534199278",
+  "group_id": 20,
+  "id": 13
+}
+

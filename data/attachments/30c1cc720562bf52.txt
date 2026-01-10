@@ -1,0 +1,99 @@
+[2026-01-10 19:40:09,239 - INFO] - Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 173' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=scottashleytestUser11&password=D905LAU7u%23l%40Zs3l%2B%29%2BESUd5%2AA%24VMK&password_repeat=D905LAU7u%23l%40Zs3l%2B%29%2BESUd5%2AA%24VMK&email=james75%40example.org' http://auth:8000/auth/register/
+[2026-01-10 19:40:09,239 - INFO] - Response status code="201", elapsed_time="0:00:00.259863"
+{
+  "detail": "User registered"
+}
+
+[2026-01-10 19:40:09,575 - INFO] - Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 84' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=scottashleytestUser11&password=D905LAU7u%23l%40Zs3l%2B%29%2BESUd5%2AA%24VMK' http://auth:8000/auth/login/
+[2026-01-10 19:40:09,575 - INFO] - Response status code="200", elapsed_time="0:00:00.295161"
+{
+  "access_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMzLCJ1c2VybmFtZSI6InNjb3R0YXNobGV5dGVzdFVzZXIxMSIsImV4cCI6MTc2ODA4MTIwOSwiaWF0IjoxNzY4MDc0MDA5fQ.WzjIGPjNc9Mtvj4zFAN6KO_mxzWIgvmzWkx2Y4fm0EMoKknFXF6ShlFfIybKWE214VlBHlTDSFdHqdVoem6ktWEQpJ8PfUlVQxrDJ_cA1iQg8EbIrYAWh_zu8Z1XewbUevFk7C8-7kjMV6Zfmxh-E4Ro6ZW-4E7XKlYajclBJ1inRYKYiLlBw0a71vkJQxu_IJNAEoxIMasvUqpj1J04124NnCV5Pt3wi7zGwCPNdzwhPqowvNrgp5yZblFQYorgijCM8qqmIcE9R6lVbm2OPQ4a_mV5snrrFoG1zjWx_ULrygTxSiHK-a6b34jSt3_v9wUbixjuqyHa1lxWGN-b0Q",
+  "token_type": "Bearer"
+}
+
+[2026-01-10 19:40:09,586 - INFO] - Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMzLCJ1c2VybmFtZSI6InNjb3R0YXNobGV5dGVzdFVzZXIxMSIsImV4cCI6MTc2ODA4MTIwOSwiaWF0IjoxNzY4MDc0MDA5fQ.WzjIGPjNc9Mtvj4zFAN6KO_mxzWIgvmzWkx2Y4fm0EMoKknFXF6ShlFfIybKWE214VlBHlTDSFdHqdVoem6ktWEQpJ8PfUlVQxrDJ_cA1iQg8EbIrYAWh_zu8Z1XewbUevFk7C8-7kjMV6Zfmxh-E4Ro6ZW-4E7XKlYajclBJ1inRYKYiLlBw0a71vkJQxu_IJNAEoxIMasvUqpj1J04124NnCV5Pt3wi7zGwCPNdzwhPqowvNrgp5yZblFQYorgijCM8qqmIcE9R6lVbm2OPQ4a_mV5snrrFoG1zjWx_ULrygTxSiHK-a6b34jSt3_v9wUbixjuqyHa1lxWGN-b0Q' http://university:8000/students/
+[2026-01-10 19:40:09,586 - INFO] - Response status code="200", elapsed_time="0:00:00.009652"
+[
+  {
+    "first_name": "Elizabeth",
+    "last_name": "Diaz",
+    "email": "johnsonalicia@example.com",
+    "degree": "Doctorate",
+    "phone": "+76160011533",
+    "group_id": 1,
+    "id": 1
+  },
+  {
+    "first_name": "Nicole",
+    "last_name": "Lara",
+    "email": "smithamanda@example.org",
+    "degree": "Master",
+    "phone": "+72542945272",
+    "group_id": 3,
+    "id": 3
+  },
+  {
+    "first_name": "Edward",
+    "last_name": "Gonzalez",
+    "email": "andrewfox@example.com",
+    "degree": "Doctorate",
+    "phone": "+79565824760",
+    "group_id": 4,
+    "id": 4
+  },
+  {
+    "first_name": "Jennifer",
+    "last_name": "Newton",
+    "email": "huntermargaret@example.org",
+    "degree": "Master",
+    "phone": "+70815315707",
+    "group_id": 5,
+    "id": 5
+  },
+  {
+    "first_name": "Joseph",
+    "last_name": "Hendrix",
+    "email": "westjerry@example.net",
+    "degree": "Master",
+    "phone": "+70238755619",
+    "group_id": 6,
+    "id": 6
+  },
+  {
+    "first_name": "Brianna",
+    "last_name": "Wolf",
+    "email": "qmedina@example.org",
+    "degree": "Master",
+    "phone": "+76229508209",
+    "group_id": 7,
+    "id": 7
+  },
+  {
+    "first_name": "Daniel",
+    "last_name": "Cardenas",
+    "email": "davisangela@example.net",
+    "degree": "Master",
+    "phone": "+72385846198",
+    "group_id": 8,
+    "id": 8
+  },
+  {
+    "first_name": "Angelica",
+    "last_name": "Sims",
+    "email": "tjones@example.net",
+    "degree": "Associate",
+    "phone": "+70450712129",
+    "group_id": 9,
+    "id": 9
+  },
+  {
+    "first_name": "Melissa",
+    "last_name": "Todd",
+    "email": "leroynguyen@example.net",
+    "degree": "Associate",
+    "phone": "+78594787353",
+    "group_id": 16,
+    "id": 10
+  }
+]
+

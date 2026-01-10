@@ -1,0 +1,8 @@
+[2026-01-10 19:39:48,987 - INFO] - !auth_service_readiness!
+[2026-01-10 19:39:48,991 - INFO] - Step 1. Register user
+[2026-01-10 19:39:49,277 - INFO] - Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 353' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=morgantimothy&password=z%25%40X788sl%26TFSj1_mgkwp%21TO7ng%28Cy8%40Ih69H%5EID%26qde2z%21cfNRu%233B3K0pI2%23Al%2BAx9%23pYwfz7hUcb%24%29A%2BzoR2St2j%5ElgdU%40aY&password_repeat=z%25%40X788sl%26TFSj1_mgkwp%21TO7ng%28Cy8%40Ih69H%5EID%26qde2z%21cfNRu%233B3K0pI2%23Al%2BAx9%23pYwfz7hUcb%24%29A%2BzoR2St2j%5ElgdU%40aY&email=bradshawkelli%40example.net' http://auth:8000/auth/register/
+[2026-01-10 19:39:49,277 - INFO] - Response status code="201", elapsed_time="0:00:00.284389"
+{
+  "detail": "User registered"
+}
+

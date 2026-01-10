@@ -1,0 +1,13 @@
+[2026-01-10 19:39:51,716 - INFO] - Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 126' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=todd95&password=%2B_6FgFjaEb07saniw%29wLR5Y&password_repeat=%2B_6FgFjaEb07saniw%29wLR5Y&email=barbara40%40example.com' http://auth:8000/auth/register/
+[2026-01-10 19:39:51,716 - INFO] - Response status code="201", elapsed_time="0:00:00.258821"
+{
+  "detail": "User registered"
+}
+
+[2026-01-10 19:39:52,053 - INFO] - Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 52' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=todd95&password=%2B_6FgFjaEb07saniw%29wLR5Y' http://auth:8000/auth/login/
+[2026-01-10 19:39:52,053 - INFO] - Response status code="200", elapsed_time="0:00:00.295970"
+{
+  "access_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjcsInVzZXJuYW1lIjoidG9kZDk1IiwiZXhwIjoxNzY4MDgxMTkxLCJpYXQiOjE3NjgwNzM5OTF9.PUYwgDYkniRZzq9qR3FKtHqvWP1qnTe7cUjJ7pJJVASR8QBkkViSnPD9o-kowqwpJr08l5oOZzYZ0VCeAtP80ZQ9URhA9rxpwDyA_83KR4jQhXBkgNROLcPyL3oE_sesuyECgjFAlkTVH3cnIwiXgBhIpx0bwzF8Aup9X4U_rszfKJraDMlpqRroAvdH8Tpg1YJaWjjC8XYj_qyLemYC1DZe3g_ILcjZJH4v4NKKh2DfP1PiW9HnpYWWAHJrUdAgGVplHt2HLJLsrlYo0kFDnTcmYmx3rnNanDzFSO3949hJMhQ9btFZ1Ks9G_-lBg2BHH2psROaegvXLxFRxePDww",
+  "token_type": "Bearer"
+}
+

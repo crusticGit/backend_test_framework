@@ -1,0 +1,26 @@
+[2026-01-10 19:39:49,884 - INFO] - Step 1. Register user
+[2026-01-10 19:39:50,144 - INFO] - Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 133' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=jamesdixon&password=z%24c94ZV3HdRZLzugY%2AiLQU2&password_repeat=z%24c94ZV3HdRZLzugY%2AiLQU2&email=laurenguerra%40example.net' http://auth:8000/auth/register/
+[2026-01-10 19:39:50,144 - INFO] - Response status code="201", elapsed_time="0:00:00.259213"
+{
+  "detail": "User registered"
+}
+
+[2026-01-10 19:39:50,144 - INFO] - Step 2. Login user
+[2026-01-10 19:39:50,480 - INFO] - Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 56' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=jamesdixon&password=z%24c94ZV3HdRZLzugY%2AiLQU2' http://auth:8000/auth/login/
+[2026-01-10 19:39:50,480 - INFO] - Response status code="200", elapsed_time="0:00:00.295347"
+{
+  "access_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMsInVzZXJuYW1lIjoiamFtZXNkaXhvbiIsImV4cCI6MTc2ODA4MTE5MCwiaWF0IjoxNzY4MDczOTkwfQ.hAUKQEYG18DOMop_N45uGZ2-tfr2cr32sesyxSECDRWZ8P9X-M5NK4vFIE2FsthDfj2kaFok-_THkwRtkdzC2L20HCYjehPein__dieIy4iHX-pnWpol7rkZAbYEjJxG2cxLbXkoMykxyt75BIWPm-GClPOVsYv6oHULflhzuCx9lsnyvzMDBGJL0ceC7CBrS1hInqkCvBn2_0rQYE_C2fS-ouQczmDBbhd82IyZPrNThLGqCiL6cFSv7lZqCYpxw1pMRhbEgiDcCdfDLWnuc7s_8sWFysmKg94HOSQCcqRJopqCOV6jUZZxgQ-GW8uIBiTellZ365kIRld8yZIRJQ",
+  "token_type": "Bearer"
+}
+
+[2026-01-10 19:39:50,480 - INFO] - Step 3. Update session headers
+[2026-01-10 19:39:50,480 - INFO] - Step 4. Get user info
+[2026-01-10 19:39:50,525 - INFO] - Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMsInVzZXJuYW1lIjoiamFtZXNkaXhvbiIsImV4cCI6MTc2ODA4MTE5MCwiaWF0IjoxNzY4MDczOTkwfQ.hAUKQEYG18DOMop_N45uGZ2-tfr2cr32sesyxSECDRWZ8P9X-M5NK4vFIE2FsthDfj2kaFok-_THkwRtkdzC2L20HCYjehPein__dieIy4iHX-pnWpol7rkZAbYEjJxG2cxLbXkoMykxyt75BIWPm-GClPOVsYv6oHULflhzuCx9lsnyvzMDBGJL0ceC7CBrS1hInqkCvBn2_0rQYE_C2fS-ouQczmDBbhd82IyZPrNThLGqCiL6cFSv7lZqCYpxw1pMRhbEgiDcCdfDLWnuc7s_8sWFysmKg94HOSQCcqRJopqCOV6jUZZxgQ-GW8uIBiTellZ365kIRld8yZIRJQ' http://auth:8000/users/me/
+[2026-01-10 19:39:50,525 - INFO] - Response status code="200", elapsed_time="0:00:00.004122"
+{
+  "id": 3,
+  "username": "jamesdixon",
+  "email": "laurenguerra@example.net",
+  "is_enabled": true
+}
+

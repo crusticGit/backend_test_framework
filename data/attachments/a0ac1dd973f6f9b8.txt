@@ -1,0 +1,27 @@
+INFO     Logger:logger.py:35 Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 162' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=joannahaletestUser165&password=LWC1ABF%25_C8WNyRD%29aDh1%5Eiudg5X1Q&password_repeat=LWC1ABF%25_C8WNyRD%29aDh1%5Eiudg5X1Q&email=katrinakelly%40example.com' http://auth:8000/auth/register/
+INFO     Logger:logger.py:35 Response status code="201", elapsed_time="0:00:00.259322"
+{
+  "detail": "User registered"
+}
+
+INFO     Logger:logger.py:35 Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 76' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=joannahaletestUser165&password=LWC1ABF%25_C8WNyRD%29aDh1%5Eiudg5X1Q' http://auth:8000/auth/login/
+INFO     Logger:logger.py:35 Response status code="200", elapsed_time="0:00:00.295101"
+{
+  "access_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMwLCJ1c2VybmFtZSI6ImpvYW5uYWhhbGV0ZXN0VXNlcjE2NSIsImV4cCI6MTc2ODA4MTIwNywiaWF0IjoxNzY4MDc0MDA3fQ.iFkEsvy-dBk_ES4g4AJNFf-UlTguKCnHqkvEUtohCtITFsvBxpeRvwb5o91upPtdEUozZ4ZWEMNH-UmctCTC2tsb5epN2BrY832fy87_rcGMVCgjLIh5pL-0L1XMfsY6hH_eQ21w2bgynCeaABDiJsokHHP_X3UyROEEBEA7DhzPNsTVukTw8ZDKVaZnStmBvH3p5YiGxp2TKULBa-vCfkXSf4n7RoUEbfpNabt0ryMs8TZ2QkT3Nua48kukAoIVeTRL7sdXl3b06hz4Wu7CG9jLVuXbKBaT5hFdiVNgibZpdt5iQcfEHkB5jjMOfrCOKKOzASgYvx6zwt1Cao9ybg",
+  "token_type": "Bearer"
+}
+INFO     Logger:logger.py:35 Request: curl -X PUT -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMwLCJ1c2VybmFtZSI6ImpvYW5uYWhhbGV0ZXN0VXNlcjE2NSIsImV4cCI6MTc2ODA4MTIwNywiaWF0IjoxNzY4MDc0MDA3fQ.iFkEsvy-dBk_ES4g4AJNFf-UlTguKCnHqkvEUtohCtITFsvBxpeRvwb5o91upPtdEUozZ4ZWEMNH-UmctCTC2tsb5epN2BrY832fy87_rcGMVCgjLIh5pL-0L1XMfsY6hH_eQ21w2bgynCeaABDiJsokHHP_X3UyROEEBEA7DhzPNsTVukTw8ZDKVaZnStmBvH3p5YiGxp2TKULBa-vCfkXSf4n7RoUEbfpNabt0ryMs8TZ2QkT3Nua48kukAoIVeTRL7sdXl3b06hz4Wu7CG9jLVuXbKBaT5hFdiVNgibZpdt5iQcfEHkB5jjMOfrCOKKOzASgYvx6zwt1Cao9ybg' -H 'Content-Length: 36' -H 'Content-Type: application/json' -d '{"name": "group-Moore-Campbell-201"}' http://university:8000/groups/None/
+INFO     Logger:logger.py:35 Response status code="422", elapsed_time="0:00:00.007229"
+{
+  "detail": [
+    {
+      "type": "int_parsing",
+      "loc": [
+        "path",
+        "group_id"
+      ],
+      "msg": "Input should be a valid integer, unable to parse string as an integer",
+      "input": "None"
+    }
+  ]
+}

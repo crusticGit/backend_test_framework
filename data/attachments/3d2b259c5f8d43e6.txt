@@ -1,0 +1,20 @@
+INFO     Logger:logger.py:35 Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 161' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=loweashleytestUser665&password=%2BqNZcWn%21CR9nFvzw%2BwXfz%5EPIHEU3Cd&password_repeat=%2BqNZcWn%21CR9nFvzw%2BwXfz%5EPIHEU3Cd&email=lampaul%40example.org' http://auth:8000/auth/register/
+INFO     Logger:logger.py:35 Response status code="201", elapsed_time="0:00:00.268651"
+{
+  "detail": "User registered"
+}
+
+INFO     Logger:logger.py:35 Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 78' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=loweashleytestUser665&password=%2BqNZcWn%21CR9nFvzw%2BwXfz%5EPIHEU3Cd' http://auth:8000/auth/login/
+INFO     Logger:logger.py:35 Response status code="200", elapsed_time="0:00:00.295226"
+{
+  "access_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjQ0LCJ1c2VybmFtZSI6Imxvd2Vhc2hsZXl0ZXN0VXNlcjY2NSIsImV4cCI6MTc2ODA4MTIxNywiaWF0IjoxNzY4MDc0MDE3fQ.NaIZ1gdoRfjYrZHk4cLgR3WdHp0F51l-63WMNbSRCnjRCyza_ZAAbI8bQBFK7KMlLWqAh-_J1hQGa2jUb2yuBeHlx_fsu1vJGpx7smbkD0UEwLiH0dW_MRYc5BYpk-ZvHgRhuqldJ59q7rTaKUgt-21kQPBaxBdNob0EVcbdNuryl4poY974SEZDqHPZsh9FpWkG18eaiuVrpJ7UTGrD0L4IH7PzKtvPNBpONrVt4Ko9vsslkMDi8qs-CS9cG3FS3IEuSqdPiIgFG5nwbjok5655huEa5q-bLT6Qe1tNkSSHMgDMqU3zUuvlyDkq-MoAd4WZyqSaz8Dk-zu6q7-1xQ",
+  "token_type": "Bearer"
+}
+INFO     Logger:logger.py:35 Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjQ0LCJ1c2VybmFtZSI6Imxvd2Vhc2hsZXl0ZXN0VXNlcjY2NSIsImV4cCI6MTc2ODA4MTIxNywiaWF0IjoxNzY4MDc0MDE3fQ.NaIZ1gdoRfjYrZHk4cLgR3WdHp0F51l-63WMNbSRCnjRCyza_ZAAbI8bQBFK7KMlLWqAh-_J1hQGa2jUb2yuBeHlx_fsu1vJGpx7smbkD0UEwLiH0dW_MRYc5BYpk-ZvHgRhuqldJ59q7rTaKUgt-21kQPBaxBdNob0EVcbdNuryl4poY974SEZDqHPZsh9FpWkG18eaiuVrpJ7UTGrD0L4IH7PzKtvPNBpONrVt4Ko9vsslkMDi8qs-CS9cG3FS3IEuSqdPiIgFG5nwbjok5655huEa5q-bLT6Qe1tNkSSHMgDMqU3zUuvlyDkq-MoAd4WZyqSaz8Dk-zu6q7-1xQ' http://auth:8000/users/me/
+INFO     Logger:logger.py:35 Response status code="200", elapsed_time="0:00:00.004121"
+{
+  "id": 44,
+  "username": "loweashleytestUser665",
+  "email": "lampaul@example.org",
+  "is_enabled": true
+}

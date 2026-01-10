@@ -1,0 +1,19 @@
+INFO     Logger:logger.py:35 Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 143' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=imorgan&password=%2572haHl87Jv%219%28c8c%25%21cSJNmLfq%214%2Bt1tBLpJK1ur05%28INY%4017FkwMqmnu1OuSJEqUD9%2B&email=grivera%40example.com' http://auth:8000/auth/register/
+INFO     Logger:logger.py:35 Response status code="422", elapsed_time="0:00:00.001902"
+{
+  "detail": [
+    {
+      "type": "missing",
+      "loc": [
+        "body",
+        "password_repeat"
+      ],
+      "msg": "Field required",
+      "input": {
+        "username": "imorgan",
+        "password": "%72haHl87Jv!9(c8c%!cSJNmLfq!4+t1tBLpJK1ur05(INY@17FkwMqmnu1OuSJEqUD9+",
+        "email": "grivera@example.com"
+      }
+    }
+  ]
+}

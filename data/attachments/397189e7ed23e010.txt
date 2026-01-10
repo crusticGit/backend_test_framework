@@ -1,0 +1,19 @@
+[2026-01-10 19:39:51,418 - INFO] - Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 111' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=linda3431&password=fo%40yK%2Aci%253Hke&password_repeat=fo%40yK%2Aci%253Hke&email=barkerginaexample.com' http://auth:8000/auth/register/
+[2026-01-10 19:39:51,418 - INFO] - Response status code="422", elapsed_time="0:00:00.002410"
+{
+  "detail": [
+    {
+      "type": "value_error",
+      "loc": [
+        "body",
+        "email"
+      ],
+      "msg": "value is not a valid email address: An email address must have an @-sign.",
+      "input": "barkerginaexample.com",
+      "ctx": {
+        "reason": "An email address must have an @-sign."
+      }
+    }
+  ]
+}
+

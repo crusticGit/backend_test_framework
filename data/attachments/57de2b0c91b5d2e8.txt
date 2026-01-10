@@ -1,0 +1,27 @@
+INFO     Logger:logger.py:35 Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 152' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=michael51testUser151&password=6sD3Qhjq_4TYI%24HoXr3ESZbuI6W%26Pl&password_repeat=6sD3Qhjq_4TYI%24HoXr3ESZbuI6W%26Pl&email=kevin04%40example.com' http://auth:8000/auth/register/
+INFO     Logger:logger.py:35 Response status code="201", elapsed_time="0:00:00.261137"
+{
+  "detail": "User registered"
+}
+
+INFO     Logger:logger.py:35 Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 73' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=michael51testUser151&password=6sD3Qhjq_4TYI%24HoXr3ESZbuI6W%26Pl' http://auth:8000/auth/login/
+INFO     Logger:logger.py:35 Response status code="200", elapsed_time="0:00:00.295328"
+{
+  "access_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjI3LCJ1c2VybmFtZSI6Im1pY2hhZWw1MXRlc3RVc2VyMTUxIiwiZXhwIjoxNzY4MDgxMjA1LCJpYXQiOjE3NjgwNzQwMDV9.ooxuwJVbdtsv9Mtb5XOtMZYsDgbFg2s-TUzW_J8iwma1b_KlJeycyDbkQJ6HPJmz2Jzg6bj35XIf_58B34SHln0ZVmQ8083s0L38nS4t-acwsMtL4B7pcK9cPbhAWg2Rn3yYQLHlgzabv1VdIZBYIF7v_qVhOhepZBT0sbfKi5tPzI3hzwC9vW-llW-TH5FTVsPlSPiSRJ9gaiqtYy8xfsDB7TKX2AV-gKKJA40OSuTSugbY5lcSzdQbYmI8ih_55bFcMOPAiWVxp5BtMV0lN_3GzOkpocflGRYGWzFe_0HCfDXaA7HosNJmOU4iMU50vIGS5R2LdbcicrJnUeIFpQ",
+  "token_type": "Bearer"
+}
+INFO     Logger:logger.py:35 Request: curl -X DELETE -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjI3LCJ1c2VybmFtZSI6Im1pY2hhZWw1MXRlc3RVc2VyMTUxIiwiZXhwIjoxNzY4MDgxMjA1LCJpYXQiOjE3NjgwNzQwMDV9.ooxuwJVbdtsv9Mtb5XOtMZYsDgbFg2s-TUzW_J8iwma1b_KlJeycyDbkQJ6HPJmz2Jzg6bj35XIf_58B34SHln0ZVmQ8083s0L38nS4t-acwsMtL4B7pcK9cPbhAWg2Rn3yYQLHlgzabv1VdIZBYIF7v_qVhOhepZBT0sbfKi5tPzI3hzwC9vW-llW-TH5FTVsPlSPiSRJ9gaiqtYy8xfsDB7TKX2AV-gKKJA40OSuTSugbY5lcSzdQbYmI8ih_55bFcMOPAiWVxp5BtMV0lN_3GzOkpocflGRYGWzFe_0HCfDXaA7HosNJmOU4iMU50vIGS5R2LdbcicrJnUeIFpQ' -H 'Content-Length: 0' 'http://university:8000/groups/%5B'"'"'Lauren%20Prince'"'"'%5D/'
+INFO     Logger:logger.py:35 Response status code="422", elapsed_time="0:00:00.008095"
+{
+  "detail": [
+    {
+      "type": "int_parsing",
+      "loc": [
+        "path",
+        "group_id"
+      ],
+      "msg": "Input should be a valid integer, unable to parse string as an integer",
+      "input": "['Lauren Prince']"
+    }
+  ]
+}
