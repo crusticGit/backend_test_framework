@@ -1,4 +1,4 @@
-from typing import Optional, Any
+from typing import Any
 
 from pydantic import BaseModel
 
@@ -7,8 +7,8 @@ class ValidationErrorItem(BaseModel):
     loc: list[str | int]
     msg: str
     type: str
-    input: Optional[Any] = None
-    ctx: Optional[dict] = None
+    input: Any | None = None
+    ctx: dict | None = None
 
 
 class ValidationErrorResponse(BaseModel):
