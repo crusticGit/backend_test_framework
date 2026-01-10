@@ -107,37 +107,12 @@ jobs:
 
       - name: Generate Allure report
         run: |
-          mkdir -p public
           allure generate allure-results --clean -o public
-          
-          cat > public/index.html << 'EOF'
-          <!DOCTYPE html>
-          <html>
-          <head>
-              <meta charset="UTF-8">
-              <title>Test Reports</title>
-              <meta http-equiv="refresh" content="2; url=./index.html">
-              <style>
-                  body { font-family: Arial, sans-serif; margin: 40px; }
-                  h1 { color: #333; }
-                  a { color: #0366d6; text-decoration: none; }
-                  a:hover { text-decoration: underline; }
-              </style>
-          </head>
-          <body>
-              <h1>📊 Test Reports</h1>
-              <p>Redirecting to Allure report...</p>
-              <p>If not redirected, <a href="./index.html">click here</a></p>
-          </body>
-          </html>
-          EOF
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
+          publish_dir: public
           publish_branch: gh-pages
           force_orphan: true
-          user_name: 'github-actions[bot]'
-          user_email: 'github-actions[bot]@users.noreply.github.com'
