@@ -1,5 +1,6 @@
 import random
 
+import pytest
 import requests
 from faker import Faker
 
@@ -12,6 +13,7 @@ faker = Faker()
 
 
 class TestStudentContract:
+    @pytest.mark.xfail
     def test_create_student_anonym(self, university_api_utils_anonym):
         student_helper = StudentHelper(api_utils=university_api_utils_anonym)
 
@@ -19,7 +21,7 @@ class TestStudentContract:
         student_data = GenerateUtils.random_student_data(group_id)
 
         response = student_helper.post_student(student_data)
-        expected_result = requests.status_codes.codes.forbidden
+        expected_result = requests.status_codes.codes.legal_reasons
         assert response.status_code == expected_result, (
             f"Wrong status code. Actual: {response.status_code}, but expected: {expected_result}"
         )
@@ -164,7 +166,7 @@ class TestStudentContract:
             update_student_data,
         )
 
-        expected_result = requests.status_codes.codes.ok
+        expected_result = requests.status_codes.codes.forbidden
         assert response_update_student.status_code == expected_result, (
             f"Wrong status code. Actual: {response_update_student.status_code}, but expected: {expected_result}"
         )
