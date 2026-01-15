@@ -1,0 +1,12 @@
+[2026-01-15 21:07:24,306 - INFO] - Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 119' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=Michael+Velazquez&password=w%290NNoif%40Y5rvn&password_repeat=w%290NNoif%40Y5rvn&email=kanderson%40example.net' http://auth:8000/auth/register/
+[2026-01-15 21:07:24,307 - INFO] - Response status code="201", elapsed_time="0:00:00.259567"
+{
+  "detail": "User registered"
+}
+
+[2026-01-15 21:07:24,350 - INFO] - Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 119' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=Michael+Velazquez&password=w%290NNoif%40Y5rvn&password_repeat=w%290NNoif%40Y5rvn&email=kanderson%40example.net' http://auth:8000/auth/register/
+[2026-01-15 21:07:24,350 - INFO] - Response status code="409", elapsed_time="0:00:00.003008"
+{
+  "detail": "Username is already taken"
+}
+

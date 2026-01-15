@@ -1,0 +1,11 @@
+INFO     Logger:logger.py:35 Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 181' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=wjones&password=bifuH%40%24EW%21ZA3HIQ1NDlPjHG8%5Ehxw%26k41%29mmrSowie&password_repeat=bifuH%40%24EW%21ZA3HIQ1NDlPjHG8%5Ehxw%26k41%29mmrSowie&email=longdonald%40example.org' http://auth:8000/auth/register/
+INFO     Logger:logger.py:35 Response status code="201", elapsed_time="0:00:00.259115"
+{
+  "detail": "User registered"
+}
+
+INFO     Logger:logger.py:35 Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 181' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=wjones&password=bifuH%40%24EW%21ZA3HIQ1NDlPjHG8%5Ehxw%26k41%29mmrSowie&password_repeat=bifuH%40%24EW%21ZA3HIQ1NDlPjHG8%5Ehxw%26k41%29mmrSowie&email=longdonald%40example.org' http://auth:8000/auth/register/
+INFO     Logger:logger.py:35 Response status code="409", elapsed_time="0:00:00.003010"
+{
+  "detail": "Username is already taken"
+}

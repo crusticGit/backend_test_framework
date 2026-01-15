@@ -1,0 +1,28 @@
+[2026-01-15 21:07:47,898 - INFO] - Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 169' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=melissa69testUser580&password=hUS3ItfzK%28LTy%5EW3%2Ahq%296FIIST%2BbUm&password_repeat=hUS3ItfzK%28LTy%5EW3%2Ahq%296FIIST%2BbUm&email=jessicaadams%40example.net' http://auth:8000/auth/register/
+[2026-01-15 21:07:47,898 - INFO] - Response status code="201", elapsed_time="0:00:00.259030"
+{
+  "detail": "User registered"
+}
+
+[2026-01-15 21:07:48,234 - INFO] - Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 79' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=melissa69testUser580&password=hUS3ItfzK%28LTy%5EW3%2Ahq%296FIIST%2BbUm' http://auth:8000/auth/login/
+[2026-01-15 21:07:48,234 - INFO] - Response status code="200", elapsed_time="0:00:00.295210"
+{
+  "access_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjQxLCJ1c2VybmFtZSI6Im1lbGlzc2E2OXRlc3RVc2VyNTgwIiwiZXhwIjoxNzY4NTE4NDY4LCJpYXQiOjE3Njg1MTEyNjh9.KUM9TSY-I-d410TE9-dCmqiHOrE2qDR9obfyheOcXAL90LThDQkpPdiYSRN4ajzaCgpFz7u2msEy4sed60RH9qzu2nHaT8XKzOE6m51vN-a3DthOPnHDisCEUHyqhw3UjtYc6CM-RSHVQb8MW2y-VNJ97-kp9M0S-HjJA_1d7sJnUjVtbsGDgKAJQsoF_0ksIghe6En9-yImuIb4QA9UVN471-B2YKrGZcna38LNw62f2L5HoHciEVj8-0d1Key49tY6C48ItdKMu64QjJy0owMxOqS6Ll1QyNht83wr429N-SkOUN9wefEfmeUoipo2fcRpPMxjNZBuBugFkg6jkA",
+  "token_type": "Bearer"
+}
+
+[2026-01-15 21:07:48,246 - INFO] - Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjQxLCJ1c2VybmFtZSI6Im1lbGlzc2E2OXRlc3RVc2VyNTgwIiwiZXhwIjoxNzY4NTE4NDY4LCJpYXQiOjE3Njg1MTEyNjh9.KUM9TSY-I-d410TE9-dCmqiHOrE2qDR9obfyheOcXAL90LThDQkpPdiYSRN4ajzaCgpFz7u2msEy4sed60RH9qzu2nHaT8XKzOE6m51vN-a3DthOPnHDisCEUHyqhw3UjtYc6CM-RSHVQb8MW2y-VNJ97-kp9M0S-HjJA_1d7sJnUjVtbsGDgKAJQsoF_0ksIghe6En9-yImuIb4QA9UVN471-B2YKrGZcna38LNw62f2L5HoHciEVj8-0d1Key49tY6C48ItdKMu64QjJy0owMxOqS6Ll1QyNht83wr429N-SkOUN9wefEfmeUoipo2fcRpPMxjNZBuBugFkg6jkA' -H 'Content-Length: 68' -H 'Content-Type: application/json' -d '{"first_name": "Sherry", "last_name": "Adams", "subject": "History"}' http://university:8000/teachers/
+[2026-01-15 21:07:48,246 - INFO] - Response status code="201", elapsed_time="0:00:00.009922"
+{
+  "first_name": "Sherry",
+  "last_name": "Adams",
+  "subject": "History",
+  "id": 12
+}
+
+[2026-01-15 21:07:48,295 - INFO] - Request: curl -X DELETE -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjQxLCJ1c2VybmFtZSI6Im1lbGlzc2E2OXRlc3RVc2VyNTgwIiwiZXhwIjoxNzY4NTE4NDY4LCJpYXQiOjE3Njg1MTEyNjh9.KUM9TSY-I-d410TE9-dCmqiHOrE2qDR9obfyheOcXAL90LThDQkpPdiYSRN4ajzaCgpFz7u2msEy4sed60RH9qzu2nHaT8XKzOE6m51vN-a3DthOPnHDisCEUHyqhw3UjtYc6CM-RSHVQb8MW2y-VNJ97-kp9M0S-HjJA_1d7sJnUjVtbsGDgKAJQsoF_0ksIghe6En9-yImuIb4QA9UVN471-B2YKrGZcna38LNw62f2L5HoHciEVj8-0d1Key49tY6C48ItdKMu64QjJy0owMxOqS6Ll1QyNht83wr429N-SkOUN9wefEfmeUoipo2fcRpPMxjNZBuBugFkg6jkA' -H 'Content-Length: 0' http://university:8000/teachers/12/
+[2026-01-15 21:07:48,295 - INFO] - Response status code="200", elapsed_time="0:00:00.008122"
+{
+  "detail": "Teacher deleted"
+}
+

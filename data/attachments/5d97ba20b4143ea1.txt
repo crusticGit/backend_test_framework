@@ -1,0 +1,25 @@
+INFO     Logger:logger.py:35 Step 1. Register user
+INFO     Logger:logger.py:35 Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 320' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=jonescolin&password=VePMRftcyG9%23p84YdZNhtvxrmqP%21W%5EkEaCWFzb1jbF_x%2BN0m_u9ryz8ahZ2Gn64u6hK%21WyIGjb6NrjY%2AEgV%26W%2A%259W%40O4%234%23Jz&password_repeat=VePMRftcyG9%23p84YdZNhtvxrmqP%21W%5EkEaCWFzb1jbF_x%2BN0m_u9ryz8ahZ2Gn64u6hK%21WyIGjb6NrjY%2AEgV%26W%2A%259W%40O4%234%23Jz&email=romerosarah%40example.org' http://auth:8000/auth/register/
+INFO     Logger:logger.py:35 Response status code="201", elapsed_time="0:00:00.259551"
+{
+  "detail": "User registered"
+}
+
+INFO     Logger:logger.py:35 Step 2. Login user
+INFO     Logger:logger.py:35 Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 150' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=jonescolin&password=VePMRftcyG9%23p84YdZNhtvxrmqP%21W%5EkEaCWFzb1jbF_x%2BN0m_u9ryz8ahZ2Gn64u6hK%21WyIGjb6NrjY%2AEgV%26W%2A%259W%40O4%234%23Jz' http://auth:8000/auth/login/
+INFO     Logger:logger.py:35 Response status code="200", elapsed_time="0:00:00.313577"
+{
+  "access_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMsInVzZXJuYW1lIjoiam9uZXNjb2xpbiIsImV4cCI6MTc2ODUxODQ0MywiaWF0IjoxNzY4NTExMjQzfQ.Bw1Ih1JyxdtXWUKg-SEo2C2qHKX53JBvTKnu7pVOvch9eT_QW-tZBYJlwienI2MZMbcfMyg3uISymR2Xbr4Trg2oMau9z_gX_UxiXB-ZrlPj-K-mopIab7RvcnkUB8jg18SXS7B5Ct7I1OlDFzJngUksqc-ko_I588qeNbJP97JMme1tie0B8hyBW7SYFMwsFz4NP50_-yciMGuZpN4_OZuEPzb14ecw-nCZ-iPR2b8fImuqfh4_rFWU--ch3FWGjdJzahrIczoCnlRWhYA_KndAUloo_i1n9kq2ocTVltyFM_3F9oER543cFPXHC7QpUv8_jgU-vm7lGIMXpG2clA",
+  "token_type": "Bearer"
+}
+
+INFO     Logger:logger.py:35 Step 3. Update session headers
+INFO     Logger:logger.py:35 Step 4. Get user info
+INFO     Logger:logger.py:35 Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMsInVzZXJuYW1lIjoiam9uZXNjb2xpbiIsImV4cCI6MTc2ODUxODQ0MywiaWF0IjoxNzY4NTExMjQzfQ.Bw1Ih1JyxdtXWUKg-SEo2C2qHKX53JBvTKnu7pVOvch9eT_QW-tZBYJlwienI2MZMbcfMyg3uISymR2Xbr4Trg2oMau9z_gX_UxiXB-ZrlPj-K-mopIab7RvcnkUB8jg18SXS7B5Ct7I1OlDFzJngUksqc-ko_I588qeNbJP97JMme1tie0B8hyBW7SYFMwsFz4NP50_-yciMGuZpN4_OZuEPzb14ecw-nCZ-iPR2b8fImuqfh4_rFWU--ch3FWGjdJzahrIczoCnlRWhYA_KndAUloo_i1n9kq2ocTVltyFM_3F9oER543cFPXHC7QpUv8_jgU-vm7lGIMXpG2clA' http://auth:8000/users/me/
+INFO     Logger:logger.py:35 Response status code="200", elapsed_time="0:00:00.004458"
+{
+  "id": 3,
+  "username": "jonescolin",
+  "email": "romerosarah@example.org",
+  "is_enabled": true
+}

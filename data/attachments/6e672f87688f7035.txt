@@ -1,0 +1,19 @@
+INFO     Logger:logger.py:35 Step 1. Register user
+INFO     Logger:logger.py:35 Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 182' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=garciajulie&password=%292Rtzkz%29EFGs%28jYDs9uj46QP4P%28v52C9%29%25Nf%21Ue%29%289W%28&password_repeat=%292Rtzkz%29EFGs%28jYDs9uj46QP4P%28v52C9%29%25Nf%21Ue%29%289W%28&email=' http://auth:8000/auth/register/
+INFO     Logger:logger.py:35 Response status code="422", elapsed_time="0:00:00.002410"
+{
+  "detail": [
+    {
+      "type": "value_error",
+      "loc": [
+        "body",
+        "email"
+      ],
+      "msg": "value is not a valid email address: An email address must have an @-sign.",
+      "input": "",
+      "ctx": {
+        "reason": "An email address must have an @-sign."
+      }
+    }
+  ]
+}

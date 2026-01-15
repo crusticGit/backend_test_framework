@@ -1,0 +1,20 @@
+[2026-01-15 21:07:34,416 - INFO] - Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 163' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=whitejonathantestUser-388&password=qix1fy%267RgI5EcP7k%28kIcu%5ErC6J2Eh&password_repeat=qix1fy%267RgI5EcP7k%28kIcu%5ErC6J2Eh&email=caitlin73%40example.net' http://auth:8000/auth/register/
+[2026-01-15 21:07:34,416 - INFO] - Response status code="201", elapsed_time="0:00:00.259514"
+{
+  "detail": "User registered"
+}
+
+[2026-01-15 21:07:34,752 - INFO] - Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 80' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=whitejonathantestUser-388&password=qix1fy%267RgI5EcP7k%28kIcu%5ErC6J2Eh' http://auth:8000/auth/login/
+[2026-01-15 21:07:34,752 - INFO] - Response status code="200", elapsed_time="0:00:00.295697"
+{
+  "access_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIxLCJ1c2VybmFtZSI6IndoaXRlam9uYXRoYW50ZXN0VXNlci0zODgiLCJleHAiOjE3Njg1MTg0NTQsImlhdCI6MTc2ODUxMTI1NH0.Mvala7614WJPIZKXLiZ2hzWDncFHocyEa4nFv6RR4QVwXccCoJXB5EVSgFkTHyQOlG3nr6cat1oOXkS9nacde6pA77326Y4dSlDmEf7c4pTTMG3TpV3GIe_6gwQJK79zwu9C-k46GcbKGYt8-vrDyyPb7LJ7hpevVh3AkiAqtAjvalbwRWr-06joLHaIS0vY2Eb3VPbl9B0HuMTAfs8iQQik1h_CibTugAKqWkFu5koxFSLWS50hWe390zgGf6g6wrZH8WxdkXq9CUSmp6oFv7VsAVsITfDiAKefrZjMxV0MjeL1vSF3LpTEE8bQUmyJrfMirs8yvQmlCC9E-fyABw",
+  "token_type": "Bearer"
+}
+
+[2026-01-15 21:07:34,765 - INFO] - Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIxLCJ1c2VybmFtZSI6IndoaXRlam9uYXRoYW50ZXN0VXNlci0zODgiLCJleHAiOjE3Njg1MTg0NTQsImlhdCI6MTc2ODUxMTI1NH0.Mvala7614WJPIZKXLiZ2hzWDncFHocyEa4nFv6RR4QVwXccCoJXB5EVSgFkTHyQOlG3nr6cat1oOXkS9nacde6pA77326Y4dSlDmEf7c4pTTMG3TpV3GIe_6gwQJK79zwu9C-k46GcbKGYt8-vrDyyPb7LJ7hpevVh3AkiAqtAjvalbwRWr-06joLHaIS0vY2Eb3VPbl9B0HuMTAfs8iQQik1h_CibTugAKqWkFu5koxFSLWS50hWe390zgGf6g6wrZH8WxdkXq9CUSmp6oFv7VsAVsITfDiAKefrZjMxV0MjeL1vSF3LpTEE8bQUmyJrfMirs8yvQmlCC9E-fyABw' -H 'Content-Length: 33' -H 'Content-Type: application/json' -d '{"name": "group-Maddox Ltd-2001"}' http://university:8000/groups/
+[2026-01-15 21:07:34,765 - INFO] - Response status code="201", elapsed_time="0:00:00.010823"
+{
+  "name": "group-Maddox Ltd-2001",
+  "id": 10
+}
+

@@ -1,0 +1,19 @@
+[2026-01-15 21:07:24,357 - INFO] - Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 326' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=tylerdaniel642&password=%40rV3vR%29Eif%28Fs%28SRBL%21juwskG%2BjMPI2yTPJ%216whY1Gh%23TKyUCi%25yj%2BSgA4%23nT4fBC69c%28%403n%21R%23DwYDQbq%26TH%2A%5E&password_repeat=%40rV3vR%29Eif%28Fs%28SRBL%21juwskG%2BjMPI2yTPJ%216whY1Gh%23TKyUCi%25yj%2BSgA4%23nT4fBC69c%28%403n%21R%23DwYDQbq%26TH%2A%5E&email=combsrichardexample.com' http://auth:8000/auth/register/
+[2026-01-15 21:07:24,357 - INFO] - Response status code="422", elapsed_time="0:00:00.002866"
+{
+  "detail": [
+    {
+      "type": "value_error",
+      "loc": [
+        "body",
+        "email"
+      ],
+      "msg": "value is not a valid email address: An email address must have an @-sign.",
+      "input": "combsrichardexample.com",
+      "ctx": {
+        "reason": "An email address must have an @-sign."
+      }
+    }
+  ]
+}
+

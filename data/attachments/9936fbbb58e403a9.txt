@@ -1,0 +1,24 @@
+[2026-01-15 21:07:26,130 - INFO] - Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 255' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=jacob92&password=iaNrm7emUJ3oQTmb9%28oYo8hYu2S%261IyJA4fQP%26e%23ZyGE6Q%25CmG2B6j%40K%25x%29XsyJImbIDE%21jU&password_repeat=iaNrm7emUJ3oQTmb9%28oYo8hYu2S%261IyJA4fQP%26e%23ZyGE6Q%25CmG2B6j%40K%25x%29XsyJImbIDE%21jU&email=stephanie35%40example.com' http://auth:8000/auth/register/
+[2026-01-15 21:07:26,131 - INFO] - Response status code="201", elapsed_time="0:00:00.259467"
+{
+  "detail": "User registered"
+}
+
+[2026-01-15 21:07:26,173 - INFO] - Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 99' -H 'Content-Type: application/x-www-form-urlencoded' -d password=iaNrm7emUJ3oQTmb9%28oYo8hYu2S%261IyJA4fQP%26e%23ZyGE6Q%25CmG2B6j%40K%25x%29XsyJImbIDE%21jU http://auth:8000/auth/login/
+[2026-01-15 21:07:26,173 - INFO] - Response status code="422", elapsed_time="0:00:00.001505"
+{
+  "detail": [
+    {
+      "type": "missing",
+      "loc": [
+        "body",
+        "username"
+      ],
+      "msg": "Field required",
+      "input": {
+        "password": "iaNrm7emUJ3oQTmb9(oYo8hYu2S&1IyJA4fQP&e#ZyGE6Q%CmG2B6j@K%x)XsyJImbIDE!jU"
+      }
+    }
+  ]
+}
+

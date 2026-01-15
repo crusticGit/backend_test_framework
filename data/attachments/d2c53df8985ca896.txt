@@ -1,0 +1,23 @@
+[2026-01-15 21:07:24,363 - INFO] - Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 218' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=Michael+Ramirez&password=0JyTG%5E4FrYbkaFkF%2AFJ8%28AyfollrMia%5E9bhQDBl%5E73tw4M9auoiPWMMekhgZL3%23%25%24%29hWMU%2AKdS%40hhoe&password_repeat=5kciVL%5EU5%2AfSb6Cxm6n%26S5%26nxNp%26&email=ggarcia%40example.org' http://auth:8000/auth/register/
+[2026-01-15 21:07:24,363 - INFO] - Response status code="422", elapsed_time="0:00:00.002588"
+{
+  "detail": [
+    {
+      "type": "value_error",
+      "loc": [
+        "body"
+      ],
+      "msg": "Value error, Passwords do not match",
+      "input": {
+        "username": "Michael Ramirez",
+        "password": "0JyTG^4FrYbkaFkF*FJ8(AyfollrMia^9bhQDBl^73tw4M9auoiPWMMekhgZL3#%$)hWMU*KdS@hhoe",
+        "password_repeat": "5kciVL^U5*fSb6Cxm6n&S5&nxNp&",
+        "email": "ggarcia@example.org"
+      },
+      "ctx": {
+        "error": {}
+      }
+    }
+  ]
+}
+

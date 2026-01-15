@@ -1,0 +1,5 @@
+INFO     Logger:logger.py:35 Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 147' -H 'Content-Type: application/json' -d '{"first_name": "Brittany", "last_name": "Smith", "email": "kathryn57@example.org", "degree": "Doctorate", "phone": "+79279484461", "group_id": 123}' http://university:8000/students/
+INFO     Logger:logger.py:35 Response status code="403", elapsed_time="0:00:00.001801"
+{
+  "detail": "Access denied"
+}

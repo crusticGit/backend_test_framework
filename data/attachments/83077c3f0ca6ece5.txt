@@ -1,0 +1,20 @@
+INFO     Logger:logger.py:35 Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 177' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=barbarawallertestUser-206&password=zQ%24JTSbe0%261P%24%25Qq%2AigVFM%26p%23dskdJ&password_repeat=zQ%24JTSbe0%261P%24%25Qq%2AigVFM%26p%23dskdJ&email=janet17%40example.com' http://auth:8000/auth/register/
+INFO     Logger:logger.py:35 Response status code="201", elapsed_time="0:00:00.258898"
+{
+  "detail": "User registered"
+}
+
+INFO     Logger:logger.py:35 Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 88' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=barbarawallertestUser-206&password=zQ%24JTSbe0%261P%24%25Qq%2AigVFM%26p%23dskdJ' http://auth:8000/auth/login/
+INFO     Logger:logger.py:35 Response status code="200", elapsed_time="0:00:00.295775"
+{
+  "access_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjQ0LCJ1c2VybmFtZSI6ImJhcmJhcmF3YWxsZXJ0ZXN0VXNlci0yMDYiLCJleHAiOjE3Njg1MTg0NzAsImlhdCI6MTc2ODUxMTI3MH0.Oz_wQRA_ZqMqTp88hy-YYVymzyE4ypkNhtbOear1mvHkGAArBwpZXqJ53GIIWRW5Zism4SquoQ3VxfaNNwPUf6_3ArYC21vUYhNsWwtr6uJuKJ5R45pJ14-kUghxXmAyP-ebeZnBZPjL0w7w7KLl4xduVVMSeEJV4IOTTIea9kmD7_THZqyvvp9iBZuUwa9w-4fquIFZHgv6j1BrlqY8C9VQRQLkBck59Q4w3nV2i9uRn7K7pcx_CMKvBO96o0gLN317GatyWUahtJUCySlc-aN4Zh8Z-nNijg6P0d53NLYNn4PAY__ZP9bVyMyiGj2EixXupOebkNbLwabWg9UoeQ",
+  "token_type": "Bearer"
+}
+INFO     Logger:logger.py:35 Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjQ0LCJ1c2VybmFtZSI6ImJhcmJhcmF3YWxsZXJ0ZXN0VXNlci0yMDYiLCJleHAiOjE3Njg1MTg0NzAsImlhdCI6MTc2ODUxMTI3MH0.Oz_wQRA_ZqMqTp88hy-YYVymzyE4ypkNhtbOear1mvHkGAArBwpZXqJ53GIIWRW5Zism4SquoQ3VxfaNNwPUf6_3ArYC21vUYhNsWwtr6uJuKJ5R45pJ14-kUghxXmAyP-ebeZnBZPjL0w7w7KLl4xduVVMSeEJV4IOTTIea9kmD7_THZqyvvp9iBZuUwa9w-4fquIFZHgv6j1BrlqY8C9VQRQLkBck59Q4w3nV2i9uRn7K7pcx_CMKvBO96o0gLN317GatyWUahtJUCySlc-aN4Zh8Z-nNijg6P0d53NLYNn4PAY__ZP9bVyMyiGj2EixXupOebkNbLwabWg9UoeQ' http://auth:8000/users/me/
+INFO     Logger:logger.py:35 Response status code="200", elapsed_time="0:00:00.004067"
+{
+  "id": 44,
+  "username": "barbarawallertestUser-206",
+  "email": "janet17@example.com",
+  "is_enabled": true
+}

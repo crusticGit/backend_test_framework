@@ -1,0 +1,7 @@
+INFO     Logger:logger.py:35 !auth_service_readiness!
+INFO     Logger:logger.py:35 Step 1. Register user
+INFO     Logger:logger.py:35 Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 146' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=millereric&password=%40jKuJQEq%40T8bkqh%215RtU6TWF%2AOz4&password_repeat=%40jKuJQEq%40T8bkqh%215RtU6TWF%2AOz4&email=ssutton%40example.net' http://auth:8000/auth/register/
+INFO     Logger:logger.py:35 Response status code="201", elapsed_time="0:00:00.285249"
+{
+  "detail": "User registered"
+}

@@ -1,0 +1,12 @@
+INFO     Logger:logger.py:35 Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 107' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=smitherin&password=yS%243ESdvsw5&password_repeat=yS%243ESdvsw5&email=nicholsonrobert%40example.com' http://auth:8000/auth/register/
+INFO     Logger:logger.py:35 Response status code="201", elapsed_time="0:00:00.259234"
+{
+  "detail": "User registered"
+}
+
+INFO     Logger:logger.py:35 Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 41' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=smitherin&password=yS%243ESdvsw5' http://auth:8000/auth/login/
+INFO     Logger:logger.py:35 Response status code="200", elapsed_time="0:00:00.295220"
+{
+  "access_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjcsInVzZXJuYW1lIjoic21pdGhlcmluIiwiZXhwIjoxNzY4NTE4NDQ0LCJpYXQiOjE3Njg1MTEyNDR9.MxqfkAq3yHRs3G1bsBhjtDAPt7E4Zp1gL5wPXCuJ9Qm7ym547cuwutjiZbuZM3GAwpM5PXO7mVUiqjKnxllfXrMEyH_5YqpiLVVKYSTO93COgj8JCkVhW0lIYi5PJHXepoBZcaQ1hJo9XIzTZKHmeJuzCEpPGyOK9zOCCOuJr2hzc0cLQ-KK3jKGpsX21Vxyp29Z6R6aTMl2RvdpssVodHWie3VKg540-sFQpbJj6P7HUvTZk9gToOGVWcxl5sEnB1UMB2JVQ5MS5IvMhn3oPTi4v6HBnaJAtyMK8icQVWz8LX80G7rtKRmW0kAjCDQ-GYHDiFI8zMh0etySCnh1Hw",
+  "token_type": "Bearer"
+}

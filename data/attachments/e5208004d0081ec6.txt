@@ -1,0 +1,78 @@
+[2026-01-15 21:07:47,288 - INFO] - Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 168' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=kjonestestUser116&password=%281Y%23%24p_t_12URoA9gDlq%24b%2Ar%25APBB%2B&password_repeat=%281Y%23%24p_t_12URoA9gDlq%24b%2Ar%25APBB%2B&email=ivan50%40example.org' http://auth:8000/auth/register/
+[2026-01-15 21:07:47,288 - INFO] - Response status code="201", elapsed_time="0:00:00.259309"
+{
+  "detail": "User registered"
+}
+
+[2026-01-15 21:07:47,625 - INFO] - Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 80' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=kjonestestUser116&password=%281Y%23%24p_t_12URoA9gDlq%24b%2Ar%25APBB%2B' http://auth:8000/auth/login/
+[2026-01-15 21:07:47,625 - INFO] - Response status code="200", elapsed_time="0:00:00.295553"
+{
+  "access_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjQwLCJ1c2VybmFtZSI6Imtqb25lc3Rlc3RVc2VyMTE2IiwiZXhwIjoxNzY4NTE4NDY3LCJpYXQiOjE3Njg1MTEyNjd9.PI7Bx375XwfXN_Kx5l1SS5Z7phWG7rfionJIPk5ZxflJhZFsXWTHELSjK9yxdhExZT60PWppZeZRQB5Lc-j1aJpOUuXqA9VBYMHun4D3tcoRsRwsNythZJ_4Us0MXqdJtbb0BQGMfuxgh0w0pirV6U0K_B_BILG7lx310UEnzWOrpn-tpKB9Cu_YxirzuNyJcGbCrPwz5kYOIGcf_MBSIbp5ADn7WU8_YjcEPE_IOfgDcB7Ch-i8k9kvTWEfzvRKcN6ZcbZc18OZQsbMkMdFGY8VAZEUUsfnRayVxEhgHXdfpxVP9jXdjD2EuB_tE5oMR_zw178HuGbBg2dUdBw74g",
+  "token_type": "Bearer"
+}
+
+[2026-01-15 21:07:47,636 - INFO] - Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjQwLCJ1c2VybmFtZSI6Imtqb25lc3Rlc3RVc2VyMTE2IiwiZXhwIjoxNzY4NTE4NDY3LCJpYXQiOjE3Njg1MTEyNjd9.PI7Bx375XwfXN_Kx5l1SS5Z7phWG7rfionJIPk5ZxflJhZFsXWTHELSjK9yxdhExZT60PWppZeZRQB5Lc-j1aJpOUuXqA9VBYMHun4D3tcoRsRwsNythZJ_4Us0MXqdJtbb0BQGMfuxgh0w0pirV6U0K_B_BILG7lx310UEnzWOrpn-tpKB9Cu_YxirzuNyJcGbCrPwz5kYOIGcf_MBSIbp5ADn7WU8_YjcEPE_IOfgDcB7Ch-i8k9kvTWEfzvRKcN6ZcbZc18OZQsbMkMdFGY8VAZEUUsfnRayVxEhgHXdfpxVP9jXdjD2EuB_tE5oMR_zw178HuGbBg2dUdBw74g' http://university:8000/teachers/
+[2026-01-15 21:07:47,636 - INFO] - Response status code="200", elapsed_time="0:00:00.008842"
+[
+  {
+    "first_name": "Grace",
+    "last_name": "Ramirez",
+    "subject": "Geography",
+    "id": 1
+  },
+  {
+    "first_name": "Becky Cain",
+    "last_name": "Conrad",
+    "subject": "History",
+    "id": 2
+  },
+  {
+    "first_name": "Allen Brown",
+    "last_name": "Hall",
+    "subject": "History",
+    "id": 4
+  },
+  {
+    "first_name": "Raymond Nelson",
+    "last_name": "Wheeler",
+    "subject": "Mathematics",
+    "id": 5
+  },
+  {
+    "first_name": "Bryan Frye",
+    "last_name": "Hobbs",
+    "subject": "History",
+    "id": 6
+  },
+  {
+    "first_name": "Carmen Leblanc",
+    "last_name": "Nelson",
+    "subject": "Biology",
+    "id": 7
+  },
+  {
+    "first_name": "Matthew Schultz",
+    "last_name": "Hernandez",
+    "subject": "Physics",
+    "id": 8
+  },
+  {
+    "first_name": "Melissa Williams",
+    "last_name": "Rich",
+    "subject": "Mathematics",
+    "id": 9
+  },
+  {
+    "first_name": "Donald Arnold",
+    "last_name": "Brown",
+    "subject": "Mathematics",
+    "id": 10
+  },
+  {
+    "first_name": "Sarah",
+    "last_name": "Thomas",
+    "subject": "Mathematics",
+    "id": 11
+  }
+]
+

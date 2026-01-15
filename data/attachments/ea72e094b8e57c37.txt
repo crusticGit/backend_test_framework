@@ -1,0 +1,24 @@
+[2026-01-15 21:07:26,437 - INFO] - Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 330' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=rachelpadilla&password=Idr%265ICDTXeNRjqZL%26gZ%40I2XLpM%2BwMDi%24%26Hf%28%29Q5t6%21q%2BHmr%5EBd%2489%21qnEG%40aIb6SeorEET%25mGXxfCKLo%5EjUOJioip%2Br&password_repeat=Idr%265ICDTXeNRjqZL%26gZ%40I2XLpM%2BwMDi%24%26Hf%28%29Q5t6%21q%2BHmr%5EBd%2489%21qnEG%40aIb6SeorEET%25mGXxfCKLo%5EjUOJioip%2Br&email=amanda20%40example.org' http://auth:8000/auth/register/
+[2026-01-15 21:07:26,437 - INFO] - Response status code="201", elapsed_time="0:00:00.259318"
+{
+  "detail": "User registered"
+}
+
+[2026-01-15 21:07:26,479 - INFO] - Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 22' -H 'Content-Type: application/x-www-form-urlencoded' -d username=rachelpadilla http://auth:8000/auth/login/
+[2026-01-15 21:07:26,479 - INFO] - Response status code="422", elapsed_time="0:00:00.001708"
+{
+  "detail": [
+    {
+      "type": "missing",
+      "loc": [
+        "body",
+        "password"
+      ],
+      "msg": "Field required",
+      "input": {
+        "username": "rachelpadilla"
+      }
+    }
+  ]
+}
+

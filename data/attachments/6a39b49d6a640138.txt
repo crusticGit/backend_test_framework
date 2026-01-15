@@ -1,0 +1,11 @@
+INFO     Logger:logger.py:35 Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 156' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=gbarrera&password=%5Ev81VTZfJXO%28r%28ywtWEJ06GK%5Eb_qVqeo&password_repeat=%5Ev81VTZfJXO%28r%28ywtWEJ06GK%5Eb_qVqeo&email=moorecheryl%40example.com' http://auth:8000/auth/register/
+INFO     Logger:logger.py:35 Response status code="201", elapsed_time="0:00:00.259789"
+{
+  "detail": "User registered"
+}
+
+INFO     Logger:logger.py:35 Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 65' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=dperry&password=%5Ev81VTZfJXO%28r%28ywtWEJ06GK%5Eb_qVqeo' http://auth:8000/auth/login/
+INFO     Logger:logger.py:35 Response status code="401", elapsed_time="0:00:00.002697"
+{
+  "detail": "Invalid login credentials"
+}

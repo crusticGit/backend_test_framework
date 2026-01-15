@@ -1,0 +1,6 @@
+[2026-01-15 21:07:42,057 - INFO] - Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' http://university:8000/students/
+[2026-01-15 21:07:42,057 - INFO] - Response status code="403", elapsed_time="0:00:00.001844"
+{
+  "detail": "Access denied"
+}
+

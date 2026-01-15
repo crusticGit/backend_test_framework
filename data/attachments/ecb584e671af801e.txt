@@ -1,0 +1,19 @@
+[2026-01-15 21:07:24,374 - INFO] - Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 1605' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=Alexis+Martin&password=aiSdfy%21qN%24Q0usY8PeY%24dZT%2AmeO6iqUZsJ3f%24%28Z%40OzAveV%29%24vj%29A9HyOlc82rN7ayRyZltbBRUzSS%23VFVto%29icA%40majZ_D%23MgsMh%231E1Z%29jQ6p0J%23%2AGYBR57X%259BwxZGnHD%2A2TT_%21vsX%23%5EZ%23ENKtisF1%2B%2AyD%29ghp7N77VTnknKl%26%2AjUvCzvab%28Xb3L8bibsemvdU%5E%2A%21JX6%5EN0qgu%5EbE%2BWgh9Vbh%23%28j%25HXdrziH9rSleeWUh2jLQIJWu3H%29%29Tb%2BB%5EtZ_M12t4c%29iA%234Hev%24912%23B%24d%25%2A%40tL8u3f%2B0oOVDLAAao4%21%2BBIAG5%2BkDL%23l%23QE%21Fy%24gg%5EeVSRIm8z%26tY%2685R%246enS%23fMIkFUfc%24Ir%257gJBGedeS9jNV%293RO0yuoGR5%2AG%2Abwbcy0svy%28FB%28j%29J%262fwdR%25%2AN_%2Bd%2Bu4q%5Elv%26ZneP5Yw2NHIAe%5Ej%2Aa%2BWeu%23QpL%26%23N_ugqqWU71m%5Eqw_YEv7ntiuJIWA3hnPQiH%40zGoW681UR8BZ%24bsq%2BmhFEu%28wJ%5Etsb5y%5EhLDn30wH%5E5AL09uY6x6ms%2A6mSC1%28VS%26bpqfv2m%5Er%26SsDhtnbEo&password_repeat=aiSdfy%21qN%24Q0usY8PeY%24dZT%2AmeO6iqUZsJ3f%24%28Z%40OzAveV%29%24vj%29A9HyOlc82rN7ayRyZltbBRUzSS%23VFVto%29icA%40majZ_D%23MgsMh%231E1Z%29jQ6p0J%23%2AGYBR57X%259BwxZGnHD%2A2TT_%21vsX%23%5EZ%23ENKtisF1%2B%2AyD%29ghp7N77VTnknKl%26%2AjUvCzvab%28Xb3L8bibsemvdU%5E%2A%21JX6%5EN0qgu%5EbE%2BWgh9Vbh%23%28j%25HXdrziH9rSleeWUh2jLQIJWu3H%29%29Tb%2BB%5EtZ_M12t4c%29iA%234Hev%24912%23B%24d%25%2A%40tL8u3f%2B0oOVDLAAao4%21%2BBIAG5%2BkDL%23l%23QE%21Fy%24gg%5EeVSRIm8z%26tY%2685R%246enS%23fMIkFUfc%24Ir%257gJBGedeS9jNV%293RO0yuoGR5%2AG%2Abwbcy0svy%28FB%28j%29J%262fwdR%25%2AN_%2Bd%2Bu4q%5Elv%26ZneP5Yw2NHIAe%5Ej%2Aa%2BWeu%23QpL%26%23N_ugqqWU71m%5Eqw_YEv7ntiuJIWA3hnPQiH%40zGoW681UR8BZ%24bsq%2BmhFEu%28wJ%5Etsb5y%5EhLDn30wH%5E5AL09uY6x6ms%2A6mSC1%28VS%26bpqfv2m%5Er%26SsDhtnbEo&email=campbelldavid%40example.com' http://auth:8000/auth/register/
+[2026-01-15 21:07:24,374 - INFO] - Response status code="422", elapsed_time="0:00:00.002479"
+{
+  "detail": [
+    {
+      "type": "value_error",
+      "loc": [
+        "body",
+        "password"
+      ],
+      "msg": "Value error, Password length should be shorter than 100 characters",
+      "input": "aiSdfy!qN$Q0usY8PeY$dZT*meO6iqUZsJ3f$(Z@OzAveV)$vj)A9HyOlc82rN7ayRyZltbBRUzSS#VFVto)icA@majZ_D#MgsMh#1E1Z)jQ6p0J#*GYBR57X%9BwxZGnHD*2TT_!vsX#^Z#ENKtisF1+*yD)ghp7N77VTnknKl&*jUvCzvab(Xb3L8bibsemvdU^*!JX6^N0qgu^bE+Wgh9Vbh#(j%HXdrziH9rSleeWUh2jLQIJWu3H))Tb+B^tZ_M12t4c)iA#4Hev$912#B$d%*@tL8u3f+0oOVDLAAao4!+BIAG5+kDL#l#QE!Fy$gg^eVSRIm8z&tY&85R$6enS#fMIkFUfc$Ir%7gJBGedeS9jNV)3RO0yuoGR5*G*bwbcy0svy(FB(j)J&2fwdR%*N_+d+u4q^lv&ZneP5Yw2NHIAe^j*a+Weu#QpL&#N_ugqqWU71m^qw_YEv7ntiuJIWA3hnPQiH@zGoW681UR8BZ$bsq+mhFEu(wJ^tsb5y^hLDn30wH^5AL09uY6x6ms*6mSC1(VS&bpqfv2m^r&SsDhtnbEo",
+      "ctx": {
+        "error": {}
+      }
+    }
+  ]
+}
+

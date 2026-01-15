@@ -1,0 +1,24 @@
+INFO     Logger:logger.py:35 Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 171' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=dallentestUser-218&password=%25A%28vAjr1%2Ayl%259O%2B14p7FC%25wnicCe2Q&password_repeat=%25A%28vAjr1%2Ayl%259O%2B14p7FC%25wnicCe2Q&email=ramireztammy%40example.org' http://auth:8000/auth/register/
+INFO     Logger:logger.py:35 Response status code="201", elapsed_time="0:00:00.259217"
+{
+  "detail": "User registered"
+}
+
+INFO     Logger:logger.py:35 Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 79' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=dallentestUser-218&password=%25A%28vAjr1%2Ayl%259O%2B14p7FC%25wnicCe2Q' http://auth:8000/auth/login/
+INFO     Logger:logger.py:35 Response status code="200", elapsed_time="0:00:00.295228"
+{
+  "access_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIyLCJ1c2VybmFtZSI6ImRhbGxlbnRlc3RVc2VyLTIxOCIsImV4cCI6MTc2ODUxODQ1NSwiaWF0IjoxNzY4NTExMjU1fQ.lH18ovD8vya6M61kmkEfSm8Ppsos8NIa58Q0E9hun_WG2BXNnOpg3ZEdmIP2xSuZVqkMrtarRGdPPsbDQck4_EMy_RAAhXYodG75OK_FIJmyuvk63t37dh0eH5aQslSvyiOlqwVMmgf4K259bqP9BpHu4RIo6QdBWWwpzz707S286-jhuUAQaY7HT8GjWI4JoM-3W_kvjFlVj5jT0li1JxCYW0duE5HYUf8nRMllfIlJaOc-ufkRKgwQ_gCKi3iMUAskGATCMzMzUD7o1N2sKo9yPT5BI4jICgCu2bAUJnJ3zk921nr-8yfVb5l_7e97L-b79kxIjATcOLpYRwu_zQ",
+  "token_type": "Bearer"
+}
+INFO     Logger:logger.py:35 Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIyLCJ1c2VybmFtZSI6ImRhbGxlbnRlc3RVc2VyLTIxOCIsImV4cCI6MTc2ODUxODQ1NSwiaWF0IjoxNzY4NTExMjU1fQ.lH18ovD8vya6M61kmkEfSm8Ppsos8NIa58Q0E9hun_WG2BXNnOpg3ZEdmIP2xSuZVqkMrtarRGdPPsbDQck4_EMy_RAAhXYodG75OK_FIJmyuvk63t37dh0eH5aQslSvyiOlqwVMmgf4K259bqP9BpHu4RIo6QdBWWwpzz707S286-jhuUAQaY7HT8GjWI4JoM-3W_kvjFlVj5jT0li1JxCYW0duE5HYUf8nRMllfIlJaOc-ufkRKgwQ_gCKi3iMUAskGATCMzMzUD7o1N2sKo9yPT5BI4jICgCu2bAUJnJ3zk921nr-8yfVb5l_7e97L-b79kxIjATcOLpYRwu_zQ' -H 'Content-Length: 38' -H 'Content-Type: application/json' -d '{"name": "group-Gardner-Sanchez-7974"}' http://university:8000/groups/
+INFO     Logger:logger.py:35 Response status code="201", elapsed_time="0:00:00.011050"
+{
+  "name": "group-Gardner-Sanchez-7974",
+  "id": 11
+}
+
+INFO     Logger:logger.py:35 Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIyLCJ1c2VybmFtZSI6ImRhbGxlbnRlc3RVc2VyLTIxOCIsImV4cCI6MTc2ODUxODQ1NSwiaWF0IjoxNzY4NTExMjU1fQ.lH18ovD8vya6M61kmkEfSm8Ppsos8NIa58Q0E9hun_WG2BXNnOpg3ZEdmIP2xSuZVqkMrtarRGdPPsbDQck4_EMy_RAAhXYodG75OK_FIJmyuvk63t37dh0eH5aQslSvyiOlqwVMmgf4K259bqP9BpHu4RIo6QdBWWwpzz707S286-jhuUAQaY7HT8GjWI4JoM-3W_kvjFlVj5jT0li1JxCYW0duE5HYUf8nRMllfIlJaOc-ufkRKgwQ_gCKi3iMUAskGATCMzMzUD7o1N2sKo9yPT5BI4jICgCu2bAUJnJ3zk921nr-8yfVb5l_7e97L-b79kxIjATcOLpYRwu_zQ' -H 'Content-Length: 38' -H 'Content-Type: application/json' -d '{"name": "group-Gardner-Sanchez-7974"}' http://university:8000/groups/
+INFO     Logger:logger.py:35 Response status code="409", elapsed_time="0:00:00.007004"
+{
+  "detail": "Group is already created"
+}

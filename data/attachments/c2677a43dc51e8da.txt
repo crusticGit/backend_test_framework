@@ -1,0 +1,15 @@
+[2026-01-15 21:07:22,197 - INFO] - Step 1. Register user
+[2026-01-15 21:07:22,458 - INFO] - Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 356' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=kingchristopher&password=ds%23fmWWko%28%26y%21p%26kL%25b%2Ah%21Ed%5Ely%23%21WyK1Gz6vYR%23WRkPl6zQ%2APDi2N0%24G%24_OI0d_%5E%2AuXCto%24u%40R1%26RRUE8wr7SsT%2AiA2SmF&password_repeat=ds%23fmWWko%28%26y%21p%26kL%25b%2Ah%21Ed%5Ely%23%21WyK1Gz6vYR%23WRkPl6zQ%2APDi2N0%24G%24_OI0d_%5E%2AuXCto%24u%40R1%26RRUE8wr7SsT%2AiA2SmF&email=xdominguez%40example.net' http://auth:8000/auth/register/
+[2026-01-15 21:07:22,458 - INFO] - Response status code="201", elapsed_time="0:00:00.259577"
+{
+  "detail": "User registered"
+}
+
+[2026-01-15 21:07:22,458 - INFO] - Step 2. Login user
+[2026-01-15 21:07:22,799 - INFO] - Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 171' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=kingchristopher&password=ds%23fmWWko%28%26y%21p%26kL%25b%2Ah%21Ed%5Ely%23%21WyK1Gz6vYR%23WRkPl6zQ%2APDi2N0%24G%24_OI0d_%5E%2AuXCto%24u%40R1%26RRUE8wr7SsT%2AiA2SmF' http://auth:8000/auth/login/
+[2026-01-15 21:07:22,799 - INFO] - Response status code="200", elapsed_time="0:00:00.299956"
+{
+  "access_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsInVzZXJuYW1lIjoia2luZ2NocmlzdG9waGVyIiwiZXhwIjoxNzY4NTE4NDQyLCJpYXQiOjE3Njg1MTEyNDJ9.k-30u2qFzyZuvXnAdxDHVhu-4m3nMJI0R0AfntDPti5cAqZRUWs_WUu2jWbSOSbVl5Gw7ImkTc_Ox13Y89UyzMOyrYjRt5ZeC-1wt_m_oZC7qmCQ4VA7uMl5SrHhj6tJEb0UHWqxxpzHd4gRsCY4djxYOS_DKxTdHcPZ1M_IElRcUyWj7zS4i0GUx6g1oR2ii27Nd-jV6G6CBHonn0Kg3IH8AhUryxKEDY3C1ZuL7GWefYSO5jfFSCk8jn-Z4MkAucXKb0EJlzUf4b64JVAzAS9So3g03_pDfch-Tj0jo767aX_dK3Cmib8qkiqkfB8NPhrWGBbeBXNPiq83F321eg",
+  "token_type": "Bearer"
+}
+

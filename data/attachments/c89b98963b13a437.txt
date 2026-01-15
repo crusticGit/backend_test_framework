@@ -1,0 +1,29 @@
+[2026-01-15 21:07:35,692 - INFO] - Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 159' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=leroyrusselltestUser122&password=%26op_8R_y%2A9dPJuOKfyW%5EwSuCkUVQGB&password_repeat=%26op_8R_y%2A9dPJuOKfyW%5EwSuCkUVQGB&email=pgarcia%40example.org' http://auth:8000/auth/register/
+[2026-01-15 21:07:35,692 - INFO] - Response status code="201", elapsed_time="0:00:00.263216"
+{
+  "detail": "User registered"
+}
+
+[2026-01-15 21:07:36,028 - INFO] - Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 78' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=leroyrusselltestUser122&password=%26op_8R_y%2A9dPJuOKfyW%5EwSuCkUVQGB' http://auth:8000/auth/login/
+[2026-01-15 21:07:36,028 - INFO] - Response status code="200", elapsed_time="0:00:00.295030"
+{
+  "access_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIzLCJ1c2VybmFtZSI6Imxlcm95cnVzc2VsbHRlc3RVc2VyMTIyIiwiZXhwIjoxNzY4NTE4NDU1LCJpYXQiOjE3Njg1MTEyNTV9.o0bSKaDzLb76AYVIzY8hgjyQGHc8MtEsSAhuP3uBHbA-ISo92X4z-56lOeECdqyzrffiObGmOfp4VGS0OzKRIejkhO2WicQKCGZwbXcWJCyUQgoJmdKlI2r-clWatF5Y3mJSPnTiP4Nxu6J1Mp6ckL9q4UNtZSCjdww7jheFKxK4pBsfaomKzp5VOO9bN8-ExSgyg22IGni5YrF95qTBKAp5uM8LcDuMkbxdDywhBZH4kp0Kh6teSntcOSNZwMVOx0_rB2XIKH8oE25HK18Ja80awROVRVusPUXRfxrSJA6PeBUGQmTdxdTr05yC6tvz7ThAyGXnovl6fq6i6hHfDg",
+  "token_type": "Bearer"
+}
+
+[2026-01-15 21:07:36,038 - INFO] - Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIzLCJ1c2VybmFtZSI6Imxlcm95cnVzc2VsbHRlc3RVc2VyMTIyIiwiZXhwIjoxNzY4NTE4NDU1LCJpYXQiOjE3Njg1MTEyNTV9.o0bSKaDzLb76AYVIzY8hgjyQGHc8MtEsSAhuP3uBHbA-ISo92X4z-56lOeECdqyzrffiObGmOfp4VGS0OzKRIejkhO2WicQKCGZwbXcWJCyUQgoJmdKlI2r-clWatF5Y3mJSPnTiP4Nxu6J1Mp6ckL9q4UNtZSCjdww7jheFKxK4pBsfaomKzp5VOO9bN8-ExSgyg22IGni5YrF95qTBKAp5uM8LcDuMkbxdDywhBZH4kp0Kh6teSntcOSNZwMVOx0_rB2XIKH8oE25HK18Ja80awROVRVusPUXRfxrSJA6PeBUGQmTdxdTr05yC6tvz7ThAyGXnovl6fq6i6hHfDg' -H 'Content-Length: 11' -H 'Content-Type: application/json' -d '{"name": 5}' http://university:8000/groups/
+[2026-01-15 21:07:36,038 - INFO] - Response status code="422", elapsed_time="0:00:00.007724"
+{
+  "detail": [
+    {
+      "type": "string_type",
+      "loc": [
+        "body",
+        "name"
+      ],
+      "msg": "Input should be a valid string",
+      "input": 5
+    }
+  ]
+}
+

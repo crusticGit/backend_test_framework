@@ -1,0 +1,12 @@
+[2026-01-15 21:07:25,258 - INFO] - Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 139' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=powellchristina&password=%5En_ywKL5%23C2aNys%21JrQEL&password_repeat=%5En_ywKL5%23C2aNys%21JrQEL&email=robertotaylor%40example.com' http://auth:8000/auth/register/
+[2026-01-15 21:07:25,259 - INFO] - Response status code="201", elapsed_time="0:00:00.259256"
+{
+  "detail": "User registered"
+}
+
+[2026-01-15 21:07:25,559 - INFO] - Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 93' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=powellchristina&password=Z%26%26v1oN63WZtTU3C%2AfGuSE%2Axy%28T3y%25pkp%25%26%23u%293' http://auth:8000/auth/login/
+[2026-01-15 21:07:25,559 - INFO] - Response status code="401", elapsed_time="0:00:00.260299"
+{
+  "detail": "Invalid login credentials"
+}
+

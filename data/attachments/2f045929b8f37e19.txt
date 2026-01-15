@@ -1,0 +1,60 @@
+INFO     Logger:logger.py:35 Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 160' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=smitchelltestUser903&password=MM3%2AcYqgJALtq%2Br3CtdC4Tir%40puF66&password_repeat=MM3%2AcYqgJALtq%2Br3CtdC4Tir%40puF66&email=matthewhunt%40example.com' http://auth:8000/auth/register/
+INFO     Logger:logger.py:35 Response status code="201", elapsed_time="0:00:00.258813"
+{
+  "detail": "User registered"
+}
+
+INFO     Logger:logger.py:35 Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 75' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=smitchelltestUser903&password=MM3%2AcYqgJALtq%2Br3CtdC4Tir%40puF66' http://auth:8000/auth/login/
+INFO     Logger:logger.py:35 Response status code="200", elapsed_time="0:00:00.295040"
+{
+  "access_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjI0LCJ1c2VybmFtZSI6InNtaXRjaGVsbHRlc3RVc2VyOTAzIiwiZXhwIjoxNzY4NTE4NDU2LCJpYXQiOjE3Njg1MTEyNTZ9.XxQSEP1GMf50EoHBBAWbP3Pk1a5guv0rLbvi8j_qQzB8KXU2VwDYiHTtuLHAbVZiwMp10wvZHVxDagxQLCuytd5YkIdLSU8R8NudXsQ8AVXvSSlfYugalcs5KzM3svggXRQng6I51Reh2uiJJx6-ZwJxGnz9OS82cWDY3qBGp6gH7Vd-Cz4VE39kixbHg7diZnX916BYg1oUBrITNcvHM7FzsmWbTV6W3u2vp1otmOgE1gXQq-c7KBF954mkR7k7SFAI6-XWwtl81RIKe1zhsG8aXZBAKk3Rm4CQT2XKGNNkwHo1zpmErAncKApPV1vIWwl4MHg66BbPY3ovsGbsYA",
+  "token_type": "Bearer"
+}
+INFO     Logger:logger.py:35 Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjI0LCJ1c2VybmFtZSI6InNtaXRjaGVsbHRlc3RVc2VyOTAzIiwiZXhwIjoxNzY4NTE4NDU2LCJpYXQiOjE3Njg1MTEyNTZ9.XxQSEP1GMf50EoHBBAWbP3Pk1a5guv0rLbvi8j_qQzB8KXU2VwDYiHTtuLHAbVZiwMp10wvZHVxDagxQLCuytd5YkIdLSU8R8NudXsQ8AVXvSSlfYugalcs5KzM3svggXRQng6I51Reh2uiJJx6-ZwJxGnz9OS82cWDY3qBGp6gH7Vd-Cz4VE39kixbHg7diZnX916BYg1oUBrITNcvHM7FzsmWbTV6W3u2vp1otmOgE1gXQq-c7KBF954mkR7k7SFAI6-XWwtl81RIKe1zhsG8aXZBAKk3Rm4CQT2XKGNNkwHo1zpmErAncKApPV1vIWwl4MHg66BbPY3ovsGbsYA' http://university:8000/groups/
+INFO     Logger:logger.py:35 Response status code="200", elapsed_time="0:00:00.008842"
+[
+  {
+    "name": "group-Gray PLC-921",
+    "id": 1
+  },
+  {
+    "name": "Megan Escobar",
+    "id": 2
+  },
+  {
+    "name": "Robert Adkins",
+    "id": 3
+  },
+  {
+    "name": "Melanie Adams",
+    "id": 4
+  },
+  {
+    "name": "Rachel Garrett",
+    "id": 5
+  },
+  {
+    "name": "Kenneth Wilson",
+    "id": 6
+  },
+  {
+    "name": "John Carr",
+    "id": 7
+  },
+  {
+    "name": "Laura Hopkins",
+    "id": 8
+  },
+  {
+    "name": "Sara Reyes",
+    "id": 9
+  },
+  {
+    "name": "group-Maddox Ltd-2001",
+    "id": 10
+  },
+  {
+    "name": "group-Gardner-Sanchez-7974",
+    "id": 11
+  }
+]

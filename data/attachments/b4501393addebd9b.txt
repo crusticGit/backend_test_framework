@@ -1,0 +1,19 @@
+[2026-01-15 21:07:50,495 - INFO] - Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 179' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=gallagherjosephtestUser823&password=n5%4016%26ho%2B8x%40%23oYA%24T1yaJ_bKVP5yz&password_repeat=n5%4016%26ho%2B8x%40%23oYA%24T1yaJ_bKVP5yz&email=hannaharcher%40example.org' http://auth:8000/auth/register/
+[2026-01-15 21:07:50,495 - INFO] - Response status code="201", elapsed_time="0:00:00.258696"
+{
+  "detail": "User registered"
+}
+
+[2026-01-15 21:07:50,832 - INFO] - Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 87' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=gallagherjosephtestUser823&password=n5%4016%26ho%2B8x%40%23oYA%24T1yaJ_bKVP5yz' http://auth:8000/auth/login/
+[2026-01-15 21:07:50,832 - INFO] - Response status code="200", elapsed_time="0:00:00.296502"
+{
+  "access_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjQ1LCJ1c2VybmFtZSI6ImdhbGxhZ2hlcmpvc2VwaHRlc3RVc2VyODIzIiwiZXhwIjoxNzY4NTE4NDcwLCJpYXQiOjE3Njg1MTEyNzB9.KVUBdn3jVFQSWHt9SCPpRQDSlXOYgCwdIhnpqdpIsZqRjGiNr03t8kRCWIzhLY6B9zTY_CCIBw-JuXdqsvIRL98mnmlQUuO6hMpWXECjF4685sl5svLnFG9TL_dymoWF6ASnWI65tqkTdD339wSBv4wOWp5aDmmFkQW-gBuspw5RjfrPDqzYeggaijV9nYv1GQqRqS4Z5xkj4MUDvWyDTNC3FWSoAqrMmgQ-Bb7AiQ6XjgCyb5jCe7c4OStoJorib5Vkor84i732MkUL30USPChQZdiVBk_KJKQJ49yd5kZT_S2uDi4TG23oGI4uw5DAdYSCwcj4KOP3BSF8f5R8Cw",
+  "token_type": "Bearer"
+}
+
+[2026-01-15 21:07:50,876 - INFO] - Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjQ1LCJ1c2VybmFtZSI6ImdhbGxhZ2hlcmpvc2VwaHRlc3RVc2VyODIzIiwiZXhwIjoxNzY4NTE4NDcwLCJpYXQiOjE3Njg1MTEyNzB9.KVUBdn3jVFQSWHt9SCPpRQDSlXOYgCwdIhnpqdpIsZqRjGiNr03t8kRCWIzhLY6B9zTY_CCIBw-JuXdqsvIRL98mnmlQUuO6hMpWXECjF4685sl5svLnFG9TL_dymoWF6ASnWI65tqkTdD339wSBv4wOWp5aDmmFkQW-gBuspw5RjfrPDqzYeggaijV9nYv1GQqRqS4Z5xkj4MUDvWyDTNC3FWSoAqrMmgQ-Bb7AiQ6XjgCyb5jCe7c4OStoJorib5Vkor84i732MkUL30USPChQZdiVBk_KJKQJ49yd5kZT_S2uDi4TG23oINVALID_SIGNATURE' http://auth:8000/users/me/
+[2026-01-15 21:07:50,876 - INFO] - Response status code="401", elapsed_time="0:00:00.002094"
+{
+  "detail": "Invalid JWT token"
+}
+

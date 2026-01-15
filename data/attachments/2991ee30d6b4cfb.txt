@@ -1,0 +1,27 @@
+INFO     Logger:logger.py:35 Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 182' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=morenojeremytestUser229&password=V%21uDJ%21%26U%23tdOw3ou%28UyOx%28%23P7%2B8rq1&password_repeat=V%21uDJ%21%26U%23tdOw3ou%28UyOx%28%23P7%2B8rq1&email=coleangela%40example.com' http://auth:8000/auth/register/
+INFO     Logger:logger.py:35 Response status code="201", elapsed_time="0:00:00.258981"
+{
+  "detail": "User registered"
+}
+
+INFO     Logger:logger.py:35 Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 88' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=morenojeremytestUser229&password=V%21uDJ%21%26U%23tdOw3ou%28UyOx%28%23P7%2B8rq1' http://auth:8000/auth/login/
+INFO     Logger:logger.py:35 Response status code="200", elapsed_time="0:00:00.294972"
+{
+  "access_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMwLCJ1c2VybmFtZSI6Im1vcmVub2plcmVteXRlc3RVc2VyMjI5IiwiZXhwIjoxNzY4NTE4NDYwLCJpYXQiOjE3Njg1MTEyNjB9.jP-eF0a2HVcjaJrP7MG3j9QK7JkB0QPjyhCQYMZ4s1fyXFVSS3_U_OS3UQknnynmPahwUlI29LzQApmotey4L9iYTo16mwrFnwzKV4jwE0EVEIL4UEr4XaxxEV0U37k6Uo71aPc4odPs_-J_56oaV1QiaWZ_foMqr_jlU_QqZoJKO-SCe5lw7nW9XKhfBS6LfHAuPKIG7tQ4IZlYboUvA3oqkg9cmc8CFnqaExLbLhr3UJ7K2hOgG2qsQEvPRN8pKInOP4bIgBcV6RehJNenMKzjThBlbeh9KdbsbXAEIcQc5IeuY3RzSDVLIZ9K6VGCMjvMrseY-21SOtYHVl4Tlw",
+  "token_type": "Bearer"
+}
+INFO     Logger:logger.py:35 Request: curl -X PUT -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMwLCJ1c2VybmFtZSI6Im1vcmVub2plcmVteXRlc3RVc2VyMjI5IiwiZXhwIjoxNzY4NTE4NDYwLCJpYXQiOjE3Njg1MTEyNjB9.jP-eF0a2HVcjaJrP7MG3j9QK7JkB0QPjyhCQYMZ4s1fyXFVSS3_U_OS3UQknnynmPahwUlI29LzQApmotey4L9iYTo16mwrFnwzKV4jwE0EVEIL4UEr4XaxxEV0U37k6Uo71aPc4odPs_-J_56oaV1QiaWZ_foMqr_jlU_QqZoJKO-SCe5lw7nW9XKhfBS6LfHAuPKIG7tQ4IZlYboUvA3oqkg9cmc8CFnqaExLbLhr3UJ7K2hOgG2qsQEvPRN8pKInOP4bIgBcV6RehJNenMKzjThBlbeh9KdbsbXAEIcQc5IeuY3RzSDVLIZ9K6VGCMjvMrseY-21SOtYHVl4Tlw' -H 'Content-Length: 44' -H 'Content-Type: application/json' -d '{"name": "group-Ramirez, Allen and Li-4155"}' 'http://university:8000/groups/%5B'"'"'Andrew%20Davis'"'"'%5D/'
+INFO     Logger:logger.py:35 Response status code="422", elapsed_time="0:00:00.007968"
+{
+  "detail": [
+    {
+      "type": "int_parsing",
+      "loc": [
+        "path",
+        "group_id"
+      ],
+      "msg": "Input should be a valid integer, unable to parse string as an integer",
+      "input": "['Andrew Davis']"
+    }
+  ]
+}

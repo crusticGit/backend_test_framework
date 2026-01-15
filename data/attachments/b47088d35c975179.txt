@@ -1,0 +1,27 @@
+INFO     Logger:logger.py:35 Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 188' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=mezachelseatestUser841&password=4sH76k%2BV6QU%2Au%24I%26%295%28O%40zlav%5EKt%25c&password_repeat=4sH76k%2BV6QU%2Au%24I%26%295%28O%40zlav%5EKt%25c&email=padillaandrew%40example.net' http://auth:8000/auth/register/
+INFO     Logger:logger.py:35 Response status code="201", elapsed_time="0:00:00.259184"
+{
+  "detail": "User registered"
+}
+
+INFO     Logger:logger.py:35 Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 89' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=mezachelseatestUser841&password=4sH76k%2BV6QU%2Au%24I%26%295%28O%40zlav%5EKt%25c' http://auth:8000/auth/login/
+INFO     Logger:logger.py:35 Response status code="200", elapsed_time="0:00:00.294985"
+{
+  "access_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjI3LCJ1c2VybmFtZSI6Im1lemFjaGVsc2VhdGVzdFVzZXI4NDEiLCJleHAiOjE3Njg1MTg0NTgsImlhdCI6MTc2ODUxMTI1OH0.jrNODY8D3efagx0CqX5qTyA5srm3dIIMFA-b4XW1Svv2LcyB7VQR87bEQ1_Z8lb61z8OoFwbfJh42UV9Ryzp_M5H35M_p3Gk6ZurIugxr4CaNqjib-NI2hwgKYgdua8N28P0JRfZpbcUFDu3MWXHrhz7K9kmdlJt9XUYOyQgboJZKabyAsd85HB_NEyEWOH-T5dtun3hbDcNSfD4w-7w70Kk1PFWULyDGlGWxZ6A6ne_k5NioAOXIwahFAHdxhdborVEgyr2h4xauzDUoG9hdZXkj_v_5zm9_4U0KhHUfmxRqQI4Rz4stQbEr7v7vLkCAC9xt4O1peLjhHwS2Ly8_A",
+  "token_type": "Bearer"
+}
+INFO     Logger:logger.py:35 Request: curl -X DELETE -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjI3LCJ1c2VybmFtZSI6Im1lemFjaGVsc2VhdGVzdFVzZXI4NDEiLCJleHAiOjE3Njg1MTg0NTgsImlhdCI6MTc2ODUxMTI1OH0.jrNODY8D3efagx0CqX5qTyA5srm3dIIMFA-b4XW1Svv2LcyB7VQR87bEQ1_Z8lb61z8OoFwbfJh42UV9Ryzp_M5H35M_p3Gk6ZurIugxr4CaNqjib-NI2hwgKYgdua8N28P0JRfZpbcUFDu3MWXHrhz7K9kmdlJt9XUYOyQgboJZKabyAsd85HB_NEyEWOH-T5dtun3hbDcNSfD4w-7w70Kk1PFWULyDGlGWxZ6A6ne_k5NioAOXIwahFAHdxhdborVEgyr2h4xauzDUoG9hdZXkj_v_5zm9_4U0KhHUfmxRqQI4Rz4stQbEr7v7vLkCAC9xt4O1peLjhHwS2Ly8_A' -H 'Content-Length: 0' http://university:8000/groups/None/
+INFO     Logger:logger.py:35 Response status code="422", elapsed_time="0:00:00.007915"
+{
+  "detail": [
+    {
+      "type": "int_parsing",
+      "loc": [
+        "path",
+        "group_id"
+      ],
+      "msg": "Input should be a valid integer, unable to parse string as an integer",
+      "input": "None"
+    }
+  ]
+}

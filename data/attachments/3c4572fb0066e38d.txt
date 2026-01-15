@@ -1,0 +1,32 @@
+[2026-01-15 21:07:41,604 - INFO] - Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 166' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=gpughtestUser-636&password=E%21GOGC%25ML%2B%23xbKSraa7_ZSqzzx%2AaR_&password_repeat=E%21GOGC%25ML%2B%23xbKSraa7_ZSqzzx%2AaR_&email=cookvictoria%40example.org' http://auth:8000/auth/register/
+[2026-01-15 21:07:41,604 - INFO] - Response status code="201", elapsed_time="0:00:00.258916"
+{
+  "detail": "User registered"
+}
+
+[2026-01-15 21:07:41,940 - INFO] - Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 76' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=gpughtestUser-636&password=E%21GOGC%25ML%2B%23xbKSraa7_ZSqzzx%2AaR_' http://auth:8000/auth/login/
+[2026-01-15 21:07:41,940 - INFO] - Response status code="200", elapsed_time="0:00:00.295072"
+{
+  "access_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMyLCJ1c2VybmFtZSI6ImdwdWdodGVzdFVzZXItNjM2IiwiZXhwIjoxNzY4NTE4NDYxLCJpYXQiOjE3Njg1MTEyNjF9.fXH9vS93TxAf-ODGxwbZ1AGU3IEtOChdfIBxSlRrIXgLLiIFPf_Q7jDIYdAQQiwKPMG3beilGhT2zZP44744fJwP1ddefKKTDr5QAqEONjHmNrgO1tns3eeP_Ci9apKtmaZEWuccZFgLWSck2GFtfWFHcj7FbzEGXvjtqhSq25LqEIt43HR4ZHG6XDIILpEXwY7Am_fZIg6B30jQu3u2kySGzxCMl1sV3-OAYViSk889NNiyLCG5rnBX0ytn4uzp7WGmDrq_XzA9_dzcH-RIwb96svQ1jn3dAuakNhnbdk8fSCgwzonkdob3fqsVq8dEi1PI3TBYZLcps3-RybrWNQ",
+  "token_type": "Bearer"
+}
+
+[2026-01-15 21:07:41,952 - INFO] - Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMyLCJ1c2VybmFtZSI6ImdwdWdodGVzdFVzZXItNjM2IiwiZXhwIjoxNzY4NTE4NDYxLCJpYXQiOjE3Njg1MTEyNjF9.fXH9vS93TxAf-ODGxwbZ1AGU3IEtOChdfIBxSlRrIXgLLiIFPf_Q7jDIYdAQQiwKPMG3beilGhT2zZP44744fJwP1ddefKKTDr5QAqEONjHmNrgO1tns3eeP_Ci9apKtmaZEWuccZFgLWSck2GFtfWFHcj7FbzEGXvjtqhSq25LqEIt43HR4ZHG6XDIILpEXwY7Am_fZIg6B30jQu3u2kySGzxCMl1sV3-OAYViSk889NNiyLCG5rnBX0ytn4uzp7WGmDrq_XzA9_dzcH-RIwb96svQ1jn3dAuakNhnbdk8fSCgwzonkdob3fqsVq8dEi1PI3TBYZLcps3-RybrWNQ' -H 'Content-Length: 36' -H 'Content-Type: application/json' -d '{"name": "group-Jackson Group-8524"}' http://university:8000/groups/
+[2026-01-15 21:07:41,952 - INFO] - Response status code="201", elapsed_time="0:00:00.010287"
+{
+  "name": "group-Jackson Group-8524",
+  "id": 17
+}
+
+[2026-01-15 21:07:42,001 - INFO] - Request: curl -X DELETE -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMyLCJ1c2VybmFtZSI6ImdwdWdodGVzdFVzZXItNjM2IiwiZXhwIjoxNzY4NTE4NDYxLCJpYXQiOjE3Njg1MTEyNjF9.fXH9vS93TxAf-ODGxwbZ1AGU3IEtOChdfIBxSlRrIXgLLiIFPf_Q7jDIYdAQQiwKPMG3beilGhT2zZP44744fJwP1ddefKKTDr5QAqEONjHmNrgO1tns3eeP_Ci9apKtmaZEWuccZFgLWSck2GFtfWFHcj7FbzEGXvjtqhSq25LqEIt43HR4ZHG6XDIILpEXwY7Am_fZIg6B30jQu3u2kySGzxCMl1sV3-OAYViSk889NNiyLCG5rnBX0ytn4uzp7WGmDrq_XzA9_dzcH-RIwb96svQ1jn3dAuakNhnbdk8fSCgwzonkdob3fqsVq8dEi1PI3TBYZLcps3-RybrWNQ' -H 'Content-Length: 0' http://university:8000/groups/17/
+[2026-01-15 21:07:42,001 - INFO] - Response status code="200", elapsed_time="0:00:00.007442"
+{
+  "detail": "Group deleted"
+}
+
+[2026-01-15 21:07:42,051 - INFO] - Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMyLCJ1c2VybmFtZSI6ImdwdWdodGVzdFVzZXItNjM2IiwiZXhwIjoxNzY4NTE4NDYxLCJpYXQiOjE3Njg1MTEyNjF9.fXH9vS93TxAf-ODGxwbZ1AGU3IEtOChdfIBxSlRrIXgLLiIFPf_Q7jDIYdAQQiwKPMG3beilGhT2zZP44744fJwP1ddefKKTDr5QAqEONjHmNrgO1tns3eeP_Ci9apKtmaZEWuccZFgLWSck2GFtfWFHcj7FbzEGXvjtqhSq25LqEIt43HR4ZHG6XDIILpEXwY7Am_fZIg6B30jQu3u2kySGzxCMl1sV3-OAYViSk889NNiyLCG5rnBX0ytn4uzp7WGmDrq_XzA9_dzcH-RIwb96svQ1jn3dAuakNhnbdk8fSCgwzonkdob3fqsVq8dEi1PI3TBYZLcps3-RybrWNQ' -H 'Content-Length: 140' -H 'Content-Type: application/json' -d '{"first_name": "Edward", "last_name": "Lopez", "email": "wwood@example.net", "degree": "Associate", "phone": "+77900802404", "group_id": 17}' http://university:8000/students/
+[2026-01-15 21:07:42,051 - INFO] - Response status code="404", elapsed_time="0:00:00.008462"
+{
+  "detail": "Group not found"
+}
+

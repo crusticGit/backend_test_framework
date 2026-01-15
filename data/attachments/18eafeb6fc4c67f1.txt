@@ -1,0 +1,6 @@
+[2026-01-15 21:07:23,736 - INFO] - Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 118' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=johncortez971&password=C9VUmo%2BN%5E%237&password_repeat=C9VUmo%2BN%5E%237&email=marissapadilla%40example.net' http://auth:8000/auth/register/
+[2026-01-15 21:07:23,737 - INFO] - Response status code="201", elapsed_time="0:00:00.259019"
+{
+  "detail": "User registered"
+}
+

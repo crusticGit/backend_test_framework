@@ -1,0 +1,97 @@
+INFO     Logger:logger.py:35 Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 163' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=spowelltestUser121&password=%25N2%2AjS%25d3Q8qeMGsWi6Y46%29WA%24MK%26n&password_repeat=%25N2%2AjS%25d3Q8qeMGsWi6Y46%29WA%24MK%26n&email=vlee%40example.org' http://auth:8000/auth/register/
+INFO     Logger:logger.py:35 Response status code="201", elapsed_time="0:00:00.259192"
+{
+  "detail": "User registered"
+}
+
+INFO     Logger:logger.py:35 Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 79' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=spowelltestUser121&password=%25N2%2AjS%25d3Q8qeMGsWi6Y46%29WA%24MK%26n' http://auth:8000/auth/login/
+INFO     Logger:logger.py:35 Response status code="200", elapsed_time="0:00:00.295396"
+{
+  "access_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMzLCJ1c2VybmFtZSI6InNwb3dlbGx0ZXN0VXNlcjEyMSIsImV4cCI6MTc2ODUxODQ2MiwiaWF0IjoxNzY4NTExMjYyfQ.QE-Gbat2JtzYTmoxqVkLUifaEE4P3d-Z9mLM5pVI8m49onIl638hlGM3-yoFUBgTl6AdoshRwk1R0RKy6CAWU5MkNtuKhQnbF3FBosfUpKCsj7wwURNI9yLl620DUmuWXkIQYkks83sRtvAQoqZWp30lhMJH9J8h70QDMnmLT6mpAjTUjpDpayuj5Da3CCSAqevWJanlBjlP8qNb06wMLnoj5kjL-YcGLghL57Jb8qU0IqsArzaZuOBUz2HGtYZOZenNdBGmRFVWXNBD8MxkKI8y_-3pBXbzQxgnQUElUhM5YojLLclGIpn-p6k7-a0UAzoWwxVZvvDw64K49rZgCA",
+  "token_type": "Bearer"
+}
+INFO     Logger:logger.py:35 Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMzLCJ1c2VybmFtZSI6InNwb3dlbGx0ZXN0VXNlcjEyMSIsImV4cCI6MTc2ODUxODQ2MiwiaWF0IjoxNzY4NTExMjYyfQ.QE-Gbat2JtzYTmoxqVkLUifaEE4P3d-Z9mLM5pVI8m49onIl638hlGM3-yoFUBgTl6AdoshRwk1R0RKy6CAWU5MkNtuKhQnbF3FBosfUpKCsj7wwURNI9yLl620DUmuWXkIQYkks83sRtvAQoqZWp30lhMJH9J8h70QDMnmLT6mpAjTUjpDpayuj5Da3CCSAqevWJanlBjlP8qNb06wMLnoj5kjL-YcGLghL57Jb8qU0IqsArzaZuOBUz2HGtYZOZenNdBGmRFVWXNBD8MxkKI8y_-3pBXbzQxgnQUElUhM5YojLLclGIpn-p6k7-a0UAzoWwxVZvvDw64K49rZgCA' http://university:8000/students/
+INFO     Logger:logger.py:35 Response status code="200", elapsed_time="0:00:00.009774"
+[
+  {
+    "first_name": "Scott",
+    "last_name": "Lopez",
+    "email": "eford@example.net",
+    "degree": "Associate",
+    "phone": "+74064355929",
+    "group_id": 1,
+    "id": 1
+  },
+  {
+    "first_name": "Jeffrey",
+    "last_name": "Campbell",
+    "email": "ewhitney@example.com",
+    "degree": "Associate",
+    "phone": "+73291705280",
+    "group_id": 3,
+    "id": 3
+  },
+  {
+    "first_name": "Chad",
+    "last_name": "Mcdaniel",
+    "email": "reynoldsbrandi@example.net",
+    "degree": "Master",
+    "phone": "+78490474909",
+    "group_id": 4,
+    "id": 4
+  },
+  {
+    "first_name": "Daniel",
+    "last_name": "Harris",
+    "email": "larryharris@example.net",
+    "degree": "Master",
+    "phone": "+77884148357",
+    "group_id": 5,
+    "id": 5
+  },
+  {
+    "first_name": "Jessica",
+    "last_name": "Diaz",
+    "email": "amy66@example.net",
+    "degree": "Associate",
+    "phone": "+79467216669",
+    "group_id": 6,
+    "id": 6
+  },
+  {
+    "first_name": "Connie",
+    "last_name": "Webb",
+    "email": "jacob23@example.org",
+    "degree": "Associate",
+    "phone": "+72689738240",
+    "group_id": 7,
+    "id": 7
+  },
+  {
+    "first_name": "Paula",
+    "last_name": "Bautista",
+    "email": "daniellehansen@example.com",
+    "degree": "Associate",
+    "phone": "+72933804588",
+    "group_id": 8,
+    "id": 8
+  },
+  {
+    "first_name": "Samantha",
+    "last_name": "Griffith",
+    "email": "jenniferbenitez@example.org",
+    "degree": "Associate",
+    "phone": "+73731835524",
+    "group_id": 9,
+    "id": 9
+  },
+  {
+    "first_name": "Samuel",
+    "last_name": "Ramirez",
+    "email": "cameronmelanie@example.com",
+    "degree": "Bachelor",
+    "phone": "+70664587857",
+    "group_id": 16,
+    "id": 10
+  }
+]

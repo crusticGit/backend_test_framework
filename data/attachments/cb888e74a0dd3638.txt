@@ -1,0 +1,32 @@
+[2026-01-15 21:07:40,942 - INFO] - Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 174' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=powellmorgantestUser729&password=0d%25RGG%29mmhi%26nqRn_uEDlG%2B%40X_op7%23&password_repeat=0d%25RGG%29mmhi%26nqRn_uEDlG%2B%40X_op7%23&email=sherrybell%40example.org' http://auth:8000/auth/register/
+[2026-01-15 21:07:40,942 - INFO] - Response status code="201", elapsed_time="0:00:00.259213"
+{
+  "detail": "User registered"
+}
+
+[2026-01-15 21:07:41,278 - INFO] - Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 84' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=powellmorgantestUser729&password=0d%25RGG%29mmhi%26nqRn_uEDlG%2B%40X_op7%23' http://auth:8000/auth/login/
+[2026-01-15 21:07:41,278 - INFO] - Response status code="200", elapsed_time="0:00:00.295173"
+{
+  "access_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMxLCJ1c2VybmFtZSI6InBvd2VsbG1vcmdhbnRlc3RVc2VyNzI5IiwiZXhwIjoxNzY4NTE4NDYxLCJpYXQiOjE3Njg1MTEyNjF9.ial_Yv0Ht539LQ2JU5MkCbvhkiC3dFZXjOD27V-gUjLvuTxyvdoL-OnpXPuWnrIp8kD60oqfsEi1I6OXbIQ1LJ4f2pElNoPUmzulQaXDMBTvXvO4Zc7lHr9GKRnJMULCdYCkaH6YHkqMSr4kLiiyti2rWHT9UFdZVzMaaKIEMmZOMG0-LuWsvXapgDvj2wM4FbNoiw2tFlMX8oiRocEI7u1UiYzYOJSiuTSiWKwaRZdC5miOc99X6gZxyQjCiY10GVbjy8WDfbJzH91MUPmEcXbOg2SlOqsbOuYX5-Z4C0m7NdP9XrOAuajegFTIKiQJJ912duo1JT5ZFHm45p4guA",
+  "token_type": "Bearer"
+}
+
+[2026-01-15 21:07:41,290 - INFO] - Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMxLCJ1c2VybmFtZSI6InBvd2VsbG1vcmdhbnRlc3RVc2VyNzI5IiwiZXhwIjoxNzY4NTE4NDYxLCJpYXQiOjE3Njg1MTEyNjF9.ial_Yv0Ht539LQ2JU5MkCbvhkiC3dFZXjOD27V-gUjLvuTxyvdoL-OnpXPuWnrIp8kD60oqfsEi1I6OXbIQ1LJ4f2pElNoPUmzulQaXDMBTvXvO4Zc7lHr9GKRnJMULCdYCkaH6YHkqMSr4kLiiyti2rWHT9UFdZVzMaaKIEMmZOMG0-LuWsvXapgDvj2wM4FbNoiw2tFlMX8oiRocEI7u1UiYzYOJSiuTSiWKwaRZdC5miOc99X6gZxyQjCiY10GVbjy8WDfbJzH91MUPmEcXbOg2SlOqsbOuYX5-Z4C0m7NdP9XrOAuajegFTIKiQJJ912duo1JT5ZFHm45p4guA' -H 'Content-Length: 35' -H 'Content-Type: application/json' -d '{"name": "group-Phillips LLC-4495"}' http://university:8000/groups/
+[2026-01-15 21:07:41,290 - INFO] - Response status code="201", elapsed_time="0:00:00.010304"
+{
+  "name": "group-Phillips LLC-4495",
+  "id": 16
+}
+
+[2026-01-15 21:07:41,341 - INFO] - Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMxLCJ1c2VybmFtZSI6InBvd2VsbG1vcmdhbnRlc3RVc2VyNzI5IiwiZXhwIjoxNzY4NTE4NDYxLCJpYXQiOjE3Njg1MTEyNjF9.ial_Yv0Ht539LQ2JU5MkCbvhkiC3dFZXjOD27V-gUjLvuTxyvdoL-OnpXPuWnrIp8kD60oqfsEi1I6OXbIQ1LJ4f2pElNoPUmzulQaXDMBTvXvO4Zc7lHr9GKRnJMULCdYCkaH6YHkqMSr4kLiiyti2rWHT9UFdZVzMaaKIEMmZOMG0-LuWsvXapgDvj2wM4FbNoiw2tFlMX8oiRocEI7u1UiYzYOJSiuTSiWKwaRZdC5miOc99X6gZxyQjCiY10GVbjy8WDfbJzH91MUPmEcXbOg2SlOqsbOuYX5-Z4C0m7NdP9XrOAuajegFTIKiQJJ912duo1JT5ZFHm45p4guA' -H 'Content-Length: 150' -H 'Content-Type: application/json' -d '{"first_name": "Samuel", "last_name": "Ramirez", "email": "cameronmelanie@example.com", "degree": "Bachelor", "phone": "+70664587857", "group_id": 16}' http://university:8000/students/
+[2026-01-15 21:07:41,341 - INFO] - Response status code="201", elapsed_time="0:00:00.009690"
+{
+  "first_name": "Samuel",
+  "last_name": "Ramirez",
+  "email": "cameronmelanie@example.com",
+  "degree": "Bachelor",
+  "phone": "+70664587857",
+  "group_id": 16,
+  "id": 10
+}
+

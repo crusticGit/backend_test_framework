@@ -1,0 +1,32 @@
+[2026-01-15 21:07:37,579 - INFO] - Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 171' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=susan21testUser-787&password=3%24pN_5J%29Y9zd59%401%40oceH8GyAlb%2Bgk&password_repeat=3%24pN_5J%29Y9zd59%401%40oceH8GyAlb%2Bgk&email=samuelrodriguez%40example.com' http://auth:8000/auth/register/
+[2026-01-15 21:07:37,579 - INFO] - Response status code="201", elapsed_time="0:00:00.259104"
+{
+  "detail": "User registered"
+}
+
+[2026-01-15 21:07:37,915 - INFO] - Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 78' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=susan21testUser-787&password=3%24pN_5J%29Y9zd59%401%40oceH8GyAlb%2Bgk' http://auth:8000/auth/login/
+[2026-01-15 21:07:37,915 - INFO] - Response status code="200", elapsed_time="0:00:00.295076"
+{
+  "access_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjI2LCJ1c2VybmFtZSI6InN1c2FuMjF0ZXN0VXNlci03ODciLCJleHAiOjE3Njg1MTg0NTcsImlhdCI6MTc2ODUxMTI1N30.nVj4-p1pJXa5t8Tzy3J4BIqJ4KsHaKpFhb-0iV1XhzizyFKJzenEbcepVYajh38CXKGggKR_gfFUzh5nYr1QBca5f2kQYIuMkAVe8dy89mkT2ABYWYzxLi56neTupT3JDHm-akq0Yvqw406XnXgt8CiPond3VpclIi7LyLwU0Cr1KkfrsoJduIdIswGRILLyuzmwHoLLwvDrK35eahzAPXUWAkZw2aRLPPyzY5QBTwAba6wp5hF5VGYDK8AzNMF4WdvKpj2Bpa3ZGxt2dGnFYI7jyTw0AFI4D8UYJfPI0VON7Ls9ONCngi0EIj7KSeRqUfZD18XN71SLXzl8Fe5QwA",
+  "token_type": "Bearer"
+}
+
+[2026-01-15 21:07:37,927 - INFO] - Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjI2LCJ1c2VybmFtZSI6InN1c2FuMjF0ZXN0VXNlci03ODciLCJleHAiOjE3Njg1MTg0NTcsImlhdCI6MTc2ODUxMTI1N30.nVj4-p1pJXa5t8Tzy3J4BIqJ4KsHaKpFhb-0iV1XhzizyFKJzenEbcepVYajh38CXKGggKR_gfFUzh5nYr1QBca5f2kQYIuMkAVe8dy89mkT2ABYWYzxLi56neTupT3JDHm-akq0Yvqw406XnXgt8CiPond3VpclIi7LyLwU0Cr1KkfrsoJduIdIswGRILLyuzmwHoLLwvDrK35eahzAPXUWAkZw2aRLPPyzY5QBTwAba6wp5hF5VGYDK8AzNMF4WdvKpj2Bpa3ZGxt2dGnFYI7jyTw0AFI4D8UYJfPI0VON7Ls9ONCngi0EIj7KSeRqUfZD18XN71SLXzl8Fe5QwA' -H 'Content-Length: 46' -H 'Content-Type: application/json' -d '{"name": "group-King, Bryan and Johnson-6246"}' http://university:8000/groups/
+[2026-01-15 21:07:37,928 - INFO] - Response status code="201", elapsed_time="0:00:00.010421"
+{
+  "name": "group-King, Bryan and Johnson-6246",
+  "id": 13
+}
+
+[2026-01-15 21:07:37,976 - INFO] - Request: curl -X DELETE -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjI2LCJ1c2VybmFtZSI6InN1c2FuMjF0ZXN0VXNlci03ODciLCJleHAiOjE3Njg1MTg0NTcsImlhdCI6MTc2ODUxMTI1N30.nVj4-p1pJXa5t8Tzy3J4BIqJ4KsHaKpFhb-0iV1XhzizyFKJzenEbcepVYajh38CXKGggKR_gfFUzh5nYr1QBca5f2kQYIuMkAVe8dy89mkT2ABYWYzxLi56neTupT3JDHm-akq0Yvqw406XnXgt8CiPond3VpclIi7LyLwU0Cr1KkfrsoJduIdIswGRILLyuzmwHoLLwvDrK35eahzAPXUWAkZw2aRLPPyzY5QBTwAba6wp5hF5VGYDK8AzNMF4WdvKpj2Bpa3ZGxt2dGnFYI7jyTw0AFI4D8UYJfPI0VON7Ls9ONCngi0EIj7KSeRqUfZD18XN71SLXzl8Fe5QwA' -H 'Content-Length: 0' http://university:8000/groups/13/
+[2026-01-15 21:07:37,976 - INFO] - Response status code="200", elapsed_time="0:00:00.007794"
+{
+  "detail": "Group deleted"
+}
+
+[2026-01-15 21:07:38,025 - INFO] - Request: curl -X DELETE -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjI2LCJ1c2VybmFtZSI6InN1c2FuMjF0ZXN0VXNlci03ODciLCJleHAiOjE3Njg1MTg0NTcsImlhdCI6MTc2ODUxMTI1N30.nVj4-p1pJXa5t8Tzy3J4BIqJ4KsHaKpFhb-0iV1XhzizyFKJzenEbcepVYajh38CXKGggKR_gfFUzh5nYr1QBca5f2kQYIuMkAVe8dy89mkT2ABYWYzxLi56neTupT3JDHm-akq0Yvqw406XnXgt8CiPond3VpclIi7LyLwU0Cr1KkfrsoJduIdIswGRILLyuzmwHoLLwvDrK35eahzAPXUWAkZw2aRLPPyzY5QBTwAba6wp5hF5VGYDK8AzNMF4WdvKpj2Bpa3ZGxt2dGnFYI7jyTw0AFI4D8UYJfPI0VON7Ls9ONCngi0EIj7KSeRqUfZD18XN71SLXzl8Fe5QwA' -H 'Content-Length: 0' http://university:8000/groups/13/
+[2026-01-15 21:07:38,025 - INFO] - Response status code="404", elapsed_time="0:00:00.008088"
+{
+  "detail": "Group not found"
+}
+

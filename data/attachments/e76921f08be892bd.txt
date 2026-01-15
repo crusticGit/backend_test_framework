@@ -1,0 +1,19 @@
+INFO     Logger:logger.py:35 Request: curl -H 'User-Agent: python-requests/2.32.5' -H 'Accept-Encoding: gzip, deflate' -H 'Accept: */*' -H 'Connection: keep-alive' -H 'Content-Length: 191' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=gileslisa&password=P%2A0%40Om5uqHq%29YQeFupyxR4iqFjMd1N%5E%262pd_%21LYtE7lyWcYmg%2A%29x%2Ayc&password_repeat=P%2A0%40Om5uqHq%29YQeFupyxR4iqFjMd1N%5E%262pd_%21LYtE7lyWcYmg%2A%29x%2Ayc' http://auth:8000/auth/register/
+INFO     Logger:logger.py:35 Response status code="422", elapsed_time="0:00:00.002053"
+{
+  "detail": [
+    {
+      "type": "missing",
+      "loc": [
+        "body",
+        "email"
+      ],
+      "msg": "Field required",
+      "input": {
+        "username": "gileslisa",
+        "password": "P*0@Om5uqHq)YQeFupyxR4iqFjMd1N^&2pd_!LYtE7lyWcYmg*)x*yc",
+        "password_repeat": "P*0@Om5uqHq)YQeFupyxR4iqFjMd1N^&2pd_!LYtE7lyWcYmg*)x*yc"
+      }
+    }
+  ]
+}
