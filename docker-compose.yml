@@ -14,6 +14,8 @@ services:
       retries: 5
       start_period: 30s
       timeout: 10s
+    networks:
+      - api-tests-network
 
   postgres_university:
     image: postgres:17
@@ -30,6 +32,8 @@ services:
       retries: 5
       start_period: 30s
       timeout: 10s
+    networks:
+      - api-tests-network
 
   auth:
     image: mekidmetal/auth-service
@@ -47,6 +51,8 @@ services:
     depends_on:
       postgres_auth:
         condition: service_healthy
+    networks:
+      - api-tests-network
 
   university:
     image: mekidmetal/university-service
@@ -64,3 +70,9 @@ services:
     depends_on:
       postgres_university:
         condition: service_healthy
+    networks:
+      - api-tests-network
+
+networks:
+  api-tests-network:
+    name: api-tests-network
